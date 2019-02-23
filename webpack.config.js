@@ -10,6 +10,7 @@ var env = process.env.ENV ? process.env.ENV : 'dev';
  */
 var phusionEntryPath = './exports/core/Phusion';
 var configTaskPath = './exports/build/ConfigTask';
+var devServerTaskPath = './exports/build/DevServerTask';
 var outputFileExt = (env === 'prod') ? '.min.js' : '.js';
 var sourceMapOutputFileExt = '.map';
 var mode = (env === 'prod') ? 'production' : 'development';
@@ -60,6 +61,40 @@ module.exports = [
     },
     entry:        {
       ConfigTask: configTaskPath
+    },
+    devtool:      sourcemap,
+    output:       {
+      path:              path.resolve(__dirname, "dist/build"),
+      filename:          '[name]' + outputFileExt,
+      sourceMapFilename: '[name]' + sourceMapOutputFileExt,
+      libraryTarget:     'commonjs',
+      library:           '[name]'
+    },
+    resolve:      {
+      extensions: ['.js', '.ts']
+    },
+    target:       "node",
+    module:       {
+      rules: [
+        {
+          test:    /\.ts/,
+          exclude: /node_modules\/(?!phusion|vue).*/,
+          use:     ['ts-loader']
+        }
+      ]
+    }
+  },
+  /**
+   * DevServerTask
+   */
+  {
+    mode:         mode,
+    watch:        false,
+    watchOptions: {
+      aggregateTimeout: 300
+    },
+    entry:        {
+      DevServerTask: devServerTaskPath
     },
     devtool:      sourcemap,
     output:       {
