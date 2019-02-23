@@ -55,7 +55,7 @@ module.exports = [
    */
   {
     mode:         mode,
-    watch:        watch,
+    watch:        false,
     watchOptions: {
       aggregateTimeout: 300
     },
