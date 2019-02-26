@@ -6,13 +6,9 @@ import {Config} from "../module/Config/Entity/Config";
 export class DevServerTask extends AbstractTask implements TaskInterface
 {
 	protected browserSync: any;
-	protected express: any;
-	protected nodeJsPath: any;
-	protected watch: any;
 
-	public run()
+	protected exec()
 	{
-		this.logInfo('DevServerTask: started');
 		let taskConfig = this.getTaskConfig();
 		let browserSyncConfig = taskConfig.getByPath('browserSyncConfig');
 
@@ -28,7 +24,7 @@ export class DevServerTask extends AbstractTask implements TaskInterface
 		browserSync.init(browserSyncConfig);
 	}
 
-	public getRequiredTaskConfigPaths(): Object
+	protected getRequiredTaskConfigPaths(): Object
 	{
 		return {
 			browserSyncConfig: "object",

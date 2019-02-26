@@ -4,9 +4,8 @@ import {TaskInterface} from "./TaskInterface";
 
 export class ConfigTask extends AbstractTask implements TaskInterface
 {
-	public run()
+	protected exec()
 	{
-		this.logInfo('ConfigTask: started');
 		let taskConfig = this.getTaskConfig();
 
 		let configDirPath = taskConfig.getByPath('configDirPath');
@@ -21,10 +20,9 @@ export class ConfigTask extends AbstractTask implements TaskInterface
 		}
 
 		this.getModuleContainer().getConfigModule().generateConfig(configDirPath, outputFilePath, outputFormat, variableName);
-		this.logSuccess('ConfigTask: complete');
 	}
 
-	public getRequiredTaskConfigPaths(): Object
+	protected getRequiredTaskConfigPaths(): Object
 	{
 		return {
 			configDirPath: "string",

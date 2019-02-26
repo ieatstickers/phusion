@@ -4936,8 +4936,7 @@ var DevServerTask = /** @class */ (function (_super) {
     function DevServerTask() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    DevServerTask.prototype.run = function () {
-        this.logInfo('DevServerTask: started');
+    DevServerTask.prototype.exec = function () {
         var taskConfig = this.getTaskConfig();
         var browserSyncConfig = taskConfig.getByPath('browserSyncConfig');
         // Create a new instance of Browser Sync

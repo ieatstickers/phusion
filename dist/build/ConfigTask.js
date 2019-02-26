@@ -4935,8 +4935,7 @@ var ConfigTask = /** @class */ (function (_super) {
     function ConfigTask() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    ConfigTask.prototype.run = function () {
-        this.logInfo('ConfigTask: started');
+    ConfigTask.prototype.exec = function () {
         var taskConfig = this.getTaskConfig();
         var configDirPath = taskConfig.getByPath('configDirPath');
         var outputFilePath = taskConfig.getByPath('outputFilePath');
@@ -4947,7 +4946,6 @@ var ConfigTask = /** @class */ (function (_super) {
             configDirPath += '/';
         }
         this.getModuleContainer().getConfigModule().generateConfig(configDirPath, outputFilePath, outputFormat, variableName);
-        this.logSuccess('ConfigTask: complete');
     };
     ConfigTask.prototype.getRequiredTaskConfigPaths = function () {
         return {
