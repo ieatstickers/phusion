@@ -6,6 +6,9 @@ export abstract class AbstractTask
 {
 	protected moduleContainer: ModuleContainer;
 	protected taskConfig: Config;
+	protected running: boolean = false;
+	protected queued: number = 0;
+	protected queueLimit: number = 0;
 
 	public constructor(taskConfig: Object = {})
 	{
@@ -23,6 +26,31 @@ export abstract class AbstractTask
 		this.taskConfig = configModule.toConfig(mergedConfigObject);
 
 		this.validateTaskConfig();
+	}
+
+	public run()
+	{
+		// If task is already running
+		if (this.running)
+		{
+			// Queue it up
+			this.queue();
+			return;
+		}
+
+		let taskName = this.constructor['name'];
+
+		// Log task as running
+		this.running = true;
+		this.logInfo(taskName + ': started');
+
+		// Execute the task
+		this.exec();
+
+		this.running = false;
+		this.logInfo(taskName + ': finished');
+
+		this.shutdown();
 	}
 
 	protected getDefaultTaskConfig(): Object
@@ -49,7 +77,6 @@ export abstract class AbstractTask
 
 	protected validateTaskConfigForRequiredPathsAndTypes(): this
 	{
-
 		let requiredTaskConfigPaths = this.getRequiredTaskConfigPaths();
 
 		for (let requiredConfigPath in requiredTaskConfigPaths)
@@ -74,6 +101,36 @@ export abstract class AbstractTask
 			}
 
 		return this;
+	}
+
+	protected queue()
+	{
+		if (this.queued < this.queueLimit)
+		{
+			this.queued++;
+		}
+
+		return this;
+	}
+
+	protected shutdown()
+	{
+		// Remove one from the queue
+		this.queued--;
+
+		// If there are tasks in the queue
+		if (this.queued > 0)
+		{
+			// Run it
+			this.run();
+		}
+
+		return this;
+	}
+
+	protected exec()
+	{
+		throw new Error('exec() method must be implemented');
 	}
 
 	protected logError(message: string): this
