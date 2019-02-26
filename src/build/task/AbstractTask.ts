@@ -48,7 +48,7 @@ export abstract class AbstractTask
 		this.exec();
 
 		this.running = false;
-		this.logInfo(taskName + ': finished');
+		this.logSuccess(taskName + ': finished');
 
 		this.shutdown();
 	}

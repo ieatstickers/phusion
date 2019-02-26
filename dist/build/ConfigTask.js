@@ -4827,7 +4827,7 @@ var AbstractTask = /** @class */ (function () {
         // Execute the task
         this.exec();
         this.running = false;
-        this.logInfo(taskName + ': finished');
+        this.logSuccess(taskName + ': finished');
         this.shutdown();
     };
     AbstractTask.prototype.getDefaultTaskConfig = function () {
