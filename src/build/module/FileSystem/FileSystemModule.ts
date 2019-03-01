@@ -42,6 +42,8 @@ export class FileSystemModule extends AbstractModule implements FileSystemModule
 	{
 		let itemsInScope = this.getDirContents(srcDirPath);
 
+		let iterationCount = 0;
+
 		for (let key in itemsInScope)
 		{
 			let fileName = itemsInScope[key];
@@ -53,25 +55,28 @@ export class FileSystemModule extends AbstractModule implements FileSystemModule
 				let pattern = ignorePatterns[key];
 
 				// If full file path matches
-				console.log('testing ignore pattern: ', pattern);
-				console.log('result: ', pattern.test(fullFilePath));
 				if(pattern.test(fullFilePath))
 				{
-					console.log('ignoring: ', fullFilePath);
+					console.log('Ignoring: ', fullFilePath);
 					// Ignore it and return
 					return;
 				}
 			}
 
+			iterationCount++;
+
 			if (this.isDirectory(fullFilePath))
 			{
 				this.forEachFileRecursively(fullFilePath, callback);
-			} else if (this.isFile(fullFilePath))
+			}
+			else if (this.isFile(fullFilePath))
 			{
 				console.log('processing: ', fullFilePath);
 				callback(fileName, fullFilePath);
 			}
 		}
+
+		console.log('iterationCount', iterationCount);
 
 		return this;
 	}

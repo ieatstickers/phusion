@@ -4545,6 +4545,7 @@ var FileSystemModule = /** @class */ (function (_super) {
     FileSystemModule.prototype.forEachFileRecursively = function (srcDirPath, callback, ignorePatterns) {
         if (ignorePatterns === void 0) { ignorePatterns = []; }
         var itemsInScope = this.getDirContents(srcDirPath);
+        var iterationCount = 0;
         for (var key in itemsInScope) {
             var fileName = itemsInScope[key];
             var fullFilePath = srcDirPath + '/' + fileName;
@@ -4552,14 +4553,13 @@ var FileSystemModule = /** @class */ (function (_super) {
             for (var key_1 in ignorePatterns) {
                 var pattern = ignorePatterns[key_1];
                 // If full file path matches
-                console.log('testing ignore pattern: ', pattern);
-                console.log('result: ', pattern.test(fullFilePath));
                 if (pattern.test(fullFilePath)) {
-                    console.log('ignoring: ', fullFilePath);
+                    console.log('Ignoring: ', fullFilePath);
                     // Ignore it and return
                     return;
                 }
             }
+            iterationCount++;
             if (this.isDirectory(fullFilePath)) {
                 this.forEachFileRecursively(fullFilePath, callback);
             }
@@ -4568,6 +4568,7 @@ var FileSystemModule = /** @class */ (function (_super) {
                 callback(fileName, fullFilePath);
             }
         }
+        console.log('iterationCount', iterationCount);
         return this;
     };
     FileSystemModule.prototype.getDirContents = function (absoluteDirPath) {
