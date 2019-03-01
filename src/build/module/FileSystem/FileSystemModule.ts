@@ -47,6 +47,8 @@ export class FileSystemModule extends AbstractModule implements FileSystemModule
 			let fileName = itemsInScope[key];
 			let fullFilePath = srcDirPath + '/' + fileName;
 
+			iterationCount++;
+
 			// For each ignore pattern
 			for (let key in ignorePatterns)
 			{
@@ -60,8 +62,6 @@ export class FileSystemModule extends AbstractModule implements FileSystemModule
 					return;
 				}
 			}
-
-			iterationCount++;
 
 			if (this.isDirectory(fullFilePath))
 			{

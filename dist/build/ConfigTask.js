@@ -4549,6 +4549,7 @@ var FileSystemModule = /** @class */ (function (_super) {
         for (var key in itemsInScope) {
             var fileName = itemsInScope[key];
             var fullFilePath = srcDirPath + '/' + fileName;
+            iterationCount++;
             // For each ignore pattern
             for (var key_1 in ignorePatterns) {
                 var pattern = ignorePatterns[key_1];
@@ -4559,7 +4560,6 @@ var FileSystemModule = /** @class */ (function (_super) {
                     return;
                 }
             }
-            iterationCount++;
             if (this.isDirectory(fullFilePath)) {
                 iterationCount = this.forEachFileRecursively(fullFilePath, callback, [], iterationCount);
             }
