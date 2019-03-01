@@ -38,11 +38,9 @@ export class FileSystemModule extends AbstractModule implements FileSystemModule
 		return fileExists;
 	}
 
-	public forEachFileRecursively(srcDirPath: string, callback: Function, ignorePatterns: Array<RegExp> = []): this
+	public forEachFileRecursively(srcDirPath: string, callback: Function, ignorePatterns: Array<RegExp> = [], iterationCount: number = 0): number
 	{
 		let itemsInScope = this.getDirContents(srcDirPath);
-
-		let iterationCount = 0;
 
 		for (let key in itemsInScope)
 		{
@@ -67,18 +65,15 @@ export class FileSystemModule extends AbstractModule implements FileSystemModule
 
 			if (this.isDirectory(fullFilePath))
 			{
-				this.forEachFileRecursively(fullFilePath, callback);
+				iterationCount = this.forEachFileRecursively(fullFilePath, callback, [], iterationCount);
 			}
 			else if (this.isFile(fullFilePath))
 			{
-				console.log('processing: ', fullFilePath);
 				callback(fileName, fullFilePath);
 			}
 		}
 
-		console.log('iterationCount', iterationCount);
-
-		return this;
+		return iterationCount;
 	}
 
 	public getDirContents(absoluteDirPath: string): Array<string>
