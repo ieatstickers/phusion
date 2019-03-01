@@ -5,7 +5,7 @@ export interface FileSystemModuleInterface
 
 	fileExists(absoluteFilePath: string): boolean;
 
-	forEachFileRecursively(srcDirPath: string, callback: Function): this;
+	forEachFileRecursively(srcDirPath: string, callback: Function, ignorePatterns: Array<any>): this;
 
 	getDirContents(absoluteDirPath: string): Array<string>;
 
