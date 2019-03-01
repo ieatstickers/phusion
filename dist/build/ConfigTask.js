@@ -4542,11 +4542,21 @@ var FileSystemModule = /** @class */ (function (_super) {
         }
         return fileExists;
     };
-    FileSystemModule.prototype.forEachFileRecursively = function (srcDirPath, callback) {
+    FileSystemModule.prototype.forEachFileRecursively = function (srcDirPath, callback, ignorePatterns) {
+        if (ignorePatterns === void 0) { ignorePatterns = []; }
         var itemsInScope = this.getDirContents(srcDirPath);
         for (var key in itemsInScope) {
             var fileName = itemsInScope[key];
             var fullFilePath = srcDirPath + '/' + fileName;
+            // For each ignore pattern
+            for (var key_1 in ignorePatterns) {
+                var pattern = ignorePatterns[key_1];
+                // If full file path matches
+                if (pattern.test(fullFilePath)) {
+                    // Ignore it and return
+                    return;
+                }
+            }
             if (this.isDirectory(fullFilePath)) {
                 this.forEachFileRecursively(fullFilePath, callback);
             }
