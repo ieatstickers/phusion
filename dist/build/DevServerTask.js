@@ -4557,7 +4557,7 @@ var FileSystemModule = /** @class */ (function (_super) {
                 if (pattern.test(fullFilePath)) {
                     console.log('Ignoring: ', fullFilePath);
                     // Ignore it and return
-                    return;
+                    return iterationCount;
                 }
             }
             if (this.isDirectory(fullFilePath)) {

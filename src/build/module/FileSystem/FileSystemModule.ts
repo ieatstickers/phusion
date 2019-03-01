@@ -59,7 +59,7 @@ export class FileSystemModule extends AbstractModule implements FileSystemModule
 				{
 					console.log('Ignoring: ', fullFilePath);
 					// Ignore it and return
-					return;
+					return iterationCount;
 				}
 			}
 
