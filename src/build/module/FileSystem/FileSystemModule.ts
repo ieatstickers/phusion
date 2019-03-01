@@ -53,8 +53,11 @@ export class FileSystemModule extends AbstractModule implements FileSystemModule
 				let pattern = ignorePatterns[key];
 
 				// If full file path matches
+				console.log('testing ignore pattern: ', pattern);
+				console.log('result: ', pattern.test(fullFilePath));
 				if(pattern.test(fullFilePath))
 				{
+					console.log('ignoring: ', fullFilePath);
 					// Ignore it and return
 					return;
 				}
@@ -65,6 +68,7 @@ export class FileSystemModule extends AbstractModule implements FileSystemModule
 				this.forEachFileRecursively(fullFilePath, callback);
 			} else if (this.isFile(fullFilePath))
 			{
+				console.log('processing: ', fullFilePath);
 				callback(fileName, fullFilePath);
 			}
 		}

@@ -4552,7 +4552,10 @@ var FileSystemModule = /** @class */ (function (_super) {
             for (var key_1 in ignorePatterns) {
                 var pattern = ignorePatterns[key_1];
                 // If full file path matches
+                console.log('testing ignore pattern: ', pattern);
+                console.log('result: ', pattern.test(fullFilePath));
                 if (pattern.test(fullFilePath)) {
+                    console.log('ignoring: ', fullFilePath);
                     // Ignore it and return
                     return;
                 }
@@ -4561,6 +4564,7 @@ var FileSystemModule = /** @class */ (function (_super) {
                 this.forEachFileRecursively(fullFilePath, callback);
             }
             else if (this.isFile(fullFilePath)) {
+                console.log('processing: ', fullFilePath);
                 callback(fileName, fullFilePath);
             }
         }
