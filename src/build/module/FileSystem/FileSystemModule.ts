@@ -57,7 +57,6 @@ export class FileSystemModule extends AbstractModule implements FileSystemModule
 				// If full file path matches
 				if(pattern.test(fullFilePath))
 				{
-					console.log('Ignoring: ', fullFilePath);
 					// Ignore it and return
 					return iterationCount;
 				}
