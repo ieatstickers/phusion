@@ -1,4 +1,3 @@
-
 import {AbstractModule} from "../AbstractModule";
 import {FileSystemModuleInterface} from "./FileSystemModuleInterface";
 
@@ -15,8 +14,7 @@ export class FileSystemModule extends AbstractModule implements FileSystemModule
 			this
 				.getNodeJsFileSystem()
 				.writeFileSync(absoluteFilePath, '');
-		}
-		catch(exception)
+		} catch (exception)
 		{
 			throw exception;
 		}
@@ -32,8 +30,7 @@ export class FileSystemModule extends AbstractModule implements FileSystemModule
 		{
 			this.getNodeJsFileSystem().statSync(absoluteFilePath);
 			fileExists = true;
-		}
-		catch(exception)
+		} catch (exception)
 		{
 			fileExists = false;
 		}
@@ -41,7 +38,7 @@ export class FileSystemModule extends AbstractModule implements FileSystemModule
 		return fileExists;
 	}
 
-	public forEachFileRecursively(srcDirPath: string, callback:Function): this
+	public forEachFileRecursively(srcDirPath: string, callback: Function, ignorePatterns: Array<RegExp> = [], iterationCount: number = 0): number
 	{
 		let itemsInScope = this.getDirContents(srcDirPath);
 
@@ -50,9 +47,24 @@ export class FileSystemModule extends AbstractModule implements FileSystemModule
 			let fileName = itemsInScope[key];
 			let fullFilePath = srcDirPath + '/' + fileName;
 
+			iterationCount++;
+
+			// For each ignore pattern
+			for (let key in ignorePatterns)
+			{
+				let pattern = ignorePatterns[key];
+
+				// If full file path matches
+				if(pattern.test(fullFilePath))
+				{
+					// Ignore it and return
+					return iterationCount;
+				}
+			}
+
 			if (this.isDirectory(fullFilePath))
 			{
-				this.forEachFileRecursively(fullFilePath, callback);
+				iterationCount = this.forEachFileRecursively(fullFilePath, callback, [], iterationCount);
 			}
 			else if (this.isFile(fullFilePath))
 			{
@@ -60,7 +72,7 @@ export class FileSystemModule extends AbstractModule implements FileSystemModule
 			}
 		}
 
-		return this;
+		return iterationCount;
 	}
 
 	public getDirContents(absoluteDirPath: string): Array<string>
@@ -69,7 +81,7 @@ export class FileSystemModule extends AbstractModule implements FileSystemModule
 			.getNodeJsFileSystem()
 			.readdirSync(absoluteDirPath);
 
-		return dirItems.filter((function(fileOrDirName)
+		return dirItems.filter((function (fileOrDirName)
 		{
 			let stat = this
 				.getNodeJsFileSystem()
@@ -84,7 +96,7 @@ export class FileSystemModule extends AbstractModule implements FileSystemModule
 			.getNodeJsFileSystem()
 			.readdirSync(absoluteDirPath);
 
-		return dirItems.filter((function(fileOrDirName)
+		return dirItems.filter((function (fileOrDirName)
 		{
 			return this
 				.getNodeJsFileSystem()
@@ -118,35 +130,34 @@ export class FileSystemModule extends AbstractModule implements FileSystemModule
 		return this.getNodeJsFileSystem().readFileSync(absoluteFilePath).toString();
 	};
 
-  public readYaml(absoluteFilePath: string): Object
-  {
-	  if (!this.fileExists(absoluteFilePath))
-	  {
-		  return null;
-	  }
+	public readYaml(absoluteFilePath: string): Object
+	{
+		if (!this.fileExists(absoluteFilePath))
+		{
+			return null;
+		}
 
-	  let yamlString = this.readAsTextString(absoluteFilePath);
+		let yamlString = this.readAsTextString(absoluteFilePath);
 
-	  // Return imported JavaScript array
-	  return this.getYamlJs().parse(yamlString);
-  }
+		// Return imported JavaScript array
+		return this.getYamlJs().parse(yamlString);
+	}
 
 	public removeDir(absoluteDirPath: string): boolean
 	{
 		let fs = this.getNodeJsFileSystem();
 
-		if( fs.existsSync(absoluteDirPath) )
+		if (fs.existsSync(absoluteDirPath))
 		{
-			fs.readdirSync(absoluteDirPath).forEach(function(file,index)
+			fs.readdirSync(absoluteDirPath).forEach(function (file, index)
 			{
 				var currentPath = absoluteDirPath + "/" + file;
 
-				if(fs.lstatSync(currentPath).isDirectory())
+				if (fs.lstatSync(currentPath).isDirectory())
 				{
 					// recurse
 					this.removeDir(currentPath);
-				}
-				else
+				} else
 				{
 					// delete file
 					fs.unlinkSync(currentPath);
@@ -170,7 +181,7 @@ export class FileSystemModule extends AbstractModule implements FileSystemModule
 		return true;
 	};
 
-  public writeFile(absoluteFilePath: string, fileContents: string): boolean
+	public writeFile(absoluteFilePath: string, fileContents: string): boolean
 	{
 		let fileExists = this.fileExists(absoluteFilePath);
 
@@ -182,14 +193,14 @@ export class FileSystemModule extends AbstractModule implements FileSystemModule
 				.createFile(absoluteFilePath);
 		}
 
-		try {
+		try
+		{
 			this.getNodeJsFileSystem().writeFileSync(
 				absoluteFilePath,
 				fileContents,
 				'utf-8'
 			);
-		}
-		catch(exception)
+		} catch (exception)
 		{
 			return false;
 		}

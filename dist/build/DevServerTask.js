@@ -4542,19 +4542,31 @@ var FileSystemModule = /** @class */ (function (_super) {
         }
         return fileExists;
     };
-    FileSystemModule.prototype.forEachFileRecursively = function (srcDirPath, callback) {
+    FileSystemModule.prototype.forEachFileRecursively = function (srcDirPath, callback, ignorePatterns, iterationCount) {
+        if (ignorePatterns === void 0) { ignorePatterns = []; }
+        if (iterationCount === void 0) { iterationCount = 0; }
         var itemsInScope = this.getDirContents(srcDirPath);
         for (var key in itemsInScope) {
             var fileName = itemsInScope[key];
             var fullFilePath = srcDirPath + '/' + fileName;
+            iterationCount++;
+            // For each ignore pattern
+            for (var key_1 in ignorePatterns) {
+                var pattern = ignorePatterns[key_1];
+                // If full file path matches
+                if (pattern.test(fullFilePath)) {
+                    // Ignore it and return
+                    return iterationCount;
+                }
+            }
             if (this.isDirectory(fullFilePath)) {
-                this.forEachFileRecursively(fullFilePath, callback);
+                iterationCount = this.forEachFileRecursively(fullFilePath, callback, [], iterationCount);
             }
             else if (this.isFile(fullFilePath)) {
                 callback(fileName, fullFilePath);
             }
         }
-        return this;
+        return iterationCount;
     };
     FileSystemModule.prototype.getDirContents = function (absoluteDirPath) {
         var dirItems = this
