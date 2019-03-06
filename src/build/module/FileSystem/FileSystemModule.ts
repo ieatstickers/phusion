@@ -51,7 +51,7 @@ export class FileSystemModule extends AbstractModule implements FileSystemModule
 			// For each ignore pattern
 			for (let key in ignorePatterns)
 			{
-				let pattern = ignorePatterns[key];
+				let pattern = new RegExp(ignorePatterns[key]);
 
 				// If full file path matches
 				if(pattern.test(fullFilePath))
