@@ -28,8 +28,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iammikeburke/phusion.git"
+    "url": "git+https://github.com/ieatstickers/phusion.git"
   },
   "license": "MIT",
-  "homepage": "https://github.com/iammikeburke/phusion"
+  "homepage": "https://github.com/ieatstickers/phusion"
 }
