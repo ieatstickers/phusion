@@ -5,12 +5,17 @@ export class FileSystemModule extends AbstractModule implements FileSystemModule
 {
 	private nodeJsFileSystem: any;
 	private nodeJsPath: any;
+	private shellJs: any;
 	private yamlJs: any;
 
 	public createFile(absoluteFilePath: string): boolean
 	{
 		try
 		{
+			// Get directory path by removing file name at the end
+			let directoryPath = absoluteFilePath.replace(/[^\/]+$/, '');
+			this.getShellJs().mkdir('-p', directoryPath);
+
 			this
 				.getNodeJsFileSystem()
 				.writeFileSync(absoluteFilePath, '');
@@ -242,5 +247,15 @@ export class FileSystemModule extends AbstractModule implements FileSystemModule
 		}
 
 		return this.yamlJs;
+	}
+
+	private getShellJs(): any
+	{
+		if (!this.shellJs)
+		{
+			this.shellJs = require('shelljs')
+		}
+
+		return this.shellJs;
 	}
 }
