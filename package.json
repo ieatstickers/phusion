@@ -1,7 +1,7 @@
 {
   "name": "phusion",
-  "version": "1.0.0",
-  "description": "Extendable dependency injection container with pre-built modules for making HTTP requests, caching responses, accessing browser storage and more.",
+  "version": "2.0.0",
+  "description": "TypeScript library designed to help with building Javascript/TypeScript applications. It provides a number of utility classes to handle making HTTP requests, caching responses, accessing browser storage and more.",
   "author": "Mike Burke",
   "scripts": {
     "test": "jest"
@@ -10,11 +10,19 @@
     "axios": "^0.16.1",
     "browser-sync": "^2.26.3",
     "chalk": "^2.4.2",
+    "express": "^4.17.1",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-if": "^2.0.2",
+    "gulp-uglify": "^3.0.2",
     "json-loader": "^0.5.4",
     "merge-deep": "^3.0.2",
     "moment": "^2.24.0",
     "shelljs": "^0.8.3",
     "user-agent-parser": "^0.6.0",
+    "vinyl-named": "^1.1.0",
+    "watch": "^1.0.2",
+    "webpack-stream": "^5.2.1",
     "yamljs": "^0.3.0"
   },
   "devDependencies": {

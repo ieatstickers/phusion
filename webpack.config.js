@@ -8,9 +8,8 @@ var env = process.env.ENV ? process.env.ENV : 'dev';
 /**
  * Config Options
  */
-var phusionEntryPath = './exports/core/Phusion';
-var configTaskPath = './exports/build/ConfigTask';
-var devServerTaskPath = './exports/build/DevServerTask';
+var configTaskPath = './exports/Task/ConfigTask';
+var devServerTaskPath = './exports/Task/DevServerTask';
 var outputFileExt = (env === 'prod') ? '.min.js' : '.js';
 var sourceMapOutputFileExt = '.map';
 var mode = (env === 'prod') ? 'production' : 'development';
@@ -27,7 +26,16 @@ module.exports = [
       aggregateTimeout: 300
     },
     entry:        {
-      Phusion: phusionEntryPath
+      Config: './exports/Core/Config.ts',
+      Cookies: './exports/Core/Cookies.ts',
+      Event: './exports/Core/Event.ts',
+      Http: './exports/Core/Http.ts',
+      Objects: './exports/Core/Objects.ts',
+      LocalStorage: './exports/Core/LocalStorage.ts',
+      SessionStorage: './exports/Core/SessionStorage.ts',
+      Strings: './exports/Core/Strings.ts',
+      Time: './exports/Core/Time.ts',
+      UserAgent: './exports/Core/UserAgent.ts'
     },
     devtool:      sourcemap,
     output:       {
@@ -64,7 +72,7 @@ module.exports = [
     },
     devtool:      sourcemap,
     output:       {
-      path:              path.resolve(__dirname, "dist/build"),
+      path:              path.resolve(__dirname, "dist/task"),
       filename:          '[name]' + outputFileExt,
       sourceMapFilename: '[name]' + sourceMapOutputFileExt,
       libraryTarget:     'commonjs',
@@ -98,7 +106,7 @@ module.exports = [
     },
     devtool:      sourcemap,
     output:       {
-      path:              path.resolve(__dirname, "dist/build"),
+      path:              path.resolve(__dirname, "dist/task"),
       filename:          '[name]' + outputFileExt,
       sourceMapFilename: '[name]' + sourceMapOutputFileExt,
       libraryTarget:     'commonjs',
