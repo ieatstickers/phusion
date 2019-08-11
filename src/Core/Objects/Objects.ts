@@ -1,4 +1,6 @@
 
+import {Arrays} from '../Arrays/Arrays';
+
 export class Objects
 {
 	public static getByKeyPath(keyPath: string, object: Object, delimiter: string = ':'): any
@@ -94,5 +96,51 @@ export class Objects
 
 		return merge(target, ...sourceObjects);
 	};
+
+	public static clone(object: Object): Object
+	{
+		if(typeof object !== 'object')
+		{
+			throw new Error("Cannot clone object. Source object must be of type 'object'.");
+		}
+
+		return this.hydrate(Object.create(object), object);
+	}
+
+	public static hydrate(dest: Object, source: Object, mutators: Object = {})
+	{
+		if(typeof dest !== 'object' || typeof source !== 'object')
+		{
+			throw new Error("Cannot hydrate object. Source and destination object must both be of type 'object'.");
+		}
+
+		for (let property in source)
+		{
+			let propertyValue = source[property];
+
+			// If a mutator is present
+			if (mutators.hasOwnProperty(property) && typeof mutators[property] == 'function')
+			{
+				dest[property] = mutators[property](source[property]);
+			}
+			// If property value is an array
+			else if (Array.isArray(propertyValue))
+			{
+				// Clone array
+				dest[property] = Arrays.clone(propertyValue);
+			}
+			// If value is an object
+			else if (typeof propertyValue == 'object')
+			{
+				dest[property] = this.clone(propertyValue);
+			}
+			else
+			{
+				dest[property] = propertyValue;
+			}
+		}
+
+		return dest;
+	}
 
 }

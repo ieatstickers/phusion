@@ -45,13 +45,6 @@ export class AxiosHttpProvider extends AbstractHttpProvider implements HttpProvi
 				url+= queryString;
 			}
 
-			console.log('axiosRequest', {
-				url: url,
-				method: httpRequest.method,
-				headers: httpRequest.headers,
-				data: params
-			});
-
 			let promise = axios({
 				url: url,
 				method: httpRequest.method,
