@@ -19618,6 +19618,49 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
+/***/ "./src/Core/Arrays/Arrays.ts":
+/*!***********************************!*\
+  !*** ./src/Core/Arrays/Arrays.ts ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Objects_1 = __webpack_require__(/*! ../Objects/Objects */ "./src/Core/Objects/Objects.ts");
+var Arrays = /** @class */ (function () {
+    function Arrays() {
+    }
+    Arrays.clone = function (array) {
+        if (!Array.isArray(array)) {
+            throw new Error("Cannot clone array -  must be of type 'array'.");
+        }
+        var clone = [];
+        for (var key in array) {
+            var arrayItem = array[key];
+            // If array item is an array
+            if (Array.isArray(arrayItem)) {
+                // Clone the array
+                clone.push(this.clone(arrayItem));
+            }
+            // If value is an object
+            else if (typeof arrayItem == 'object') {
+                clone.push(Objects_1.Objects.clone(arrayItem));
+            }
+            else {
+                clone.push(arrayItem);
+            }
+        }
+        return clone;
+    };
+    return Arrays;
+}());
+exports.Arrays = Arrays;
+
+
+/***/ }),
+
 /***/ "./src/Core/Http/Http.ts":
 /*!*******************************!*\
   !*** ./src/Core/Http/Http.ts ***!
@@ -20063,12 +20106,6 @@ var AxiosHttpProvider = /** @class */ (function (_super) {
                 // Append query string
                 url += queryString;
             }
-            console.log('axiosRequest', {
-                url: url,
-                method: httpRequest.method,
-                headers: httpRequest.headers,
-                data: params
-            });
             var promise = axios({
                 url: url,
                 method: httpRequest.method,
@@ -20121,6 +20158,7 @@ exports.AxiosHttpProvider = AxiosHttpProvider;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
+var Arrays_1 = __webpack_require__(/*! ../Arrays/Arrays */ "./src/Core/Arrays/Arrays.ts");
 var Objects = /** @class */ (function () {
     function Objects() {
     }
@@ -20199,6 +20237,38 @@ var Objects = /** @class */ (function () {
         return merge.apply(void 0, [target].concat(sourceObjects));
     };
     ;
+    Objects.clone = function (object) {
+        if (typeof object !== 'object') {
+            throw new Error("Cannot clone object. Source object must be of type 'object'.");
+        }
+        return this.hydrate(Object.create(object), object);
+    };
+    Objects.hydrate = function (dest, source, mutators) {
+        if (mutators === void 0) { mutators = {}; }
+        if (typeof dest !== 'object' || typeof source !== 'object') {
+            throw new Error("Cannot hydrate object. Source and destination object must both be of type 'object'.");
+        }
+        for (var property in source) {
+            var propertyValue = source[property];
+            // If a mutator is present
+            if (mutators.hasOwnProperty(property) && typeof mutators[property] == 'function') {
+                dest[property] = mutators[property](source[property]);
+            }
+            // If property value is an array
+            else if (Array.isArray(propertyValue)) {
+                // Clone array
+                dest[property] = Arrays_1.Arrays.clone(propertyValue);
+            }
+            // If value is an object
+            else if (typeof propertyValue == 'object') {
+                dest[property] = this.clone(propertyValue);
+            }
+            else {
+                dest[property] = propertyValue;
+            }
+        }
+        return dest;
+    };
     return Objects;
 }());
 exports.Objects = Objects;
