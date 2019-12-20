@@ -49,7 +49,7 @@ export class Objects
 		}
 	};
 
-	public static merge(target: Object, ...sourceObjects: Array<Object>): Object
+	public static merge(target: Object, ...sourceObjects: Array<Object>): any
 	{
 		// If no sources passed in, return target
 		if (!sourceObjects.length)
@@ -63,7 +63,7 @@ export class Objects
 		// Assign functions that need to be used inside "forEach" function below
 		let merge = this.merge.bind(this);
 		let isMergebleObject = (function(item) {
-			return typeof item === 'object' && !Array.isArray(item);
+			return item !== null && typeof item === 'object' && !Array.isArray(item);
 		}).bind(this);
 
 		// If target and source are both mergeble

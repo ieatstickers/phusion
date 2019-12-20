@@ -2315,7 +2315,7 @@ var Objects = /** @class */ (function () {
         // Assign functions that need to be used inside "forEach" function below
         var merge = this.merge.bind(this);
         var isMergebleObject = (function (item) {
-            return typeof item === 'object' && !Array.isArray(item);
+            return item !== null && typeof item === 'object' && !Array.isArray(item);
         }).bind(this);
         // If target and source are both mergeble
         if (isMergebleObject(target) && isMergebleObject(source)) {
