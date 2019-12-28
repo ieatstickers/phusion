@@ -97,7 +97,7 @@ export class Objects
 		return merge(target, ...sourceObjects);
 	};
 
-	public static clone(object: Object): Object
+	public static clone(object: Object): any
 	{
 		if(typeof object !== 'object')
 		{
