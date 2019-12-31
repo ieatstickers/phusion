@@ -20250,8 +20250,11 @@ var Objects = /** @class */ (function () {
         }
         for (var property in source) {
             var propertyValue = source[property];
+            if (source[property] == null) {
+                dest[property] = null;
+            }
             // If a mutator is present
-            if (mutators.hasOwnProperty(property) && typeof mutators[property] == 'function') {
+            else if (mutators.hasOwnProperty(property) && typeof mutators[property] == 'function') {
                 dest[property] = mutators[property](source[property]);
             }
             // If property value is an array
