@@ -28,7 +28,14 @@ export class AxiosHttpProvider extends AbstractHttpProvider implements HttpProvi
 
 			for (let key in data)
 			{
-				params.append(key, data[key]);
+				let propertyValue = data[key];
+
+				if (typeof propertyValue == 'object')
+				{
+					propertyValue = JSON.stringify(propertyValue);
+				}
+
+				params.append(key, propertyValue);
 			}
 
 			let url = httpRequest.url;

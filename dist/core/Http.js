@@ -20096,7 +20096,11 @@ var AxiosHttpProvider = /** @class */ (function (_super) {
             var data = httpRequest.data;
             var params = new URLSearchParams();
             for (var key in data) {
-                params.append(key, data[key]);
+                var propertyValue = data[key];
+                if (typeof propertyValue == 'object') {
+                    propertyValue = JSON.stringify(propertyValue);
+                }
+                params.append(key, propertyValue);
             }
             var url = httpRequest.url;
             // If GET or DELETE request
