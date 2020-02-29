@@ -19632,6 +19632,9 @@ var Objects_1 = __webpack_require__(/*! ../Objects/Objects */ "./src/Core/Object
 var Arrays = /** @class */ (function () {
     function Arrays() {
     }
+    Arrays.inArray = function (needle, haystack) {
+        return Boolean(haystack.indexOf(needle) !== -1);
+    };
     Arrays.clone = function (array) {
         if (!Array.isArray(array)) {
             throw new Error("Cannot clone array -  must be of type 'array'.");

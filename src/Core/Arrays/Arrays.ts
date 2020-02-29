@@ -3,6 +3,11 @@ import {Objects} from '../Objects/Objects';
 
 export class Arrays
 {
+	public static inArray(needle: any, haystack: Array<any>): boolean
+	{
+		return Boolean(haystack.indexOf(needle) !== -1);
+	}
+
 	public static clone(array: Array<any>): Array<any>
 	{
 		if(!Array.isArray(array))
