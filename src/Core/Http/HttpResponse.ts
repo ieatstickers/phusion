@@ -1,5 +1,5 @@
 
-import * as Moment from 'moment';
+import Moment from 'moment';
 import {HttpRequest} from "./HttpRequest";
 
 export class HttpResponse

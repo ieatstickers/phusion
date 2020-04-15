@@ -17750,8 +17750,11 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 "use strict";
 
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-var Moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+var moment_1 = __importDefault(__webpack_require__(/*! moment */ "./node_modules/moment/moment.js"));
 var Time_1 = __webpack_require__(/*! ../Time/Time */ "./src/Core/Time/Time.ts");
 var Cookies = /** @class */ (function () {
     function Cookies() {
@@ -17803,7 +17806,7 @@ var Cookies = /** @class */ (function () {
         if (expiry) {
             var dateString = "";
             // If expiry is a Moment object
-            if (Moment.isMoment(expiry)) {
+            if (moment_1.default.isMoment(expiry)) {
                 dateString = expiry.toDate().toUTCString();
             }
             // If expiry is a Date object

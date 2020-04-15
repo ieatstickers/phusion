@@ -1,7 +1,7 @@
 
 import {HttpRequest} from "./HttpRequest";
 import {HttpResponse} from "./HttpResponse";
-import * as Moment from "moment";
+import Moment from 'moment';
 import {LocalStorage} from "../Storage/LocalStorage";
 import {Time} from "../Time/Time";
 import {Http} from "./Http";

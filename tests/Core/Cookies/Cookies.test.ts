@@ -1,6 +1,6 @@
 
 import {Cookies} from "../../../src/Core/Cookies/Cookies";
-import * as Moment from 'moment';
+import Moment from 'moment';
 
 /**
  * Cookies Tests

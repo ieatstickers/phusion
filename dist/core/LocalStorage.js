@@ -17784,8 +17784,11 @@ exports.LocalStorage = LocalStorage;
 
 "use strict";
 
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-var Moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+var moment_1 = __importDefault(__webpack_require__(/*! moment */ "./node_modules/moment/moment.js"));
 var Time_1 = __webpack_require__(/*! ../Time/Time */ "./src/Core/Time/Time.ts");
 var StorageItem_1 = __webpack_require__(/*! ./StorageItem */ "./src/Core/Storage/StorageItem.ts");
 var StorageApi = /** @class */ (function () {
@@ -17835,14 +17838,14 @@ var StorageApi = /** @class */ (function () {
         return this;
     };
     StorageApi.set = function (key, value, expiry, storageProvider) {
-        var unixCreated = Moment().valueOf();
+        var unixCreated = moment_1.default().valueOf();
         var unixExpiry = null;
         if (expiry) {
             if (typeof expiry == 'string') {
                 var expiryTimeInSeconds = Time_1.Time.timeStringToSeconds(expiry);
                 unixExpiry = unixCreated + (expiryTimeInSeconds * 1000); // Multiplied by 1000 to convert to milliseconds
             }
-            else if (Moment.isMoment(expiry) || expiry instanceof Date) {
+            else if (moment_1.default.isMoment(expiry) || expiry instanceof Date) {
                 unixExpiry = expiry.valueOf();
             }
         }
@@ -17867,8 +17870,8 @@ var StorageApi = /** @class */ (function () {
         }
         storageItem.key = object['key'] ? object['key'] : null;
         storageItem.value = value ? value : null;
-        storageItem.expiry = object['expiry'] ? Moment(object['expiry']) : null;
-        storageItem.created = object['created'] ? Moment(object['created']) : null;
+        storageItem.expiry = object['expiry'] ? moment_1.default(object['expiry']) : null;
+        storageItem.created = object['created'] ? moment_1.default(object['created']) : null;
         return storageItem;
     };
     return StorageApi;
@@ -17887,8 +17890,11 @@ exports.StorageApi = StorageApi;
 
 "use strict";
 
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-var Moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+var moment_1 = __importDefault(__webpack_require__(/*! moment */ "./node_modules/moment/moment.js"));
 var StorageItem = /** @class */ (function () {
     function StorageItem() {
     }
@@ -17897,7 +17903,7 @@ var StorageItem = /** @class */ (function () {
             return false;
         }
         var expiryUnix = this.expiry.valueOf();
-        var nowUnix = Moment().valueOf();
+        var nowUnix = moment_1.default().valueOf();
         return (nowUnix > expiryUnix);
     };
     return StorageItem;

@@ -2,7 +2,7 @@
 import {HttpRequest} from "../../../src/Core/Http/HttpRequest";
 import {HttpResponse} from "../../../src/Core/Http/HttpResponse";
 import {MockHttpProvider} from "../../../src/Core/Http/Provider/Mock/MockHttpProvider";
-import * as Moment from 'moment';
+import Moment from 'moment';
 import {Http} from "../../../src/Core/Http/Http";
 import {HttpApi} from "../../../src/Core/Http/HttpApi";
 

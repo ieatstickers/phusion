@@ -18066,8 +18066,11 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 "use strict";
 
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-var Moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+var moment_1 = __importDefault(__webpack_require__(/*! moment */ "./node_modules/moment/moment.js"));
 var Time_1 = __webpack_require__(/*! ../Time/Time */ "./src/Core/Time/Time.ts");
 var Cookies = /** @class */ (function () {
     function Cookies() {
@@ -18119,7 +18122,7 @@ var Cookies = /** @class */ (function () {
         if (expiry) {
             var dateString = "";
             // If expiry is a Moment object
-            if (Moment.isMoment(expiry)) {
+            if (moment_1.default.isMoment(expiry)) {
                 dateString = expiry.toDate().toUTCString();
             }
             // If expiry is a Date object
@@ -38275,9 +38278,12 @@ exports.HttpResponse = HttpResponse;
 
 "use strict";
 
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var HttpResponse_1 = __webpack_require__(/*! ./HttpResponse */ "./src/Core/Http/HttpResponse.ts");
-var Moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+var moment_1 = __importDefault(__webpack_require__(/*! moment */ "./node_modules/moment/moment.js"));
 var LocalStorage_1 = __webpack_require__(/*! ../Storage/LocalStorage */ "./src/Core/Storage/LocalStorage.ts");
 var Time_1 = __webpack_require__(/*! ../Time/Time */ "./src/Core/Time/Time.ts");
 var Http_1 = __webpack_require__(/*! ./Http */ "./src/Core/Http/Http.ts");
@@ -38301,7 +38307,7 @@ var HttpResponseCache = /** @class */ (function () {
             }
             // If cached response exists
             // Create HttpResponse entity
-            var httpResponseEntity = new HttpResponse_1.HttpResponse(httpRequest, cachedHttpResponse['statusCode'], cachedHttpResponse['statusText'], cachedHttpResponse['headers'], cachedHttpResponse['data'], true, Moment(cachedHttpResponse['cacheExpiry']));
+            var httpResponseEntity = new HttpResponse_1.HttpResponse(httpRequest, cachedHttpResponse['statusCode'], cachedHttpResponse['statusText'], cachedHttpResponse['headers'], cachedHttpResponse['data'], true, moment_1.default(cachedHttpResponse['cacheExpiry']));
             // If it's expired, remove it
             if (httpResponseEntity.isExpired()) {
                 // Remove key
@@ -38327,17 +38333,17 @@ var HttpResponseCache = /** @class */ (function () {
             var httpRequest = httpResponse.httpRequest;
             var key = httpRequest.method + '_' + httpRequest.url;
             // Set cache expiry
-            if (Moment.isMoment(cacheExpiry)) {
+            if (moment_1.default.isMoment(cacheExpiry)) {
                 httpResponse.cacheExpiry = cacheExpiry;
             }
             else if (cacheExpiry instanceof Date) {
-                httpResponse.cacheExpiry = Moment(cacheExpiry.valueOf());
+                httpResponse.cacheExpiry = moment_1.default(cacheExpiry.valueOf());
             }
             else {
                 var expiryTimeInSeconds = Time_1.Time.timeStringToSeconds(cacheExpiry);
-                var unixNow = Moment().valueOf();
+                var unixNow = moment_1.default().valueOf();
                 var unixExpiry = unixNow + (expiryTimeInSeconds * 1000); // Multiplied by 1000 to convert to milliseconds
-                httpResponse.cacheExpiry = Moment(unixExpiry);
+                httpResponse.cacheExpiry = moment_1.default(unixExpiry);
             }
             // Set httpResponse at that key
             cachedResponses[key] = httpResponse;
@@ -38356,7 +38362,7 @@ var HttpResponseCache = /** @class */ (function () {
             for (var key in responseCache)
                 if (responseCache.hasOwnProperty(key)) {
                     var cachedResponseObject = responseCache[key];
-                    var httpResponseEntity = new HttpResponse_1.HttpResponse(cachedResponseObject['httpRequest'], cachedResponseObject['statusCode'], cachedResponseObject['statusText'], cachedResponseObject['headers'], cachedResponseObject['data'], cachedResponseObject['fromCache'], Moment(cachedResponseObject['cacheExpiry']));
+                    var httpResponseEntity = new HttpResponse_1.HttpResponse(cachedResponseObject['httpRequest'], cachedResponseObject['statusCode'], cachedResponseObject['statusText'], cachedResponseObject['headers'], cachedResponseObject['data'], cachedResponseObject['fromCache'], moment_1.default(cachedResponseObject['cacheExpiry']));
                     // If it's expired
                     if (httpResponseEntity.isExpired()) {
                         // Remove it
@@ -38686,8 +38692,11 @@ exports.LocalStorage = LocalStorage;
 
 "use strict";
 
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-var Moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+var moment_1 = __importDefault(__webpack_require__(/*! moment */ "./node_modules/moment/moment.js"));
 var Time_1 = __webpack_require__(/*! ../Time/Time */ "./src/Core/Time/Time.ts");
 var StorageItem_1 = __webpack_require__(/*! ./StorageItem */ "./src/Core/Storage/StorageItem.ts");
 var StorageApi = /** @class */ (function () {
@@ -38737,14 +38746,14 @@ var StorageApi = /** @class */ (function () {
         return this;
     };
     StorageApi.set = function (key, value, expiry, storageProvider) {
-        var unixCreated = Moment().valueOf();
+        var unixCreated = moment_1.default().valueOf();
         var unixExpiry = null;
         if (expiry) {
             if (typeof expiry == 'string') {
                 var expiryTimeInSeconds = Time_1.Time.timeStringToSeconds(expiry);
                 unixExpiry = unixCreated + (expiryTimeInSeconds * 1000); // Multiplied by 1000 to convert to milliseconds
             }
-            else if (Moment.isMoment(expiry) || expiry instanceof Date) {
+            else if (moment_1.default.isMoment(expiry) || expiry instanceof Date) {
                 unixExpiry = expiry.valueOf();
             }
         }
@@ -38769,8 +38778,8 @@ var StorageApi = /** @class */ (function () {
         }
         storageItem.key = object['key'] ? object['key'] : null;
         storageItem.value = value ? value : null;
-        storageItem.expiry = object['expiry'] ? Moment(object['expiry']) : null;
-        storageItem.created = object['created'] ? Moment(object['created']) : null;
+        storageItem.expiry = object['expiry'] ? moment_1.default(object['expiry']) : null;
+        storageItem.created = object['created'] ? moment_1.default(object['created']) : null;
         return storageItem;
     };
     return StorageApi;
@@ -38789,8 +38798,11 @@ exports.StorageApi = StorageApi;
 
 "use strict";
 
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-var Moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+var moment_1 = __importDefault(__webpack_require__(/*! moment */ "./node_modules/moment/moment.js"));
 var StorageItem = /** @class */ (function () {
     function StorageItem() {
     }
@@ -38799,7 +38811,7 @@ var StorageItem = /** @class */ (function () {
             return false;
         }
         var expiryUnix = this.expiry.valueOf();
-        var nowUnix = Moment().valueOf();
+        var nowUnix = moment_1.default().valueOf();
         return (nowUnix > expiryUnix);
     };
     return StorageItem;
@@ -56652,8 +56664,11 @@ exports.LocalStorage = LocalStorage;
 
 "use strict";
 
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-var Moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+var moment_1 = __importDefault(__webpack_require__(/*! moment */ "./node_modules/moment/moment.js"));
 var Time_1 = __webpack_require__(/*! ../Time/Time */ "./src/Core/Time/Time.ts");
 var StorageItem_1 = __webpack_require__(/*! ./StorageItem */ "./src/Core/Storage/StorageItem.ts");
 var StorageApi = /** @class */ (function () {
@@ -56703,14 +56718,14 @@ var StorageApi = /** @class */ (function () {
         return this;
     };
     StorageApi.set = function (key, value, expiry, storageProvider) {
-        var unixCreated = Moment().valueOf();
+        var unixCreated = moment_1.default().valueOf();
         var unixExpiry = null;
         if (expiry) {
             if (typeof expiry == 'string') {
                 var expiryTimeInSeconds = Time_1.Time.timeStringToSeconds(expiry);
                 unixExpiry = unixCreated + (expiryTimeInSeconds * 1000); // Multiplied by 1000 to convert to milliseconds
             }
-            else if (Moment.isMoment(expiry) || expiry instanceof Date) {
+            else if (moment_1.default.isMoment(expiry) || expiry instanceof Date) {
                 unixExpiry = expiry.valueOf();
             }
         }
@@ -56735,8 +56750,8 @@ var StorageApi = /** @class */ (function () {
         }
         storageItem.key = object['key'] ? object['key'] : null;
         storageItem.value = value ? value : null;
-        storageItem.expiry = object['expiry'] ? Moment(object['expiry']) : null;
-        storageItem.created = object['created'] ? Moment(object['created']) : null;
+        storageItem.expiry = object['expiry'] ? moment_1.default(object['expiry']) : null;
+        storageItem.created = object['created'] ? moment_1.default(object['created']) : null;
         return storageItem;
     };
     return StorageApi;
@@ -56755,8 +56770,11 @@ exports.StorageApi = StorageApi;
 
 "use strict";
 
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-var Moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+var moment_1 = __importDefault(__webpack_require__(/*! moment */ "./node_modules/moment/moment.js"));
 var StorageItem = /** @class */ (function () {
     function StorageItem() {
     }
@@ -56765,7 +56783,7 @@ var StorageItem = /** @class */ (function () {
             return false;
         }
         var expiryUnix = this.expiry.valueOf();
-        var nowUnix = Moment().valueOf();
+        var nowUnix = moment_1.default().valueOf();
         return (nowUnix > expiryUnix);
     };
     return StorageItem;
@@ -74902,8 +74920,11 @@ exports.SessionStorage = SessionStorage;
 
 "use strict";
 
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-var Moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+var moment_1 = __importDefault(__webpack_require__(/*! moment */ "./node_modules/moment/moment.js"));
 var Time_1 = __webpack_require__(/*! ../Time/Time */ "./src/Core/Time/Time.ts");
 var StorageItem_1 = __webpack_require__(/*! ./StorageItem */ "./src/Core/Storage/StorageItem.ts");
 var StorageApi = /** @class */ (function () {
@@ -74953,14 +74974,14 @@ var StorageApi = /** @class */ (function () {
         return this;
     };
     StorageApi.set = function (key, value, expiry, storageProvider) {
-        var unixCreated = Moment().valueOf();
+        var unixCreated = moment_1.default().valueOf();
         var unixExpiry = null;
         if (expiry) {
             if (typeof expiry == 'string') {
                 var expiryTimeInSeconds = Time_1.Time.timeStringToSeconds(expiry);
                 unixExpiry = unixCreated + (expiryTimeInSeconds * 1000); // Multiplied by 1000 to convert to milliseconds
             }
-            else if (Moment.isMoment(expiry) || expiry instanceof Date) {
+            else if (moment_1.default.isMoment(expiry) || expiry instanceof Date) {
                 unixExpiry = expiry.valueOf();
             }
         }
@@ -74985,8 +75006,8 @@ var StorageApi = /** @class */ (function () {
         }
         storageItem.key = object['key'] ? object['key'] : null;
         storageItem.value = value ? value : null;
-        storageItem.expiry = object['expiry'] ? Moment(object['expiry']) : null;
-        storageItem.created = object['created'] ? Moment(object['created']) : null;
+        storageItem.expiry = object['expiry'] ? moment_1.default(object['expiry']) : null;
+        storageItem.created = object['created'] ? moment_1.default(object['created']) : null;
         return storageItem;
     };
     return StorageApi;
@@ -75005,8 +75026,11 @@ exports.StorageApi = StorageApi;
 
 "use strict";
 
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-var Moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+var moment_1 = __importDefault(__webpack_require__(/*! moment */ "./node_modules/moment/moment.js"));
 var StorageItem = /** @class */ (function () {
     function StorageItem() {
     }
@@ -75015,7 +75039,7 @@ var StorageItem = /** @class */ (function () {
             return false;
         }
         var expiryUnix = this.expiry.valueOf();
-        var nowUnix = Moment().valueOf();
+        var nowUnix = moment_1.default().valueOf();
         return (nowUnix > expiryUnix);
     };
     return StorageItem;

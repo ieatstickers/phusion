@@ -1,6 +1,6 @@
 
 import {StorageItem} from "../../../src/Core/Storage/StorageItem";
-import * as Moment from 'moment';
+import Moment from 'moment';
 import {SessionStorage} from "../../../src/Core/Storage/SessionStorage";
 
 /**

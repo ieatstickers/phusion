@@ -1,6 +1,6 @@
 
 import {HttpProviderInterface} from "../HttpProviderInterface";
-import * as Moment from 'moment';
+import Moment from 'moment';
 import {AbstractHttpProvider} from "../AbstractHttpProvider";
 import {HttpResponse} from "../../HttpResponse";
 import {HttpRequest} from "../../HttpRequest";

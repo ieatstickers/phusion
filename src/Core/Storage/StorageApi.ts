@@ -1,5 +1,5 @@
 
-import * as Moment from 'moment';
+import Moment from 'moment';
 import {Time} from "../Time/Time";
 import {StorageItem} from "./StorageItem";
 
