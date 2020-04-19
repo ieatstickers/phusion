@@ -15,6 +15,7 @@ export class HttpApi
 	private static httpProvider: HttpProviderInterface;
 	private static defaultHttpProvider: HttpProviderInterface;
 	private static beforeRequestCallbacks: Array<Function> = [];
+	private static onSuccessCallbacks: Array<Function> = [];
 	public static responseCachingEnabled: boolean = false;
 	public static responseCachingOptions: Object = { defaultCacheExpiry: "30s", localStorageKey: "phusion_http_response_cache" };
 
@@ -52,7 +53,7 @@ export class HttpApi
 			// Make request through provider
 			let promise = this.getProvider().makeHttpRequest(httpRequest);
 
-			promise.then((function(httpRequest: HttpResponse)
+			promise.then((function(httpResponse: HttpResponse)
 			{
 				if (this.responseCachingEnabled)
 				{
@@ -61,11 +62,13 @@ export class HttpApi
 						cacheExpiry = this.responseCachingOptions['defaultCacheExpiry']
 					}
 
-					HttpResponseCache.cacheHttpResponseAsync(httpRequest, cacheExpiry);
+					HttpResponseCache.cacheHttpResponseAsync(httpResponse, cacheExpiry);
 					HttpResponseCache.clearExpiredResponsesFromCacheAsync();
 				}
 
-				return resolve(httpRequest);
+				this.applyOnSuccessHooks(httpResponse);
+
+				return resolve(httpResponse);
 			}).bind(this));
 
 			promise.catch(function(httpError: HttpError)
@@ -79,6 +82,11 @@ export class HttpApi
 	public static onBeforeRequest(callbackFunction: Function)
 	{
 		this.beforeRequestCallbacks.push(callbackFunction);
+	}
+
+	public static onSuccess(callbackFunction: Function)
+	{
+		this.onSuccessCallbacks.push(callbackFunction);
 	}
 
 	public static setProvider(httpProvider: HttpProviderInterface)
@@ -119,6 +127,7 @@ export class HttpApi
 
 		// For each of the beforeRequest hooks
 		for (let key in beforeRequestCallbacks)
+			if (beforeRequestCallbacks.hasOwnProperty(key))
 		{
 			// Get callback
 			let callback = beforeRequestCallbacks[key];
@@ -137,6 +146,24 @@ export class HttpApi
 		}
 
 		return httpRequest;
+	}
+
+	private static applyOnSuccessHooks(httpResponse: HttpResponse)
+	{
+		let onSuccessCallbacks = this.onSuccessCallbacks;
+
+		// For each of the beforeRequest hooks
+		for (let key in onSuccessCallbacks)
+			if (onSuccessCallbacks.hasOwnProperty(key))
+		{
+			// Get callback
+			let callback = onSuccessCallbacks[key];
+
+			// Run callback
+			callback.bind(null, httpResponse)();
+		}
+
+		return httpResponse;
 	}
 
 }

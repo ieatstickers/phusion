@@ -19758,15 +19758,16 @@ var HttpApi = /** @class */ (function () {
         return new Promise((function (resolve, reject) {
             // Make request through provider
             var promise = this.getProvider().makeHttpRequest(httpRequest);
-            promise.then((function (httpRequest) {
+            promise.then((function (httpResponse) {
                 if (this.responseCachingEnabled) {
                     if (!cacheExpiry) {
                         cacheExpiry = this.responseCachingOptions['defaultCacheExpiry'];
                     }
-                    HttpResponseCache_1.HttpResponseCache.cacheHttpResponseAsync(httpRequest, cacheExpiry);
+                    HttpResponseCache_1.HttpResponseCache.cacheHttpResponseAsync(httpResponse, cacheExpiry);
                     HttpResponseCache_1.HttpResponseCache.clearExpiredResponsesFromCacheAsync();
                 }
-                return resolve(httpRequest);
+                this.applyOnSuccessHooks(httpResponse);
+                return resolve(httpResponse);
             }).bind(this));
             promise.catch(function (httpError) {
                 return reject(httpError);
@@ -19775,6 +19776,9 @@ var HttpApi = /** @class */ (function () {
     };
     HttpApi.onBeforeRequest = function (callbackFunction) {
         this.beforeRequestCallbacks.push(callbackFunction);
+    };
+    HttpApi.onSuccess = function (callbackFunction) {
+        this.onSuccessCallbacks.push(callbackFunction);
     };
     HttpApi.setProvider = function (httpProvider) {
         this.httpProvider = httpProvider;
@@ -19800,21 +19804,35 @@ var HttpApi = /** @class */ (function () {
     HttpApi.applyBeforeRequestHooks = function (httpRequest) {
         var beforeRequestCallbacks = this.beforeRequestCallbacks;
         // For each of the beforeRequest hooks
-        for (var key in beforeRequestCallbacks) {
-            // Get callback
-            var callback = beforeRequestCallbacks[key];
-            // Get the result
-            var result = callback.bind(null, httpRequest)();
-            // If the result isn't an instance HttpRequest
-            if (!(result instanceof HttpRequest_1.HttpRequest)) {
-                console.error('onBeforeRequest hook must return an instance of HttpRequest - received ' + typeof result + '. Changes made to the request in this beforeRequest hook will not be applied: ', callback);
-                continue;
+        for (var key in beforeRequestCallbacks)
+            if (beforeRequestCallbacks.hasOwnProperty(key)) {
+                // Get callback
+                var callback = beforeRequestCallbacks[key];
+                // Get the result
+                var result = callback.bind(null, httpRequest)();
+                // If the result isn't an instance HttpRequest
+                if (!(result instanceof HttpRequest_1.HttpRequest)) {
+                    console.error('onBeforeRequest hook must return an instance of HttpRequest - received ' + typeof result + '. Changes made to the request in this beforeRequest hook will not be applied: ', callback);
+                    continue;
+                }
+                httpRequest = result;
             }
-            httpRequest = result;
-        }
         return httpRequest;
     };
+    HttpApi.applyOnSuccessHooks = function (httpResponse) {
+        var onSuccessCallbacks = this.onSuccessCallbacks;
+        // For each of the beforeRequest hooks
+        for (var key in onSuccessCallbacks)
+            if (onSuccessCallbacks.hasOwnProperty(key)) {
+                // Get callback
+                var callback = onSuccessCallbacks[key];
+                // Run callback
+                callback.bind(null, httpResponse)();
+            }
+        return httpResponse;
+    };
     HttpApi.beforeRequestCallbacks = [];
+    HttpApi.onSuccessCallbacks = [];
     HttpApi.responseCachingEnabled = false;
     HttpApi.responseCachingOptions = { defaultCacheExpiry: "30s", localStorageKey: "phusion_http_response_cache" };
     return HttpApi;
