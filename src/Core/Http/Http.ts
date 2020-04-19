@@ -48,6 +48,11 @@ export class Http
 		HttpApi.onBeforeRequest(callbackFunction);
 	}
 
+	public static onSuccess(callbackFunction: Function)
+	{
+		HttpApi.onSuccess(callbackFunction);
+	}
+
 	public static enableResponseCaching(responseCachingOptions: Object = null)
 	{
 		HttpApi.enableResponseCaching(responseCachingOptions);

@@ -38070,6 +38070,9 @@ var Http = /** @class */ (function () {
     Http.onBeforeRequest = function (callbackFunction) {
         HttpApi_1.HttpApi.onBeforeRequest(callbackFunction);
     };
+    Http.onSuccess = function (callbackFunction) {
+        HttpApi_1.HttpApi.onSuccess(callbackFunction);
+    };
     Http.enableResponseCaching = function (responseCachingOptions) {
         if (responseCachingOptions === void 0) { responseCachingOptions = null; }
         HttpApi_1.HttpApi.enableResponseCaching(responseCachingOptions);
