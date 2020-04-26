@@ -50,4 +50,3 @@ let storageItem = LocalStorage.get('myKey');
 ### Tasks
 
 - [ConfigTask](docs/Task/ConfigTask.md)
-- [DevServerTask](docs/Task/DevServerTask.md)
