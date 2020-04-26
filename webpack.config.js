@@ -9,7 +9,6 @@ var env = process.env.ENV ? process.env.ENV : 'dev';
  * Config Options
  */
 var configTaskPath = './exports/Task/ConfigTask';
-var devServerTaskPath = './exports/Task/DevServerTask';
 var outputFileExt = (env === 'prod') ? '.min.js' : '.js';
 var sourceMapOutputFileExt = '.map';
 var mode = (env === 'prod') ? 'production' : 'development';
@@ -91,39 +90,5 @@ module.exports = [
         }
       ]
     }
-  },
-  /**
-   * DevServerTask
-   */
-  {
-    mode:         mode,
-    watch:        false,
-    watchOptions: {
-      aggregateTimeout: 300
-    },
-    entry:        {
-      DevServerTask: devServerTaskPath
-    },
-    devtool:      sourcemap,
-    output:       {
-      path:              path.resolve(__dirname, "dist/task"),
-      filename:          '[name]' + outputFileExt,
-      sourceMapFilename: '[name]' + sourceMapOutputFileExt,
-      libraryTarget:     'commonjs',
-      library:           '[name]'
-    },
-    resolve:      {
-      extensions: ['.js', '.ts']
-    },
-    target:       "node",
-    module:       {
-      rules: [
-        {
-          test:    /\.ts/,
-          exclude: /node_modules\/(?!phusion|vue).*/,
-          use:     ['ts-loader']
-        }
-      ]
-    }
-  }]
-;
+  }
+];
