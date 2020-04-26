@@ -276,14 +276,20 @@ var Objects = /** @class */ (function () {
         }
         return this.hydrate(Object.create(object), object);
     };
-    Objects.hydrate = function (dest, source, mutators) {
+    Objects.hydrate = function (dest, source, mutators, excludeNullValues, excludeMethods) {
         if (mutators === void 0) { mutators = {}; }
+        if (excludeNullValues === void 0) { excludeNullValues = false; }
+        if (excludeMethods === void 0) { excludeMethods = true; }
         if (typeof dest !== 'object' || typeof source !== 'object') {
             throw new Error("Cannot hydrate object. Source and destination object must both be of type 'object'.");
         }
         for (var property in source) {
             var propertyValue = source[property];
+            if (typeof propertyValue == "function" && excludeMethods)
+                continue;
             if (source[property] == null) {
+                if (excludeNullValues)
+                    continue;
                 dest[property] = null;
             }
             // If a mutator is present
@@ -38634,14 +38640,20 @@ var Objects = /** @class */ (function () {
         }
         return this.hydrate(Object.create(object), object);
     };
-    Objects.hydrate = function (dest, source, mutators) {
+    Objects.hydrate = function (dest, source, mutators, excludeNullValues, excludeMethods) {
         if (mutators === void 0) { mutators = {}; }
+        if (excludeNullValues === void 0) { excludeNullValues = false; }
+        if (excludeMethods === void 0) { excludeMethods = true; }
         if (typeof dest !== 'object' || typeof source !== 'object') {
             throw new Error("Cannot hydrate object. Source and destination object must both be of type 'object'.");
         }
         for (var property in source) {
             var propertyValue = source[property];
+            if (typeof propertyValue == "function" && excludeMethods)
+                continue;
             if (source[property] == null) {
+                if (excludeNullValues)
+                    continue;
                 dest[property] = null;
             }
             // If a mutator is present
@@ -57117,14 +57129,20 @@ var Objects = /** @class */ (function () {
         }
         return this.hydrate(Object.create(object), object);
     };
-    Objects.hydrate = function (dest, source, mutators) {
+    Objects.hydrate = function (dest, source, mutators, excludeNullValues, excludeMethods) {
         if (mutators === void 0) { mutators = {}; }
+        if (excludeNullValues === void 0) { excludeNullValues = false; }
+        if (excludeMethods === void 0) { excludeMethods = true; }
         if (typeof dest !== 'object' || typeof source !== 'object') {
             throw new Error("Cannot hydrate object. Source and destination object must both be of type 'object'.");
         }
         for (var property in source) {
             var propertyValue = source[property];
+            if (typeof propertyValue == "function" && excludeMethods)
+                continue;
             if (source[property] == null) {
+                if (excludeNullValues)
+                    continue;
                 dest[property] = null;
             }
             // If a mutator is present
