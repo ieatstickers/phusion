@@ -107,7 +107,13 @@ export class Objects
 		return this.hydrate(Object.create(object), object);
 	}
 
-	public static hydrate(dest: Object, source: Object, mutators: Object = {})
+	public static hydrate(
+		dest: Object,
+		source: Object,
+		mutators: Object = {},
+		excludeNullValues: boolean = false,
+		excludeMethods: boolean = true
+	)
 	{
 		if(typeof dest !== 'object' || typeof source !== 'object')
 		{
@@ -118,8 +124,11 @@ export class Objects
 		{
 			let propertyValue = source[property];
 
+			if (typeof propertyValue == "function" && excludeMethods) continue;
+
 			if (source[property] == null)
 			{
+				if (excludeNullValues) continue;
 				dest[property] = null
 			}
 			// If a mutator is present
