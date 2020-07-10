@@ -231,20 +231,15 @@ var Objects = /** @class */ (function () {
     };
     ;
     Objects.setByKeyPath = function (keyPath, value, target) {
-        var keys = keyPath.split(':');
-        var sourceObject = this.setByPath(keys, value, {});
-        // @ts-ignore
-        return Object.assign(target, sourceObject);
+        return this.setByPath(keyPath.split(':'), value, target);
     };
     Objects.setByPath = function (keys, value, object) {
         var key = keys.shift();
-        if (typeof object[key] == 'undefined') {
-            if (keys.length) {
-                object[key] = this.setByPath(keys, value, {});
-            }
-            else {
-                object[key] = value;
-            }
+        if (keys.length) {
+            object[key] = this.setByPath(keys, value, object[key] ? object[key] : {});
+        }
+        else {
+            object[key] = value;
         }
         return object;
     };

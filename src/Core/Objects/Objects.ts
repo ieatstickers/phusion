@@ -49,29 +49,22 @@ export class Objects
     }
   };
   
-  public static setByKeyPath(keyPath: string, value: any, target: Object)
+  public static setByKeyPath(keyPath: string, value: any, target: Object): any
   {
-    let keys = keyPath.split(':');
-    let sourceObject = this.setByPath(keys, value, {});
-    
-    // @ts-ignore
-    return Object.assign(target, sourceObject);
+    return this.setByPath(keyPath.split(':'), value, target);
   }
   
-  private static setByPath(keys: Array<string>, value: any, object: Object)
+  private static setByPath(keys: Array<string>, value: any, object: Object): any
   {
     let key = keys.shift();
     
-    if (typeof object[key] == 'undefined')
+    if (keys.length)
     {
-      if (keys.length)
-      {
-        object[key] = this.setByPath(keys, value, {});
-      }
-      else
-      {
-        object[key] = value;
-      }
+      object[key] = this.setByPath(keys, value, object[key] ? object[key] : {});
+    }
+    else
+    {
+      object[key] = value;
     }
     
     return object;
