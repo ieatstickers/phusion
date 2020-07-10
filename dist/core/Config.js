@@ -230,6 +230,24 @@ var Objects = /** @class */ (function () {
         }
     };
     ;
+    Objects.setByKeyPath = function (keyPath, value, target) {
+        var keys = keyPath.split(':');
+        var sourceObject = this.setByPath(keys, value, {});
+        // @ts-ignore
+        return Object.assign(target, sourceObject);
+    };
+    Objects.setByPath = function (keys, value, object) {
+        var key = keys.shift();
+        if (typeof object[key] == 'undefined') {
+            if (keys.length) {
+                object[key] = this.setByPath(keys, value, {});
+            }
+            else {
+                object[key] = value;
+            }
+        }
+        return object;
+    };
     Objects.merge = function (target) {
         var sourceObjects = [];
         for (var _i = 1; _i < arguments.length; _i++) {
