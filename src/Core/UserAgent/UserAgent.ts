@@ -34,13 +34,18 @@ export class UserAgent
 		}
 		return false;
 	}
-
-	public static isEdge(): boolean
-	{
-		// Created an extra check for Edge browser as it's getting a false positive
-		let regex = new RegExp('^.*(Edge|edge).*$', 'g');
-		return regex.test(navigator.userAgent);
-	}
+  
+  public static isChromiumEdge(): boolean
+  {
+    let regex = new RegExp('^.*(Edg\\/).*$', 'g');
+    return regex.test(navigator.userAgent);
+  }
+  
+  public static isLegacyEdge(): boolean
+  {
+    let regex = new RegExp('^.*(Edge\\/).*$', 'g');
+    return regex.test(navigator.userAgent);
+  }
 
 	public static isFirefox(): boolean
 	{

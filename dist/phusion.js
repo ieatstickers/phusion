@@ -76254,9 +76254,12 @@ var UserAgent = /** @class */ (function () {
         }
         return false;
     };
-    UserAgent.isEdge = function () {
-        // Created an extra check for Edge browser as it's getting a false positive
-        var regex = new RegExp('^.*(Edge|edge).*$', 'g');
+    UserAgent.isChromiumEdge = function () {
+        var regex = new RegExp('^.*(Edg\\/).*$', 'g');
+        return regex.test(navigator.userAgent);
+    };
+    UserAgent.isLegacyEdge = function () {
+        var regex = new RegExp('^.*(Edge\\/).*$', 'g');
         return regex.test(navigator.userAgent);
     };
     UserAgent.isFirefox = function () {
