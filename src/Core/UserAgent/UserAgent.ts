@@ -1,7 +1,7 @@
 
 export class UserAgent
 {
-	private static provider: any = require('user-agent-parser')(navigator.userAgent);
+	private static provider: any = require('ua-parser-js')(navigator.userAgent);
 
 	public static getBrowserName(): string
 	{

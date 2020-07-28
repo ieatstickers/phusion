@@ -18,7 +18,7 @@
     "merge-deep": "^3.0.2",
     "moment": "^2.24.0",
     "shelljs": "^0.8.4",
-    "user-agent-parser": "^0.6.0",
+    "ua-parser-js": "^0.7.21",
     "vinyl-named": "^1.1.0",
     "watch": "^1.0.2",
     "webpack-stream": "^5.2.1",
