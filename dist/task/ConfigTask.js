@@ -12208,6 +12208,25 @@ var Strings = /** @class */ (function () {
     Strings.endsWith = function (string, suffix) {
         return string.indexOf(suffix, string.length - suffix.length) >= 0;
     };
+    Strings.random = function (length) {
+        if (length === void 0) { length = 10; }
+        return this.generateRandomString(length, this.RANDOM_STRING_AVAILABLE_CHARS);
+    };
+    Strings.password = function (length) {
+        return this.generateRandomString(length, this.PASSWORD_AVAILABLE_CHARS);
+    };
+    Strings.generateRandomString = function (length, availableCharacters) {
+        if (length === void 0) { length = 10; }
+        if (availableCharacters === void 0) { availableCharacters = this.RANDOM_STRING_AVAILABLE_CHARS; }
+        var result = '';
+        var charactersLength = availableCharacters.length;
+        for (var i = 0; i < length; i++) {
+            result += availableCharacters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
+    };
+    Strings.RANDOM_STRING_AVAILABLE_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    Strings.PASSWORD_AVAILABLE_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$-_.+!*\'(),,';
     return Strings;
 }());
 exports.Strings = Strings;
