@@ -53,6 +53,12 @@ export class UserAgent
 		return regex.test(UserAgent.getBrowserName());
 	}
 
+	public static isSafari(): boolean
+	{
+		let regex = new RegExp('Safari|safari');
+		return regex.test(UserAgent.getBrowserName());
+	}
+
 	public static isOpera(): boolean
 	{
 		let regex = new RegExp('Opera|opera');

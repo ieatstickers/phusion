@@ -1066,6 +1066,10 @@ var UserAgent = /** @class */ (function () {
         var regex = new RegExp('Firefox|firefox');
         return regex.test(UserAgent.getBrowserName());
     };
+    UserAgent.isSafari = function () {
+        var regex = new RegExp('Safari|safari');
+        return regex.test(UserAgent.getBrowserName());
+    };
     UserAgent.isOpera = function () {
         var regex = new RegExp('Opera|opera');
         return regex.test(UserAgent.getBrowserName());
