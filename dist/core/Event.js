@@ -122,10 +122,13 @@ var Event = /** @class */ (function () {
         window.dispatchEvent(event);
     };
     Event.on = function (eventName, callback) {
-        // Listen for the event.
-        window.addEventListener(eventName, function (event) {
+        var eventListener = function (event) {
             return callback(event['detail']);
-        }, false);
+        };
+        // Listen for the event
+        window.addEventListener(eventName, eventListener, false);
+        // Return unsubscriber
+        return window.removeEventListener.bind(undefined, eventName, eventListener);
     };
     return Event;
 }());
