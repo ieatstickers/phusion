@@ -113,6 +113,7 @@ module.exports = Config_1.Config;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
+var Numbers_1 = __webpack_require__(/*! ../Numbers/Numbers */ "./src/Core/Numbers/Numbers.ts");
 var Objects_1 = __webpack_require__(/*! ../Objects/Objects */ "./src/Core/Objects/Objects.ts");
 var Arrays = /** @class */ (function () {
     function Arrays() {
@@ -141,6 +142,9 @@ var Arrays = /** @class */ (function () {
             }
         }
         return clone;
+    };
+    Arrays.randomItem = function (array) {
+        return array[Numbers_1.Numbers.random(0, array.length - 1)];
     };
     return Arrays;
 }());
@@ -177,6 +181,33 @@ var Config = /** @class */ (function () {
     return Config;
 }());
 exports.Config = Config;
+
+
+/***/ }),
+
+/***/ "./src/Core/Numbers/Numbers.ts":
+/*!*************************************!*\
+  !*** ./src/Core/Numbers/Numbers.ts ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Numbers = /** @class */ (function () {
+    function Numbers() {
+    }
+    Numbers.random = function (min, max) {
+        if (min === void 0) { min = 0; }
+        if (max === void 0) { max = 100; }
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    };
+    return Numbers;
+}());
+exports.Numbers = Numbers;
 
 
 /***/ }),
@@ -38141,6 +38172,7 @@ module.exports = function(module) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
+var Numbers_1 = __webpack_require__(/*! ../Numbers/Numbers */ "./src/Core/Numbers/Numbers.ts");
 var Objects_1 = __webpack_require__(/*! ../Objects/Objects */ "./src/Core/Objects/Objects.ts");
 var Arrays = /** @class */ (function () {
     function Arrays() {
@@ -38169,6 +38201,9 @@ var Arrays = /** @class */ (function () {
             }
         }
         return clone;
+    };
+    Arrays.randomItem = function (array) {
+        return array[Numbers_1.Numbers.random(0, array.length - 1)];
     };
     return Arrays;
 }());
@@ -38688,6 +38723,33 @@ var AxiosHttpProvider = /** @class */ (function (_super) {
     return AxiosHttpProvider;
 }(AbstractHttpProvider_1.AbstractHttpProvider));
 exports.AxiosHttpProvider = AxiosHttpProvider;
+
+
+/***/ }),
+
+/***/ "./src/Core/Numbers/Numbers.ts":
+/*!*************************************!*\
+  !*** ./src/Core/Numbers/Numbers.ts ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Numbers = /** @class */ (function () {
+    function Numbers() {
+    }
+    Numbers.random = function (min, max) {
+        if (min === void 0) { min = 0; }
+        if (max === void 0) { max = 100; }
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    };
+    return Numbers;
+}());
+exports.Numbers = Numbers;
 
 
 /***/ }),
@@ -57158,6 +57220,7 @@ module.exports = Objects_1.Objects;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
+var Numbers_1 = __webpack_require__(/*! ../Numbers/Numbers */ "./src/Core/Numbers/Numbers.ts");
 var Objects_1 = __webpack_require__(/*! ../Objects/Objects */ "./src/Core/Objects/Objects.ts");
 var Arrays = /** @class */ (function () {
     function Arrays() {
@@ -57187,9 +57250,39 @@ var Arrays = /** @class */ (function () {
         }
         return clone;
     };
+    Arrays.randomItem = function (array) {
+        return array[Numbers_1.Numbers.random(0, array.length - 1)];
+    };
     return Arrays;
 }());
 exports.Arrays = Arrays;
+
+
+/***/ }),
+
+/***/ "./src/Core/Numbers/Numbers.ts":
+/*!*************************************!*\
+  !*** ./src/Core/Numbers/Numbers.ts ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Numbers = /** @class */ (function () {
+    function Numbers() {
+    }
+    Numbers.random = function (min, max) {
+        if (min === void 0) { min = 0; }
+        if (max === void 0) { max = 100; }
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    };
+    return Numbers;
+}());
+exports.Numbers = Numbers;
 
 
 /***/ }),

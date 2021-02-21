@@ -1,4 +1,5 @@
 
+import { Numbers } from "../Numbers/Numbers";
 import {Objects} from '../Objects/Objects';
 
 export class Arrays
@@ -40,4 +41,9 @@ export class Arrays
 
 		return clone;
 	}
+	
+	public static randomItem(array: Array<any>)
+  {
+    return array[Numbers.random(0, array.length - 1)];
+  }
 }
