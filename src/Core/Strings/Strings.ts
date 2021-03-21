@@ -29,6 +29,11 @@ export class Strings
     return this.generateRandomString(length, this.PASSWORD_AVAILABLE_CHARS);
   }
   
+  public static initialCaps(string: string)
+  {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  
   private static generateRandomString(
     length: number = 10,
     availableCharacters: string = this.RANDOM_STRING_AVAILABLE_CHARS

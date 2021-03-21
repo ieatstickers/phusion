@@ -12246,6 +12246,9 @@ var Strings = /** @class */ (function () {
     Strings.password = function (length) {
         return this.generateRandomString(length, this.PASSWORD_AVAILABLE_CHARS);
     };
+    Strings.initialCaps = function (string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    };
     Strings.generateRandomString = function (length, availableCharacters) {
         if (length === void 0) { length = 10; }
         if (availableCharacters === void 0) { availableCharacters = this.RANDOM_STRING_AVAILABLE_CHARS; }
