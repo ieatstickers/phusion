@@ -25303,6 +25303,13 @@ var StorageApi = /** @class */ (function () {
             storageValue = JSON.parse(storageItemRawValue);
         }
         catch (exception) { }
+        if (typeof storageValue === 'object'
+            && storageValue.key !== undefined
+            && storageValue.value !== undefined
+            && storageValue.created !== undefined
+            && storageValue.expiry !== undefined) {
+            return storageValue.value;
+        }
         return storageValue;
     };
     StorageApi.remove = function (key, storageProvider) {
@@ -25822,6 +25829,13 @@ var StorageApi = /** @class */ (function () {
             storageValue = JSON.parse(storageItemRawValue);
         }
         catch (exception) { }
+        if (typeof storageValue === 'object'
+            && storageValue.key !== undefined
+            && storageValue.value !== undefined
+            && storageValue.created !== undefined
+            && storageValue.expiry !== undefined) {
+            return storageValue.value;
+        }
         return storageValue;
     };
     StorageApi.remove = function (key, storageProvider) {

@@ -30,6 +30,7 @@ module.exports = [
       Event: './exports/Core/Event.ts',
       Http: './exports/Core/Http.ts',
       Objects: './exports/Core/Objects.ts',
+      AsyncStorage: './exports/Core/AsyncStorage.ts',
       LocalStorage: './exports/Core/LocalStorage.ts',
       SessionStorage: './exports/Core/SessionStorage.ts',
       Strings: './exports/Core/Strings.ts',
