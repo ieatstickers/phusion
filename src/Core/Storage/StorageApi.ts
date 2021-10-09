@@ -16,13 +16,24 @@ export class StorageApi
 			return null;
 		}
 
-		let storageValue = storageItemRawValue;
+		let storageValue: any = storageItemRawValue;
 
 		try
 		{
 			storageValue = JSON.parse(storageItemRawValue);
 		}
 		catch (exception) {}
+    
+    if (
+      typeof storageValue === 'object'
+      && storageValue.key !== undefined
+      && storageValue.value !== undefined
+      && storageValue.created !== undefined
+      && storageValue.expiry !== undefined
+    )
+    {
+      return storageValue.value;
+    }
 
 		return storageValue;
 	}
