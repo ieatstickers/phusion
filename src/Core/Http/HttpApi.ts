@@ -4,9 +4,6 @@ import {HttpResponse} from "./HttpResponse";
 import {HttpProviderInterface} from "./Provider/HttpProviderInterface";
 import {AxiosHttpProvider} from "./Provider/Axios/AxiosHttpProvider";
 import {HttpError} from "./HttpError";
-import * as Moment from "moment";
-import {HttpResponseCache} from "./HttpResponseCache";
-import {Objects} from "../Objects/Objects";
 
 declare let Promise: any;
 
@@ -16,12 +13,9 @@ export class HttpApi
 	private static defaultHttpProvider: HttpProviderInterface;
 	private static beforeRequestCallbacks: Array<Function> = [];
 	private static onSuccessCallbacks: Array<Function> = [];
-	public static responseCachingEnabled: boolean = false;
-	public static responseCachingOptions: Object = { defaultCacheExpiry: "30s", localStorageKey: "phusion_http_response_cache" };
 
 	public static makeHttpRequest(
-		httpRequest: HttpRequest,
-		cacheExpiry: Moment.Moment  | Date | string = null
+		httpRequest: HttpRequest
 	): Promise<HttpResponse>
 	{
 		let validMethods = [ 'get', 'post', 'put', 'delete', 'options' ];
@@ -29,21 +23,6 @@ export class HttpApi
 		if (validMethods.indexOf(httpRequest.method.toLowerCase()) == -1)
 		{
 			throw new Error('Invalid HTTP method: ' + httpRequest.method);
-		}
-
-		if (cacheExpiry && !HttpApi.responseCachingEnabled)
-		{
-			console.warn('Cache expiry argument passed when making HTTP request. This will be ignored as response caching is not enabled. To enable, use Http.enableResponseCaching(cacheOptions)', httpRequest);
-		}
-
-		let cachedResponse = HttpResponseCache.getCachedResponseByRequest(httpRequest);
-
-		if (cachedResponse)
-		{
-			return new Promise(function (resolve: Function, reject: Function)
-			{
-				return resolve(cachedResponse);
-			});
 		}
 
 		httpRequest = this.applyBeforeRequestHooks(httpRequest);
@@ -55,17 +34,6 @@ export class HttpApi
 
 			promise.then((function(httpResponse: HttpResponse)
 			{
-				if (this.responseCachingEnabled)
-				{
-					if (!cacheExpiry)
-					{
-						cacheExpiry = this.responseCachingOptions['defaultCacheExpiry']
-					}
-
-					HttpResponseCache.cacheHttpResponseAsync(httpResponse, cacheExpiry);
-					HttpResponseCache.clearExpiredResponsesFromCacheAsync();
-				}
-
 				this.applyOnSuccessHooks(httpResponse);
 
 				return resolve(httpResponse);
@@ -108,17 +76,6 @@ export class HttpApi
 		}
 
 		return this.defaultHttpProvider;
-	}
-
-	public static enableResponseCaching(responseCachingOptions: Object = null)
-	{
-		if (responseCachingOptions)
-		{
-			responseCachingOptions = Objects.merge(this.responseCachingOptions, responseCachingOptions);
-		}
-
-		this.responseCachingEnabled = true;
-		this.responseCachingOptions = responseCachingOptions;
 	}
 
 	private static applyBeforeRequestHooks(httpRequest: HttpRequest): HttpRequest

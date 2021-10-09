@@ -1,6 +1,4 @@
 
-import {StorageItem} from "./StorageItem";
-import * as Moment from "moment";
 import {StorageApi} from "./StorageApi";
 
 export class SessionStorage
@@ -10,7 +8,7 @@ export class SessionStorage
 		return StorageApi.clear(window.sessionStorage);
 	}
 
-	public static get(key: string): StorageItem | null
+	public static get(key: string): any
 	{
 		return StorageApi.get(key, window.sessionStorage);
 	}
@@ -22,10 +20,9 @@ export class SessionStorage
 
 	public static set(
 		key: string,
-		value: any,
-		expiry: Moment.Moment | Date | string = null
+		value: any
 	)
 	{
-		return StorageApi.set(key, value, expiry, window.sessionStorage);
+		return StorageApi.set(key, value, window.sessionStorage);
 	}
 }
