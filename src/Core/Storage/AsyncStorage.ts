@@ -98,6 +98,6 @@ export class AsyncStorage
 	
 	private static isWeb(): boolean
   {
-    return Boolean(typeof window !== 'undefined');
+    return Boolean(typeof document !== 'undefined');
   }
 }

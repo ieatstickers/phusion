@@ -639,7 +639,7 @@ var AsyncStorage = /** @class */ (function () {
         });
     };
     AsyncStorage.isWeb = function () {
-        return Boolean(typeof window !== 'undefined');
+        return Boolean(typeof document !== 'undefined');
     };
     return AsyncStorage;
 }());
