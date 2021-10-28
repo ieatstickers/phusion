@@ -24784,33 +24784,28 @@ var HttpApi_1 = __webpack_require__(/*! ./HttpApi */ "./src/Core/Http/HttpApi.ts
 var Http = /** @class */ (function () {
     function Http() {
     }
-    Http.get = function (url, data, cacheExpiry) {
+    Http.get = function (url, data) {
         if (data === void 0) { data = null; }
-        if (cacheExpiry === void 0) { cacheExpiry = null; }
         var request = new HttpRequest_1.HttpRequest(url, 'get', data);
-        return HttpApi_1.HttpApi.makeHttpRequest(request, cacheExpiry);
+        return HttpApi_1.HttpApi.makeHttpRequest(request);
     };
-    Http.post = function (url, data, cacheExpiry) {
-        if (cacheExpiry === void 0) { cacheExpiry = null; }
+    Http.post = function (url, data) {
         var request = new HttpRequest_1.HttpRequest(url, 'post', data);
-        return HttpApi_1.HttpApi.makeHttpRequest(request, cacheExpiry);
+        return HttpApi_1.HttpApi.makeHttpRequest(request);
     };
-    Http.put = function (url, data, cacheExpiry) {
-        if (cacheExpiry === void 0) { cacheExpiry = null; }
+    Http.put = function (url, data) {
         var request = new HttpRequest_1.HttpRequest(url, 'put', data);
-        return HttpApi_1.HttpApi.makeHttpRequest(request, cacheExpiry);
+        return HttpApi_1.HttpApi.makeHttpRequest(request);
     };
-    Http.delete = function (url, data, cacheExpiry) {
+    Http.delete = function (url, data) {
         if (data === void 0) { data = null; }
-        if (cacheExpiry === void 0) { cacheExpiry = null; }
         var request = new HttpRequest_1.HttpRequest(url, 'delete', data);
-        return HttpApi_1.HttpApi.makeHttpRequest(request, cacheExpiry);
+        return HttpApi_1.HttpApi.makeHttpRequest(request);
     };
-    Http.makeRequest = function (method, url, data, cacheExpiry) {
+    Http.makeRequest = function (method, url, data) {
         if (data === void 0) { data = null; }
-        if (cacheExpiry === void 0) { cacheExpiry = null; }
         var request = new HttpRequest_1.HttpRequest(url, method, data);
-        return HttpApi_1.HttpApi.makeHttpRequest(request, cacheExpiry);
+        return HttpApi_1.HttpApi.makeHttpRequest(request);
     };
     Http.onBeforeRequest = function (callbackFunction) {
         HttpApi_1.HttpApi.onBeforeRequest(callbackFunction);
@@ -24818,11 +24813,6 @@ var Http = /** @class */ (function () {
     Http.onSuccess = function (callbackFunction) {
         HttpApi_1.HttpApi.onSuccess(callbackFunction);
     };
-    Http.enableResponseCaching = function (responseCachingOptions) {
-        if (responseCachingOptions === void 0) { responseCachingOptions = null; }
-        HttpApi_1.HttpApi.enableResponseCaching(responseCachingOptions);
-    };
-    Http.responseCachingOptions = { defaultCacheExpiry: "30s", localStorageKey: "phusion_http_response_cache" };
     return Http;
 }());
 exports.Http = Http;
