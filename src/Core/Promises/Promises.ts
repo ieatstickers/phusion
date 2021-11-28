@@ -34,7 +34,7 @@ export class Promises
           }
       
           // Resolve
-          return resolve();
+          return resolve(responsesByKey);
         })
         .catch(reject);
     })

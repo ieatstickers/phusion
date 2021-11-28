@@ -142,7 +142,7 @@ var Promises = /** @class */ (function () {
                     responsesByKey[keyMap[index]] = responses[index];
                 }
                 // Resolve
-                return resolve();
+                return resolve(responsesByKey);
             })
                 .catch(reject);
         });
