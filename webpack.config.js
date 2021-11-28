@@ -25,11 +25,14 @@ module.exports = [
       aggregateTimeout: 300
     },
     entry:        {
+      Arrays: './exports/Core/Arrays.ts',
       Config: './exports/Core/Config.ts',
       Cookies: './exports/Core/Cookies.ts',
       Event: './exports/Core/Event.ts',
       Http: './exports/Core/Http.ts',
+      Numbers: './exports/Core/Numbers.ts',
       Objects: './exports/Core/Objects.ts',
+      Promises: './exports/Core/Promises.ts',
       AsyncStorage: './exports/Core/AsyncStorage.ts',
       LocalStorage: './exports/Core/LocalStorage.ts',
       SessionStorage: './exports/Core/SessionStorage.ts',
