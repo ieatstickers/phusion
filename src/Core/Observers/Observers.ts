@@ -4,7 +4,7 @@
 export class Observers
 {
   public static onResize(
-    elements: HTMLElement | Array<HTMLElement>,
+    elements: Element | Array<Element>,
     callback: (
       resizeData: {
         target: HTMLElement,
