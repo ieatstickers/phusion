@@ -7,7 +7,7 @@ export class Observers
     elements: Element | Array<Element>,
     callback: (
       resizeData: {
-        target: HTMLElement,
+        target: Element,
         height: number,
         width: number,
         top: number,
