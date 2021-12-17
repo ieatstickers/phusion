@@ -32,6 +32,7 @@ module.exports = [
       Http: './exports/Core/Http.ts',
       Numbers: './exports/Core/Numbers.ts',
       Objects: './exports/Core/Objects.ts',
+      Observers: './exports/Core/Observers.ts',
       Promises: './exports/Core/Promises.ts',
       AsyncStorage: './exports/Core/AsyncStorage.ts',
       LocalStorage: './exports/Core/LocalStorage.ts',
