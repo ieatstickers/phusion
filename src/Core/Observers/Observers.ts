@@ -21,18 +21,21 @@ export class Observers
   ): () => void
   {
     // @ts-ignore
-    const resizeObserver = new ResizeObserver((entries) => {
-      callback({
-        target: entries.target,
-        width: entries.contentRect.width,
-        height: entries.contentRect.height,
-        top: entries.contentRect.top,
-        bottom: entries.contentRect.bottom,
-        left: entries.contentRect.left,
-        right: entries.contentRect.right,
-        x: entries.contentRect.x,
-        y: entries.contentRect.y
-      })
+    const resizeObserver = new ResizeObserver((resizeObserverEntries) => {
+      for (const resizeObserverEntry of resizeObserverEntries)
+      {
+        callback({
+          target: resizeObserverEntry.target,
+          width: resizeObserverEntry.contentRect.width,
+          height: resizeObserverEntry.contentRect.height,
+          top: resizeObserverEntry.contentRect.top,
+          bottom: resizeObserverEntry.contentRect.bottom,
+          left: resizeObserverEntry.contentRect.left,
+          right: resizeObserverEntry.contentRect.right,
+          x: resizeObserverEntry.contentRect.x,
+          y: resizeObserverEntry.contentRect.y
+        })
+      }
     });
   
     const elementsArray = Array.isArray(elements) ? elements : [elements];

@@ -118,18 +118,21 @@ var Observers = /** @class */ (function () {
     }
     Observers.onResize = function (elements, callback) {
         // @ts-ignore
-        var resizeObserver = new ResizeObserver(function (entries) {
-            callback({
-                target: entries.target,
-                width: entries.contentRect.width,
-                height: entries.contentRect.height,
-                top: entries.contentRect.top,
-                bottom: entries.contentRect.bottom,
-                left: entries.contentRect.left,
-                right: entries.contentRect.right,
-                x: entries.contentRect.x,
-                y: entries.contentRect.y
-            });
+        var resizeObserver = new ResizeObserver(function (resizeObserverEntries) {
+            for (var _i = 0, resizeObserverEntries_1 = resizeObserverEntries; _i < resizeObserverEntries_1.length; _i++) {
+                var resizeObserverEntry = resizeObserverEntries_1[_i];
+                callback({
+                    target: resizeObserverEntry.target,
+                    width: resizeObserverEntry.contentRect.width,
+                    height: resizeObserverEntry.contentRect.height,
+                    top: resizeObserverEntry.contentRect.top,
+                    bottom: resizeObserverEntry.contentRect.bottom,
+                    left: resizeObserverEntry.contentRect.left,
+                    right: resizeObserverEntry.contentRect.right,
+                    x: resizeObserverEntry.contentRect.x,
+                    y: resizeObserverEntry.contentRect.y
+                });
+            }
         });
         var elementsArray = Array.isArray(elements) ? elements : [elements];
         for (var _i = 0, elementsArray_1 = elementsArray; _i < elementsArray_1.length; _i++) {
