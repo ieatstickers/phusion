@@ -22167,10 +22167,11 @@ var Cookies = /** @class */ (function () {
         // Set cookie string
         document.cookie = cookieString;
     };
-    Cookies.remove = function (key) {
-        var date = new Date();
-        date.setSeconds(date.getSeconds() - 1);
-        this.set(key, null, date);
+    Cookies.remove = function (key, domain, path) {
+        if (domain === void 0) { domain = null; }
+        if (path === void 0) { path = null; }
+        var date = new Date(0);
+        this.set(key, null, date, domain, path);
     };
     return Cookies;
 }());

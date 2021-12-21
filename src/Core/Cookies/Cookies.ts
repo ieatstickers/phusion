@@ -113,10 +113,9 @@ export class Cookies
 		document.cookie = cookieString;
 	}
 
-	public static remove(key: string)
+	public static remove(key: string, domain: string = null, path: string = null)
 	{
-		let date = new Date();
-		date.setSeconds(date.getSeconds() - 1);
-		this.set(key, null, date);
+		let date = new Date(0);
+		this.set(key, null, date, domain, path);
 	}
 }
