@@ -56,7 +56,8 @@ export class AxiosHttpProvider extends AbstractHttpProvider implements HttpProvi
 				url: url,
 				method: httpRequest.method,
 				headers: httpRequest.headers,
-				data: params
+				data: params,
+        withCredentials: true
 			});
 
 			// If promise is resolved
