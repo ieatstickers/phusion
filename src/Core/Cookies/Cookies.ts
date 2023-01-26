@@ -51,7 +51,9 @@ export class Cookies
 		value: string,
 		expiry: Moment.Moment | Date | string = null,
 		domain: string = null,
-		path: string = null
+		path: string = null,
+    sameSite: 'Lax' | 'Strict' | 'None' = null,
+    secure: boolean = null
 	)
 	{
 		// Build cookie string
@@ -108,6 +110,16 @@ export class Cookies
 			// Add expiry to cookie string
 			cookieString += ';expires=' + dateString;
 		}
+    
+    if (sameSite)
+    {
+      cookieString += `;SameSite=${sameSite}`;
+    }
+    
+    if (secure === true)
+    {
+      cookieString += ';Secure';
+    }
 
 		// Set cookie string
 		document.cookie = cookieString;

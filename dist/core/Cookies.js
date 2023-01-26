@@ -21754,10 +21754,12 @@ var Cookies = /** @class */ (function () {
         }
         return cookies;
     };
-    Cookies.set = function (key, value, expiry, domain, path) {
+    Cookies.set = function (key, value, expiry, domain, path, sameSite, secure) {
         if (expiry === void 0) { expiry = null; }
         if (domain === void 0) { domain = null; }
         if (path === void 0) { path = null; }
+        if (sameSite === void 0) { sameSite = null; }
+        if (secure === void 0) { secure = null; }
         // Build cookie string
         var cookieString = key + '=' + value;
         // If a domain was passed in
@@ -21797,6 +21799,12 @@ var Cookies = /** @class */ (function () {
             }
             // Add expiry to cookie string
             cookieString += ';expires=' + dateString;
+        }
+        if (sameSite) {
+            cookieString += ";SameSite=" + sameSite;
+        }
+        if (secure === true) {
+            cookieString += ';Secure';
         }
         // Set cookie string
         document.cookie = cookieString;
