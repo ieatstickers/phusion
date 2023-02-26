@@ -1,295 +1,171 @@
-var AsyncStorage =
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// define __esModule on exports
-/******/ 	__webpack_require__.r = function(exports) {
-/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 		}
-/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 	};
-/******/
-/******/ 	// create a fake namespace object
-/******/ 	// mode & 1: value is a module id, require it
-/******/ 	// mode & 2: merge all properties of value into the ns
-/******/ 	// mode & 4: return value when already ns object
-/******/ 	// mode & 8|1: behave like require
-/******/ 	__webpack_require__.t = function(value, mode) {
-/******/ 		if(mode & 1) value = __webpack_require__(value);
-/******/ 		if(mode & 8) return value;
-/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
-/******/ 		var ns = Object.create(null);
-/******/ 		__webpack_require__.r(ns);
-/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
-/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
-/******/ 		return ns;
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./exports/Core/AsyncStorage.ts");
-/******/ })
-/************************************************************************/
-/******/ ({
-
-/***/ "./exports/Core/AsyncStorage.ts":
-/*!**************************************!*\
-  !*** ./exports/Core/AsyncStorage.ts ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var AsyncStorage_1 = __webpack_require__(/*! ../../src/Core/Storage/AsyncStorage */ "./src/Core/Storage/AsyncStorage.ts");
-module.exports = AsyncStorage_1.AsyncStorage;
-
-
-/***/ }),
+var AsyncStorage;
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
 
 /***/ "./node_modules/@react-native-async-storage/async-storage/lib/module/AsyncStorage.js":
 /*!*******************************************************************************************!*\
   !*** ./node_modules/@react-native-async-storage/async-storage/lib/module/AsyncStorage.js ***!
   \*******************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return AsyncStorage; });
-/* harmony import */ var merge_options__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! merge-options */ "./node_modules/merge-options/index.js");
-/* harmony import */ var merge_options__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(merge_options__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var merge_options__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! merge-options */ "./node_modules/merge-options/index.mjs");
 /**
  * Copyright (c) Nicolas Gallagher.
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
- *
- * 
  */
+// @ts-ignore Cannot find module 'merge-options' or its corresponding type declarations
 
-const merge = merge_options__WEBPACK_IMPORTED_MODULE_0___default.a.bind({
+const merge = merge_options__WEBPACK_IMPORTED_MODULE_0__["default"].bind({
   concatArrays: true,
   ignoreUndefined: true
 });
 
-const mergeLocalStorageItem = (key, value) => {
+function mergeLocalStorageItem(key, value) {
   const oldValue = window.localStorage.getItem(key);
-  const oldObject = JSON.parse(oldValue);
-  const newObject = JSON.parse(value);
-  const nextValue = JSON.stringify(merge(oldObject, newObject));
-  window.localStorage.setItem(key, nextValue);
-};
 
-const createPromise = (getValue, callback) => {
+  if (oldValue) {
+    const oldObject = JSON.parse(oldValue);
+    const newObject = JSON.parse(value);
+    const nextValue = JSON.stringify(merge(oldObject, newObject));
+    window.localStorage.setItem(key, nextValue);
+  } else {
+    window.localStorage.setItem(key, value);
+  }
+}
+
+function createPromise(getValue, callback) {
   return new Promise((resolve, reject) => {
     try {
       const value = getValue();
-
-      if (callback) {
-        callback(null, value);
-      }
-
+      callback === null || callback === void 0 ? void 0 : callback(null, value);
       resolve(value);
     } catch (err) {
-      if (callback) {
-        callback(err);
-      }
-
+      callback === null || callback === void 0 ? void 0 : callback(err);
       reject(err);
     }
   });
-};
+}
 
-const createPromiseAll = (promises, callback, processResult) => {
+function createPromiseAll(promises, callback, processResult) {
   return Promise.all(promises).then(result => {
-    const value = processResult ? processResult(result) : null;
-    callback && callback(null, value);
+    const value = (processResult === null || processResult === void 0 ? void 0 : processResult(result)) ?? null;
+    callback === null || callback === void 0 ? void 0 : callback(null, value);
     return Promise.resolve(value);
   }, errors => {
-    callback && callback(errors);
+    callback === null || callback === void 0 ? void 0 : callback(errors);
     return Promise.reject(errors);
   });
-};
+}
 
-class AsyncStorage {
+const AsyncStorage = {
   /**
    * Fetches `key` value.
    */
-  static getItem(key, callback) {
-    return createPromise(() => {
-      return window.localStorage.getItem(key);
-    }, callback);
-  }
+  getItem: (key, callback) => {
+    return createPromise(() => window.localStorage.getItem(key), callback);
+  },
+
   /**
    * Sets `value` for `key`.
    */
+  setItem: (key, value, callback) => {
+    return createPromise(() => window.localStorage.setItem(key, value), callback);
+  },
 
-
-  static setItem(key, value, callback) {
-    return createPromise(() => {
-      window.localStorage.setItem(key, value);
-    }, callback);
-  }
   /**
    * Removes a `key`
    */
+  removeItem: (key, callback) => {
+    return createPromise(() => window.localStorage.removeItem(key), callback);
+  },
 
-
-  static removeItem(key, callback) {
-    return createPromise(() => {
-      return window.localStorage.removeItem(key);
-    }, callback);
-  }
   /**
    * Merges existing value with input value, assuming they are stringified JSON.
    */
+  mergeItem: (key, value, callback) => {
+    return createPromise(() => mergeLocalStorageItem(key, value), callback);
+  },
 
-
-  static mergeItem(key, value, callback) {
-    return createPromise(() => {
-      mergeLocalStorageItem(key, value);
-    }, callback);
-  }
   /**
    * Erases *all* AsyncStorage for the domain.
    */
+  clear: callback => {
+    return createPromise(() => window.localStorage.clear(), callback);
+  },
 
-
-  static clear(callback) {
-    return createPromise(() => {
-      window.localStorage.clear();
-    }, callback);
-  }
   /**
    * Gets *all* keys known to the app, for all callers, libraries, etc.
    */
-
-
-  static getAllKeys(callback) {
+  getAllKeys: callback => {
     return createPromise(() => {
       const numberOfKeys = window.localStorage.length;
       const keys = [];
 
       for (let i = 0; i < numberOfKeys; i += 1) {
-        const key = window.localStorage.key(i);
+        const key = window.localStorage.key(i) || '';
         keys.push(key);
       }
 
       return keys;
     }, callback);
-  }
+  },
+
   /**
    * (stub) Flushes any pending requests using a single batch call to get the data.
    */
+  flushGetRequests: () => undefined,
 
-
-  static flushGetRequests() {}
   /**
    * multiGet resolves to an array of key-value pair arrays that matches the
    * input format of multiSet.
    *
    *   multiGet(['k1', 'k2']) -> [['k1', 'val1'], ['k2', 'val2']]
    */
-
-
-  static multiGet(keys, callback) {
+  multiGet: (keys, callback) => {
     const promises = keys.map(key => AsyncStorage.getItem(key));
 
     const processResult = result => result.map((value, i) => [keys[i], value]);
 
     return createPromiseAll(promises, callback, processResult);
-  }
+  },
+
   /**
    * Takes an array of key-value array pairs.
    *   multiSet([['k1', 'val1'], ['k2', 'val2']])
    */
-
-
-  static multiSet(keyValuePairs, callback) {
+  multiSet: (keyValuePairs, callback) => {
     const promises = keyValuePairs.map(item => AsyncStorage.setItem(item[0], item[1]));
     return createPromiseAll(promises, callback);
-  }
+  },
+
   /**
    * Delete all the keys in the `keys` array.
    */
-
-
-  static multiRemove(keys, callback) {
+  multiRemove: (keys, callback) => {
     const promises = keys.map(key => AsyncStorage.removeItem(key));
     return createPromiseAll(promises, callback);
-  }
+  },
+
   /**
    * Takes an array of key-value array pairs and merges them with existing
    * values, assuming they are stringified JSON.
    *
    *   multiMerge([['k1', 'val1'], ['k2', 'val2']])
    */
-
-
-  static multiMerge(keyValuePairs, callback) {
+  multiMerge: (keyValuePairs, callback) => {
     const promises = keyValuePairs.map(item => AsyncStorage.mergeItem(item[0], item[1]));
     return createPromiseAll(promises, callback);
   }
-
-}
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AsyncStorage);
 //# sourceMappingURL=AsyncStorage.js.map
 
 /***/ }),
@@ -298,24 +174,44 @@ class AsyncStorage {
 /*!************************************************************************************!*\
   !*** ./node_modules/@react-native-async-storage/async-storage/lib/module/hooks.js ***!
   \************************************************************************************/
-/*! exports provided: useAsyncStorage */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useAsyncStorage", function() { return useAsyncStorage; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useAsyncStorage": () => (/* binding */ useAsyncStorage)
+/* harmony export */ });
 /* harmony import */ var _AsyncStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AsyncStorage */ "./node_modules/@react-native-async-storage/async-storage/lib/module/AsyncStorage.js");
-/**
- * @format
- * 
- */
 
 function useAsyncStorage(key) {
   return {
-    getItem: (...args) => _AsyncStorage__WEBPACK_IMPORTED_MODULE_0__["default"].getItem(key, ...args),
-    setItem: (...args) => _AsyncStorage__WEBPACK_IMPORTED_MODULE_0__["default"].setItem(key, ...args),
-    mergeItem: (...args) => _AsyncStorage__WEBPACK_IMPORTED_MODULE_0__["default"].mergeItem(key, ...args),
-    removeItem: (...args) => _AsyncStorage__WEBPACK_IMPORTED_MODULE_0__["default"].removeItem(key, ...args)
+    getItem: function () {
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      return _AsyncStorage__WEBPACK_IMPORTED_MODULE_0__["default"].getItem(key, ...args);
+    },
+    setItem: function () {
+      for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+        args[_key2] = arguments[_key2];
+      }
+
+      return _AsyncStorage__WEBPACK_IMPORTED_MODULE_0__["default"].setItem(key, ...args);
+    },
+    mergeItem: function () {
+      for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+        args[_key3] = arguments[_key3];
+      }
+
+      return _AsyncStorage__WEBPACK_IMPORTED_MODULE_0__["default"].mergeItem(key, ...args);
+    },
+    removeItem: function () {
+      for (var _len4 = arguments.length, args = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
+        args[_key4] = arguments[_key4];
+      }
+
+      return _AsyncStorage__WEBPACK_IMPORTED_MODULE_0__["default"].removeItem(key, ...args);
+    }
   };
 }
 //# sourceMappingURL=hooks.js.map
@@ -326,22 +222,18 @@ function useAsyncStorage(key) {
 /*!************************************************************************************!*\
   !*** ./node_modules/@react-native-async-storage/async-storage/lib/module/index.js ***!
   \************************************************************************************/
-/*! exports provided: default, useAsyncStorage */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   "useAsyncStorage": () => (/* reexport safe */ _hooks__WEBPACK_IMPORTED_MODULE_1__.useAsyncStorage)
+/* harmony export */ });
 /* harmony import */ var _AsyncStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AsyncStorage */ "./node_modules/@react-native-async-storage/async-storage/lib/module/AsyncStorage.js");
 /* harmony import */ var _hooks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./hooks */ "./node_modules/@react-native-async-storage/async-storage/lib/module/hooks.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useAsyncStorage", function() { return _hooks__WEBPACK_IMPORTED_MODULE_1__["useAsyncStorage"]; });
 
-/**
- * @format
- * 
- */
 
-/* harmony default export */ __webpack_exports__["default"] = (_AsyncStorage__WEBPACK_IMPORTED_MODULE_0__["default"]);
-
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_AsyncStorage__WEBPACK_IMPORTED_MODULE_0__["default"]);
 //# sourceMappingURL=index.js.map
 
 /***/ }),
@@ -350,10 +242,8 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************************!*\
   !*** ./node_modules/is-plain-obj/index.js ***!
   \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
-"use strict";
 
 
 module.exports = value => {
@@ -372,10 +262,8 @@ module.exports = value => {
 /*!*********************************************!*\
   !*** ./node_modules/merge-options/index.js ***!
   \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-"use strict";
 
 const isOptionObject = __webpack_require__(/*! is-plain-obj */ "./node_modules/is-plain-obj/index.js");
 
@@ -551,19 +439,32 @@ module.exports = function (...options) {
 
 /***/ }),
 
+/***/ "./exports/Core/AsyncStorage.ts":
+/*!**************************************!*\
+  !*** ./exports/Core/AsyncStorage.ts ***!
+  \**************************************/
+/***/ ((module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+var AsyncStorage_1 = __webpack_require__(/*! ../../src/Core/Storage/AsyncStorage */ "./src/Core/Storage/AsyncStorage.ts");
+module.exports = AsyncStorage_1.AsyncStorage;
+
+
+/***/ }),
+
 /***/ "./src/Core/Storage/AsyncStorage.ts":
 /*!******************************************!*\
   !*** ./src/Core/Storage/AsyncStorage.ts ***!
   \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-"use strict";
 
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-Object.defineProperty(exports, "__esModule", { value: true });
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.AsyncStorage = void 0;
 var LocalStorage_1 = __webpack_require__(/*! ./LocalStorage */ "./src/Core/Storage/LocalStorage.ts");
 var async_storage_1 = __importDefault(__webpack_require__(/*! @react-native-async-storage/async-storage */ "./node_modules/@react-native-async-storage/async-storage/lib/module/index.js"));
 var AsyncStorage = /** @class */ (function () {
@@ -652,12 +553,11 @@ exports.AsyncStorage = AsyncStorage;
 /*!******************************************!*\
   !*** ./src/Core/Storage/LocalStorage.ts ***!
   \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-"use strict";
 
-Object.defineProperty(exports, "__esModule", { value: true });
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.LocalStorage = void 0;
 var StorageApi_1 = __webpack_require__(/*! ./StorageApi */ "./src/Core/Storage/StorageApi.ts");
 var LocalStorage = /** @class */ (function () {
     function LocalStorage() {
@@ -685,12 +585,11 @@ exports.LocalStorage = LocalStorage;
 /*!****************************************!*\
   !*** ./src/Core/Storage/StorageApi.ts ***!
   \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((__unused_webpack_module, exports) => {
 
-"use strict";
 
-Object.defineProperty(exports, "__esModule", { value: true });
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.StorageApi = void 0;
 var StorageApi = /** @class */ (function () {
     function StorageApi() {
     }
@@ -731,7 +630,94 @@ var StorageApi = /** @class */ (function () {
 exports.StorageApi = StorageApi;
 
 
+/***/ }),
+
+/***/ "./node_modules/merge-options/index.mjs":
+/*!**********************************************!*\
+  !*** ./node_modules/merge-options/index.mjs ***!
+  \**********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.js */ "./node_modules/merge-options/index.js");
+/**
+ * Thin ESM wrapper for CJS named exports.
+ *
+ * Ref: https://redfin.engineering/node-modules-at-war-why-commonjs-and-es-modules-cant-get-along-9617135eeca1
+ */
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_index_js__WEBPACK_IMPORTED_MODULE_0__);
+
+
 /***/ })
 
-/******/ });
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	var __webpack_exports__ = __webpack_require__("./exports/Core/AsyncStorage.ts");
+/******/ 	AsyncStorage = __webpack_exports__;
+/******/ 	
+/******/ })()
+;
 //# sourceMappingURL=AsyncStorage.map

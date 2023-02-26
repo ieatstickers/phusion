@@ -1,117 +1,15 @@
-exports["ConfigTask"] =
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// define __esModule on exports
-/******/ 	__webpack_require__.r = function(exports) {
-/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 		}
-/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 	};
-/******/
-/******/ 	// create a fake namespace object
-/******/ 	// mode & 1: value is a module id, require it
-/******/ 	// mode & 2: merge all properties of value into the ns
-/******/ 	// mode & 4: return value when already ns object
-/******/ 	// mode & 8|1: behave like require
-/******/ 	__webpack_require__.t = function(value, mode) {
-/******/ 		if(mode & 1) value = __webpack_require__(value);
-/******/ 		if(mode & 8) return value;
-/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
-/******/ 		var ns = Object.create(null);
-/******/ 		__webpack_require__.r(ns);
-/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
-/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
-/******/ 		return ns;
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./exports/Task/ConfigTask.ts");
-/******/ })
-/************************************************************************/
-/******/ ({
-
-/***/ "./exports/Task/ConfigTask.ts":
-/*!************************************!*\
-  !*** ./exports/Task/ConfigTask.ts ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var ConfigTask_1 = __webpack_require__(/*! ../../src/Task/ConfigTask */ "./src/Task/ConfigTask.ts");
-module.exports = ConfigTask_1.ConfigTask;
-
-
-/***/ }),
+/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
 
 /***/ "./node_modules/ansi-styles/index.js":
 /*!*******************************************!*\
   !*** ./node_modules/ansi-styles/index.js ***!
   \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(module) {
+/* module decorator */ module = __webpack_require__.nmd(module);
+
 const colorConvert = __webpack_require__(/*! color-convert */ "./node_modules/color-convert/index.js");
 
 const wrapAnsi16 = (fn, offset) => function () {
@@ -277,7 +175,6 @@ Object.defineProperty(module, 'exports', {
 	get: assembleStyles
 });
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
 
 /***/ }),
 
@@ -285,8 +182,7 @@ Object.defineProperty(module, 'exports', {
 /*!**********************************************!*\
   !*** ./node_modules/balanced-match/index.js ***!
   \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
 "use strict";
 
@@ -359,8 +255,7 @@ function range(a, b, str) {
 /*!***********************************************!*\
   !*** ./node_modules/brace-expansion/index.js ***!
   \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var concatMap = __webpack_require__(/*! concat-map */ "./node_modules/concat-map/index.js");
 var balanced = __webpack_require__(/*! balanced-match */ "./node_modules/balanced-match/index.js");
@@ -571,14 +466,13 @@ function expand(str, isTop) {
 /*!*************************************!*\
   !*** ./node_modules/chalk/index.js ***!
   \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
 const escapeStringRegexp = __webpack_require__(/*! escape-string-regexp */ "./node_modules/escape-string-regexp/index.js");
 const ansiStyles = __webpack_require__(/*! ansi-styles */ "./node_modules/ansi-styles/index.js");
-const stdoutColor = __webpack_require__(/*! supports-color */ "./node_modules/supports-color/index.js").stdout;
+const stdoutColor = (__webpack_require__(/*! supports-color */ "./node_modules/supports-color/index.js").stdout);
 
 const template = __webpack_require__(/*! ./templates.js */ "./node_modules/chalk/templates.js");
 
@@ -802,7 +696,7 @@ Object.defineProperties(Chalk.prototype, styles);
 
 module.exports = Chalk(); // eslint-disable-line new-cap
 module.exports.supportsColor = stdoutColor;
-module.exports.default = module.exports; // For TypeScript
+module.exports["default"] = module.exports; // For TypeScript
 
 
 /***/ }),
@@ -811,8 +705,7 @@ module.exports.default = module.exports; // For TypeScript
 /*!*****************************************!*\
   !*** ./node_modules/chalk/templates.js ***!
   \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
 "use strict";
 
@@ -951,8 +844,7 @@ module.exports = (chalk, tmp) => {
 /*!***************************************************!*\
   !*** ./node_modules/color-convert/conversions.js ***!
   \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 /* MIT license */
 var cssKeywords = __webpack_require__(/*! color-name */ "./node_modules/color-name/index.js");
@@ -1830,8 +1722,7 @@ convert.rgb.gray = function (rgb) {
 /*!*********************************************!*\
   !*** ./node_modules/color-convert/index.js ***!
   \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var conversions = __webpack_require__(/*! ./conversions */ "./node_modules/color-convert/conversions.js");
 var route = __webpack_require__(/*! ./route */ "./node_modules/color-convert/route.js");
@@ -1919,8 +1810,7 @@ module.exports = convert;
 /*!*********************************************!*\
   !*** ./node_modules/color-convert/route.js ***!
   \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var conversions = __webpack_require__(/*! ./conversions */ "./node_modules/color-convert/conversions.js");
 
@@ -2027,8 +1917,7 @@ module.exports = function (fromModel) {
 /*!******************************************!*\
   !*** ./node_modules/color-name/index.js ***!
   \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
 "use strict";
 
@@ -2191,8 +2080,7 @@ module.exports = {
 /*!******************************************!*\
   !*** ./node_modules/concat-map/index.js ***!
   \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 module.exports = function (xs, fn) {
     var res = [];
@@ -2215,8 +2103,7 @@ var isArray = Array.isArray || function (xs) {
 /*!****************************************************!*\
   !*** ./node_modules/escape-string-regexp/index.js ***!
   \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
 "use strict";
 
@@ -2238,8 +2125,7 @@ module.exports = function (str) {
 /*!*******************************************!*\
   !*** ./node_modules/fs.realpath/index.js ***!
   \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = realpath
 realpath.realpath = realpath
@@ -2315,8 +2201,7 @@ function unmonkeypatch () {
 /*!*****************************************!*\
   !*** ./node_modules/fs.realpath/old.js ***!
   \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -2629,8 +2514,7 @@ exports.realpath = function realpath(p, cache, cb) {
 /*!*************************************!*\
   !*** ./node_modules/glob/common.js ***!
   \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 exports.setopts = setopts
 exports.ownProp = ownProp
@@ -2744,6 +2628,8 @@ function setopts (self, pattern, options) {
   // Note that they are not supported in Glob itself anyway.
   options.nonegate = true
   options.nocomment = true
+  // always treat \ in patterns as escapes, not path separators
+  options.allowWindowsEscape = false
 
   self.minimatch = new Minimatch(pattern, options)
   self.options = self.minimatch.options
@@ -2876,8 +2762,7 @@ function childrenIgnored (self, path) {
 /*!***********************************!*\
   !*** ./node_modules/glob/glob.js ***!
   \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 // Approach:
 //
@@ -2925,7 +2810,7 @@ var rp = __webpack_require__(/*! fs.realpath */ "./node_modules/fs.realpath/inde
 var minimatch = __webpack_require__(/*! minimatch */ "./node_modules/minimatch/minimatch.js")
 var Minimatch = minimatch.Minimatch
 var inherits = __webpack_require__(/*! inherits */ "./node_modules/inherits/inherits.js")
-var EE = __webpack_require__(/*! events */ "events").EventEmitter
+var EE = (__webpack_require__(/*! events */ "events").EventEmitter)
 var path = __webpack_require__(/*! path */ "path")
 var assert = __webpack_require__(/*! assert */ "assert")
 var isAbsolute = __webpack_require__(/*! path-is-absolute */ "./node_modules/path-is-absolute/index.js")
@@ -3223,7 +3108,10 @@ Glob.prototype._process = function (pattern, index, inGlobStar, cb) {
   var read
   if (prefix === null)
     read = '.'
-  else if (isAbsolute(prefix) || isAbsolute(pattern.join('/'))) {
+  else if (isAbsolute(prefix) ||
+      isAbsolute(pattern.map(function (p) {
+        return typeof p === 'string' ? p : '[*]'
+      }).join('/'))) {
     if (!prefix || !isAbsolute(prefix))
       prefix = '/' + prefix
     read = prefix
@@ -3674,8 +3562,7 @@ Glob.prototype._stat2 = function (f, abs, er, stat, cb) {
 /*!***********************************!*\
   !*** ./node_modules/glob/sync.js ***!
   \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = globSync
 globSync.GlobSync = GlobSync
@@ -3683,7 +3570,7 @@ globSync.GlobSync = GlobSync
 var rp = __webpack_require__(/*! fs.realpath */ "./node_modules/fs.realpath/index.js")
 var minimatch = __webpack_require__(/*! minimatch */ "./node_modules/minimatch/minimatch.js")
 var Minimatch = minimatch.Minimatch
-var Glob = __webpack_require__(/*! ./glob.js */ "./node_modules/glob/glob.js").Glob
+var Glob = (__webpack_require__(/*! ./glob.js */ "./node_modules/glob/glob.js").Glob)
 var util = __webpack_require__(/*! util */ "util")
 var path = __webpack_require__(/*! path */ "path")
 var assert = __webpack_require__(/*! assert */ "assert")
@@ -3727,7 +3614,7 @@ function GlobSync (pattern, options) {
 }
 
 GlobSync.prototype._finish = function () {
-  assert(this instanceof GlobSync)
+  assert.ok(this instanceof GlobSync)
   if (this.realpath) {
     var self = this
     this.matches.forEach(function (matchset, index) {
@@ -3751,7 +3638,7 @@ GlobSync.prototype._finish = function () {
 
 
 GlobSync.prototype._process = function (pattern, index, inGlobStar) {
-  assert(this instanceof GlobSync)
+  assert.ok(this instanceof GlobSync)
 
   // Get the first [n] parts of pattern that are all strings.
   var n = 0
@@ -3788,7 +3675,10 @@ GlobSync.prototype._process = function (pattern, index, inGlobStar) {
   var read
   if (prefix === null)
     read = '.'
-  else if (isAbsolute(prefix) || isAbsolute(pattern.join('/'))) {
+  else if (isAbsolute(prefix) ||
+      isAbsolute(pattern.map(function (p) {
+        return typeof p === 'string' ? p : '[*]'
+      }).join('/'))) {
     if (!prefix || !isAbsolute(prefix))
       prefix = '/' + prefix
     read = prefix
@@ -4168,8 +4058,7 @@ GlobSync.prototype._makeAbs = function (f) {
 /*!****************************************!*\
   !*** ./node_modules/has-flag/index.js ***!
   \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
 "use strict";
 
@@ -4188,8 +4077,7 @@ module.exports = (flag, argv) => {
 /*!*******************************************!*\
   !*** ./node_modules/inflight/inflight.js ***!
   \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var wrappy = __webpack_require__(/*! wrappy */ "./node_modules/wrappy/wrappy.js")
 var reqs = Object.create(null)
@@ -4253,8 +4141,7 @@ function slice (args) {
 /*!*******************************************!*\
   !*** ./node_modules/inherits/inherits.js ***!
   \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 try {
   var util = __webpack_require__(/*! util */ "util");
@@ -4273,8 +4160,7 @@ try {
 /*!***************************************************!*\
   !*** ./node_modules/inherits/inherits_browser.js ***!
   \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
@@ -4311,16 +4197,15 @@ if (typeof Object.create === 'function') {
 /*!*********************************************!*\
   !*** ./node_modules/minimatch/minimatch.js ***!
   \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = minimatch
 minimatch.Minimatch = Minimatch
 
-var path = { sep: '/' }
-try {
-  path = __webpack_require__(/*! path */ "path")
-} catch (er) {}
+var path = (function () { try { return __webpack_require__(/*! path */ "path") } catch (e) {}}()) || {
+  sep: '/'
+}
+minimatch.sep = path.sep
 
 var GLOBSTAR = minimatch.GLOBSTAR = Minimatch.GLOBSTAR = {}
 var expand = __webpack_require__(/*! brace-expansion */ "./node_modules/brace-expansion/index.js")
@@ -4372,43 +4257,64 @@ function filter (pattern, options) {
 }
 
 function ext (a, b) {
-  a = a || {}
   b = b || {}
   var t = {}
-  Object.keys(b).forEach(function (k) {
-    t[k] = b[k]
-  })
   Object.keys(a).forEach(function (k) {
     t[k] = a[k]
+  })
+  Object.keys(b).forEach(function (k) {
+    t[k] = b[k]
   })
   return t
 }
 
 minimatch.defaults = function (def) {
-  if (!def || !Object.keys(def).length) return minimatch
+  if (!def || typeof def !== 'object' || !Object.keys(def).length) {
+    return minimatch
+  }
 
   var orig = minimatch
 
   var m = function minimatch (p, pattern, options) {
-    return orig.minimatch(p, pattern, ext(def, options))
+    return orig(p, pattern, ext(def, options))
   }
 
   m.Minimatch = function Minimatch (pattern, options) {
     return new orig.Minimatch(pattern, ext(def, options))
+  }
+  m.Minimatch.defaults = function defaults (options) {
+    return orig.defaults(ext(def, options)).Minimatch
+  }
+
+  m.filter = function filter (pattern, options) {
+    return orig.filter(pattern, ext(def, options))
+  }
+
+  m.defaults = function defaults (options) {
+    return orig.defaults(ext(def, options))
+  }
+
+  m.makeRe = function makeRe (pattern, options) {
+    return orig.makeRe(pattern, ext(def, options))
+  }
+
+  m.braceExpand = function braceExpand (pattern, options) {
+    return orig.braceExpand(pattern, ext(def, options))
+  }
+
+  m.match = function (list, pattern, options) {
+    return orig.match(list, pattern, ext(def, options))
   }
 
   return m
 }
 
 Minimatch.defaults = function (def) {
-  if (!def || !Object.keys(def).length) return Minimatch
   return minimatch.defaults(def).Minimatch
 }
 
 function minimatch (p, pattern, options) {
-  if (typeof pattern !== 'string') {
-    throw new TypeError('glob pattern string required')
-  }
+  assertValidPattern(pattern)
 
   if (!options) options = {}
 
@@ -4416,9 +4322,6 @@ function minimatch (p, pattern, options) {
   if (!options.nocomment && pattern.charAt(0) === '#') {
     return false
   }
-
-  // "" only matches ""
-  if (pattern.trim() === '') return p === ''
 
   return new Minimatch(pattern, options).match(p)
 }
@@ -4428,15 +4331,14 @@ function Minimatch (pattern, options) {
     return new Minimatch(pattern, options)
   }
 
-  if (typeof pattern !== 'string') {
-    throw new TypeError('glob pattern string required')
-  }
+  assertValidPattern(pattern)
 
   if (!options) options = {}
+
   pattern = pattern.trim()
 
   // windows support: need to use /, not \
-  if (path.sep !== '/') {
+  if (!options.allowWindowsEscape && path.sep !== '/') {
     pattern = pattern.split(path.sep).join('/')
   }
 
@@ -4447,6 +4349,7 @@ function Minimatch (pattern, options) {
   this.negate = false
   this.comment = false
   this.empty = false
+  this.partial = !!options.partial
 
   // make the set of regexps etc.
   this.make()
@@ -4456,9 +4359,6 @@ Minimatch.prototype.debug = function () {}
 
 Minimatch.prototype.make = make
 function make () {
-  // don't do it more than once.
-  if (this._made) return
-
   var pattern = this.pattern
   var options = this.options
 
@@ -4478,7 +4378,7 @@ function make () {
   // step 2: expand braces
   var set = this.globSet = this.braceExpand()
 
-  if (options.debug) this.debug = console.error
+  if (options.debug) this.debug = function debug() { console.error.apply(console, arguments) }
 
   this.debug(this.pattern, set)
 
@@ -4558,17 +4458,27 @@ function braceExpand (pattern, options) {
   pattern = typeof pattern === 'undefined'
     ? this.pattern : pattern
 
-  if (typeof pattern === 'undefined') {
-    throw new TypeError('undefined pattern')
-  }
+  assertValidPattern(pattern)
 
-  if (options.nobrace ||
-    !pattern.match(/\{.*\}/)) {
+  // Thanks to Yeting Li <https://github.com/yetingli> for
+  // improving this regexp to avoid a ReDOS vulnerability.
+  if (options.nobrace || !/\{(?:(?!\{).)*\}/.test(pattern)) {
     // shortcut. no need to expand.
     return [pattern]
   }
 
   return expand(pattern)
+}
+
+var MAX_PATTERN_LENGTH = 1024 * 64
+var assertValidPattern = function (pattern) {
+  if (typeof pattern !== 'string') {
+    throw new TypeError('invalid pattern')
+  }
+
+  if (pattern.length > MAX_PATTERN_LENGTH) {
+    throw new TypeError('pattern is too long')
+  }
 }
 
 // parse a component of the expanded set.
@@ -4585,14 +4495,17 @@ function braceExpand (pattern, options) {
 Minimatch.prototype.parse = parse
 var SUBPARSE = {}
 function parse (pattern, isSub) {
-  if (pattern.length > 1024 * 64) {
-    throw new TypeError('pattern is too long')
-  }
+  assertValidPattern(pattern)
 
   var options = this.options
 
   // shortcuts
-  if (!options.noglobstar && pattern === '**') return GLOBSTAR
+  if (pattern === '**') {
+    if (!options.noglobstar)
+      return GLOBSTAR
+    else
+      pattern = '*'
+  }
   if (pattern === '') return ''
 
   var re = ''
@@ -4648,10 +4561,12 @@ function parse (pattern, isSub) {
     }
 
     switch (c) {
-      case '/':
+      /* istanbul ignore next */
+      case '/': {
         // completely not allowed, even escaped.
         // Should already be path-split by now.
         return false
+      }
 
       case '\\':
         clearStateChar()
@@ -4770,25 +4685,23 @@ function parse (pattern, isSub) {
 
         // handle the case where we left a class open.
         // "[z-a]" is valid, equivalent to "\[z-a\]"
-        if (inClass) {
-          // split where the last [ was, make sure we don't have
-          // an invalid re. if so, re-walk the contents of the
-          // would-be class to re-translate any characters that
-          // were passed through as-is
-          // TODO: It would probably be faster to determine this
-          // without a try/catch and a new RegExp, but it's tricky
-          // to do safely.  For now, this is safe and works.
-          var cs = pattern.substring(classStart + 1, i)
-          try {
-            RegExp('[' + cs + ']')
-          } catch (er) {
-            // not a valid class!
-            var sp = this.parse(cs, SUBPARSE)
-            re = re.substr(0, reClassStart) + '\\[' + sp[0] + '\\]'
-            hasMagic = hasMagic || sp[1]
-            inClass = false
-            continue
-          }
+        // split where the last [ was, make sure we don't have
+        // an invalid re. if so, re-walk the contents of the
+        // would-be class to re-translate any characters that
+        // were passed through as-is
+        // TODO: It would probably be faster to determine this
+        // without a try/catch and a new RegExp, but it's tricky
+        // to do safely.  For now, this is safe and works.
+        var cs = pattern.substring(classStart + 1, i)
+        try {
+          RegExp('[' + cs + ']')
+        } catch (er) {
+          // not a valid class!
+          var sp = this.parse(cs, SUBPARSE)
+          re = re.substr(0, reClassStart) + '\\[' + sp[0] + '\\]'
+          hasMagic = hasMagic || sp[1]
+          inClass = false
+          continue
         }
 
         // finish up the class.
@@ -4872,9 +4785,7 @@ function parse (pattern, isSub) {
   // something that could conceivably capture a dot
   var addPatternStart = false
   switch (re.charAt(0)) {
-    case '.':
-    case '[':
-    case '(': addPatternStart = true
+    case '[': case '.': case '(': addPatternStart = true
   }
 
   // Hack to work around lack of negative lookbehind in JS
@@ -4936,7 +4847,7 @@ function parse (pattern, isSub) {
   var flags = options.nocase ? 'i' : ''
   try {
     var regExp = new RegExp('^' + re + '$', flags)
-  } catch (er) {
+  } catch (er) /* istanbul ignore next - should be impossible */ {
     // If it was an invalid regular expression, then it can't match
     // anything.  This trick looks for a character after the end of
     // the string, which is of course impossible, except in multi-line
@@ -4994,7 +4905,7 @@ function makeRe () {
 
   try {
     this.regexp = new RegExp(re, flags)
-  } catch (ex) {
+  } catch (ex) /* istanbul ignore next - should be impossible */ {
     this.regexp = false
   }
   return this.regexp
@@ -5012,8 +4923,8 @@ minimatch.match = function (list, pattern, options) {
   return list
 }
 
-Minimatch.prototype.match = match
-function match (f, partial) {
+Minimatch.prototype.match = function match (f, partial) {
+  if (typeof partial === 'undefined') partial = this.partial
   this.debug('match', f, this.pattern)
   // short-circuit in the case of busted things.
   // comments, etc.
@@ -5095,6 +5006,7 @@ Minimatch.prototype.matchOne = function (file, pattern, partial) {
 
     // should be impossible.
     // some invalid regexp stuff in the set.
+    /* istanbul ignore if */
     if (p === false) return false
 
     if (p === GLOBSTAR) {
@@ -5168,6 +5080,7 @@ Minimatch.prototype.matchOne = function (file, pattern, partial) {
       // no match was found.
       // However, in partial mode, we can't say this is necessarily over.
       // If there's more *pattern* left, then
+      /* istanbul ignore if */
       if (partial) {
         // ran out of file
         this.debug('\n>>> no match, partial?', file, fr, pattern, pr)
@@ -5181,11 +5094,7 @@ Minimatch.prototype.matchOne = function (file, pattern, partial) {
     // patterns with magic have been turned into regexps.
     var hit
     if (typeof p === 'string') {
-      if (options.nocase) {
-        hit = f.toLowerCase() === p.toLowerCase()
-      } else {
-        hit = f === p
-      }
+      hit = f === p
       this.debug('string match', p, f, hit)
     } else {
       hit = f.match(p)
@@ -5216,16 +5125,16 @@ Minimatch.prototype.matchOne = function (file, pattern, partial) {
     // this is ok if we're doing the match as part of
     // a glob fs traversal.
     return partial
-  } else if (pi === pl) {
+  } else /* istanbul ignore else */ if (pi === pl) {
     // ran out of pattern, still have file left.
     // this is only acceptable if we're on the very last
     // empty segment of a file with a trailing slash.
     // a/* should match a/b/
-    var emptyFileEnd = (fi === fl - 1) && (file[fi] === '')
-    return emptyFileEnd
+    return (fi === fl - 1) && (file[fi] === '')
   }
 
   // should be unreachable.
+  /* istanbul ignore next */
   throw new Error('wtf?')
 }
 
@@ -5245,8 +5154,7 @@ function regExpEscape (s) {
 /*!***********************************!*\
   !*** ./node_modules/once/once.js ***!
   \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var wrappy = __webpack_require__(/*! wrappy */ "./node_modules/wrappy/wrappy.js")
 module.exports = wrappy(once)
@@ -5298,8 +5206,7 @@ function onceStrict (fn) {
 /*!************************************************!*\
   !*** ./node_modules/path-is-absolute/index.js ***!
   \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
 "use strict";
 
@@ -5330,8 +5237,7 @@ module.exports.win32 = win32;
 /*!******************************************!*\
   !*** ./node_modules/shelljs/commands.js ***!
   \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 module.exports = [
   'cat',
@@ -5370,8 +5276,7 @@ module.exports = [
 /*!***************************************!*\
   !*** ./node_modules/shelljs/shell.js ***!
   \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 //
 // ShellJS
@@ -5396,7 +5301,7 @@ var common = __webpack_require__(/*! ./src/common */ "./node_modules/shelljs/src
 //@commands
 
 // Load all default commands
-__webpack_require__(/*! ./commands */ "./node_modules/shelljs/commands.js").forEach(function (command) {
+(__webpack_require__(/*! ./commands */ "./node_modules/shelljs/commands.js").forEach)(function (command) {
   __webpack_require__("./node_modules/shelljs/src sync recursive ^\\.\\/.*$")("./" + command);
 });
 
@@ -5533,108 +5438,11 @@ exports.config = common.config;
 
 /***/ }),
 
-/***/ "./node_modules/shelljs/src sync recursive ^\\.\\/.*$":
-/*!************************************************!*\
-  !*** ./node_modules/shelljs/src sync ^\.\/.*$ ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var map = {
-	"./cat": "./node_modules/shelljs/src/cat.js",
-	"./cat.js": "./node_modules/shelljs/src/cat.js",
-	"./cd": "./node_modules/shelljs/src/cd.js",
-	"./cd.js": "./node_modules/shelljs/src/cd.js",
-	"./chmod": "./node_modules/shelljs/src/chmod.js",
-	"./chmod.js": "./node_modules/shelljs/src/chmod.js",
-	"./common": "./node_modules/shelljs/src/common.js",
-	"./common.js": "./node_modules/shelljs/src/common.js",
-	"./cp": "./node_modules/shelljs/src/cp.js",
-	"./cp.js": "./node_modules/shelljs/src/cp.js",
-	"./dirs": "./node_modules/shelljs/src/dirs.js",
-	"./dirs.js": "./node_modules/shelljs/src/dirs.js",
-	"./echo": "./node_modules/shelljs/src/echo.js",
-	"./echo.js": "./node_modules/shelljs/src/echo.js",
-	"./error": "./node_modules/shelljs/src/error.js",
-	"./error.js": "./node_modules/shelljs/src/error.js",
-	"./exec": "./node_modules/shelljs/src/exec.js",
-	"./exec-child": "./node_modules/shelljs/src/exec-child.js",
-	"./exec-child.js": "./node_modules/shelljs/src/exec-child.js",
-	"./exec.js": "./node_modules/shelljs/src/exec.js",
-	"./find": "./node_modules/shelljs/src/find.js",
-	"./find.js": "./node_modules/shelljs/src/find.js",
-	"./grep": "./node_modules/shelljs/src/grep.js",
-	"./grep.js": "./node_modules/shelljs/src/grep.js",
-	"./head": "./node_modules/shelljs/src/head.js",
-	"./head.js": "./node_modules/shelljs/src/head.js",
-	"./ln": "./node_modules/shelljs/src/ln.js",
-	"./ln.js": "./node_modules/shelljs/src/ln.js",
-	"./ls": "./node_modules/shelljs/src/ls.js",
-	"./ls.js": "./node_modules/shelljs/src/ls.js",
-	"./mkdir": "./node_modules/shelljs/src/mkdir.js",
-	"./mkdir.js": "./node_modules/shelljs/src/mkdir.js",
-	"./mv": "./node_modules/shelljs/src/mv.js",
-	"./mv.js": "./node_modules/shelljs/src/mv.js",
-	"./popd": "./node_modules/shelljs/src/popd.js",
-	"./popd.js": "./node_modules/shelljs/src/popd.js",
-	"./pushd": "./node_modules/shelljs/src/pushd.js",
-	"./pushd.js": "./node_modules/shelljs/src/pushd.js",
-	"./pwd": "./node_modules/shelljs/src/pwd.js",
-	"./pwd.js": "./node_modules/shelljs/src/pwd.js",
-	"./rm": "./node_modules/shelljs/src/rm.js",
-	"./rm.js": "./node_modules/shelljs/src/rm.js",
-	"./sed": "./node_modules/shelljs/src/sed.js",
-	"./sed.js": "./node_modules/shelljs/src/sed.js",
-	"./set": "./node_modules/shelljs/src/set.js",
-	"./set.js": "./node_modules/shelljs/src/set.js",
-	"./sort": "./node_modules/shelljs/src/sort.js",
-	"./sort.js": "./node_modules/shelljs/src/sort.js",
-	"./tail": "./node_modules/shelljs/src/tail.js",
-	"./tail.js": "./node_modules/shelljs/src/tail.js",
-	"./tempdir": "./node_modules/shelljs/src/tempdir.js",
-	"./tempdir.js": "./node_modules/shelljs/src/tempdir.js",
-	"./test": "./node_modules/shelljs/src/test.js",
-	"./test.js": "./node_modules/shelljs/src/test.js",
-	"./to": "./node_modules/shelljs/src/to.js",
-	"./to.js": "./node_modules/shelljs/src/to.js",
-	"./toEnd": "./node_modules/shelljs/src/toEnd.js",
-	"./toEnd.js": "./node_modules/shelljs/src/toEnd.js",
-	"./touch": "./node_modules/shelljs/src/touch.js",
-	"./touch.js": "./node_modules/shelljs/src/touch.js",
-	"./uniq": "./node_modules/shelljs/src/uniq.js",
-	"./uniq.js": "./node_modules/shelljs/src/uniq.js",
-	"./which": "./node_modules/shelljs/src/which.js",
-	"./which.js": "./node_modules/shelljs/src/which.js"
-};
-
-
-function webpackContext(req) {
-	var id = webpackContextResolve(req);
-	return __webpack_require__(id);
-}
-function webpackContextResolve(req) {
-	if(!__webpack_require__.o(map, req)) {
-		var e = new Error("Cannot find module '" + req + "'");
-		e.code = 'MODULE_NOT_FOUND';
-		throw e;
-	}
-	return map[req];
-}
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = "./node_modules/shelljs/src sync recursive ^\\.\\/.*$";
-
-/***/ }),
-
 /***/ "./node_modules/shelljs/src/cat.js":
 /*!*****************************************!*\
   !*** ./node_modules/shelljs/src/cat.js ***!
   \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var common = __webpack_require__(/*! ./common */ "./node_modules/shelljs/src/common.js");
 var fs = __webpack_require__(/*! fs */ "fs");
@@ -5720,8 +5528,7 @@ function numberedLine(n, line) {
 /*!****************************************!*\
   !*** ./node_modules/shelljs/src/cd.js ***!
   \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var os = __webpack_require__(/*! os */ "os");
 var common = __webpack_require__(/*! ./common */ "./node_modules/shelljs/src/common.js");
@@ -5770,8 +5577,7 @@ module.exports = _cd;
 /*!*******************************************!*\
   !*** ./node_modules/shelljs/src/chmod.js ***!
   \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var common = __webpack_require__(/*! ./common */ "./node_modules/shelljs/src/common.js");
 var fs = __webpack_require__(/*! fs */ "fs");
@@ -5997,8 +5803,7 @@ module.exports = _chmod;
 /*!********************************************!*\
   !*** ./node_modules/shelljs/src/common.js ***!
   \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 // Ignore warning about 'new String()'
@@ -6477,8 +6282,7 @@ exports.register = _register;
 /*!****************************************!*\
   !*** ./node_modules/shelljs/src/cp.js ***!
   \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var fs = __webpack_require__(/*! fs */ "fs");
 var path = __webpack_require__(/*! path */ "path");
@@ -6792,8 +6596,7 @@ module.exports = _cp;
 /*!******************************************!*\
   !*** ./node_modules/shelljs/src/dirs.js ***!
   \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 var common = __webpack_require__(/*! ./common */ "./node_modules/shelljs/src/common.js");
 var _cd = __webpack_require__(/*! ./cd */ "./node_modules/shelljs/src/cd.js");
@@ -7015,10 +6818,9 @@ exports.dirs = _dirs;
 /*!******************************************!*\
   !*** ./node_modules/shelljs/src/echo.js ***!
   \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var format = __webpack_require__(/*! util */ "util").format;
+var format = (__webpack_require__(/*! util */ "util").format);
 
 var common = __webpack_require__(/*! ./common */ "./node_modules/shelljs/src/common.js");
 
@@ -7089,8 +6891,7 @@ module.exports = _echo;
 /*!*******************************************!*\
   !*** ./node_modules/shelljs/src/error.js ***!
   \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var common = __webpack_require__(/*! ./common */ "./node_modules/shelljs/src/common.js");
 
@@ -7115,10 +6916,10 @@ module.exports = error;
 /*!************************************************!*\
   !*** ./node_modules/shelljs/src/exec-child.js ***!
   \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-/* WEBPACK VAR INJECTION */(function(module) {if (__webpack_require__.c[__webpack_require__.s] !== module) {
+/* module decorator */ module = __webpack_require__.nmd(module);
+if (__webpack_require__.c[__webpack_require__.s] !== module) {
   throw new Error('This file should not be required');
 }
 
@@ -7158,7 +6959,6 @@ if (pipe) {
   c.stdin.end(pipe);
 }
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
 
 /***/ }),
 
@@ -7166,11 +6966,10 @@ if (pipe) {
 /*!******************************************!*\
   !*** ./node_modules/shelljs/src/exec.js ***!
   \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-/* WEBPACK VAR INJECTION */(function(__dirname) {var common = __webpack_require__(/*! ./common */ "./node_modules/shelljs/src/common.js");
-var _tempDir = __webpack_require__(/*! ./tempdir */ "./node_modules/shelljs/src/tempdir.js").tempDir;
+var common = __webpack_require__(/*! ./common */ "./node_modules/shelljs/src/common.js");
+var _tempDir = (__webpack_require__(/*! ./tempdir */ "./node_modules/shelljs/src/tempdir.js").tempDir);
 var _pwd = __webpack_require__(/*! ./pwd */ "./node_modules/shelljs/src/pwd.js");
 var path = __webpack_require__(/*! path */ "path");
 var fs = __webpack_require__(/*! fs */ "fs");
@@ -7219,7 +7018,24 @@ function execSync(cmd, opts, pipe) {
     stderrFile: stderrFile,
   };
 
-  fs.writeFileSync(paramsFile, JSON.stringify(paramsToSerialize), 'utf8');
+  // Create the files and ensure these are locked down (for read and write) to
+  // the current user. The main concerns here are:
+  //
+  // * If we execute a command which prints sensitive output, then
+  //   stdoutFile/stderrFile must not be readable by other users.
+  // * paramsFile must not be readable by other users, or else they can read it
+  //   to figure out the path for stdoutFile/stderrFile and create these first
+  //   (locked down to their own access), which will crash exec() when it tries
+  //   to write to the files.
+  function writeFileLockedDown(filePath, data) {
+    fs.writeFileSync(filePath, data, {
+      encoding: 'utf8',
+      mode: parseInt('600', 8),
+    });
+  }
+  writeFileLockedDown(stdoutFile, '');
+  writeFileLockedDown(stderrFile, '');
+  writeFileLockedDown(paramsFile, JSON.stringify(paramsToSerialize));
 
   var execArgs = [
     path.join(__dirname, 'exec-child.js'),
@@ -7262,6 +7078,7 @@ function execSync(cmd, opts, pipe) {
   }
 
   // No biggie if we can't erase the files now -- they're in a temp dir anyway
+  // and we locked down permissions (see the note above).
   try { common.unlinkSync(paramsFile); } catch (e) {}
   try { common.unlinkSync(stderrFile); } catch (e) {}
   try { common.unlinkSync(stdoutFile); } catch (e) {}
@@ -7378,7 +7195,6 @@ function _exec(command, options, callback) {
 }
 module.exports = _exec;
 
-/* WEBPACK VAR INJECTION */}.call(this, "/"))
 
 /***/ }),
 
@@ -7386,8 +7202,7 @@ module.exports = _exec;
 /*!******************************************!*\
   !*** ./node_modules/shelljs/src/find.js ***!
   \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var path = __webpack_require__(/*! path */ "path");
 var common = __webpack_require__(/*! ./common */ "./node_modules/shelljs/src/common.js");
@@ -7458,8 +7273,7 @@ module.exports = _find;
 /*!******************************************!*\
   !*** ./node_modules/shelljs/src/grep.js ***!
   \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var common = __webpack_require__(/*! ./common */ "./node_modules/shelljs/src/common.js");
 var fs = __webpack_require__(/*! fs */ "fs");
@@ -7542,8 +7356,7 @@ module.exports = _grep;
 /*!******************************************!*\
   !*** ./node_modules/shelljs/src/head.js ***!
   \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var common = __webpack_require__(/*! ./common */ "./node_modules/shelljs/src/common.js");
 var fs = __webpack_require__(/*! fs */ "fs");
@@ -7660,8 +7473,7 @@ module.exports = _head;
 /*!****************************************!*\
   !*** ./node_modules/shelljs/src/ln.js ***!
   \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var fs = __webpack_require__(/*! fs */ "fs");
 var path = __webpack_require__(/*! path */ "path");
@@ -7744,8 +7556,7 @@ module.exports = _ln;
 /*!****************************************!*\
   !*** ./node_modules/shelljs/src/ls.js ***!
   \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var path = __webpack_require__(/*! path */ "path");
 var fs = __webpack_require__(/*! fs */ "fs");
@@ -7896,8 +7707,7 @@ module.exports = _ls;
 /*!*******************************************!*\
   !*** ./node_modules/shelljs/src/mkdir.js ***!
   \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var common = __webpack_require__(/*! ./common */ "./node_modules/shelljs/src/common.js");
 var fs = __webpack_require__(/*! fs */ "fs");
@@ -8007,8 +7817,7 @@ module.exports = _mkdir;
 /*!****************************************!*\
   !*** ./node_modules/shelljs/src/mv.js ***!
   \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var fs = __webpack_require__(/*! fs */ "fs");
 var path = __webpack_require__(/*! path */ "path");
@@ -8136,8 +7945,7 @@ module.exports = _mv;
 /*!******************************************!*\
   !*** ./node_modules/shelljs/src/popd.js ***!
   \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (() => {
 
 // see dirs.js
 
@@ -8148,8 +7956,7 @@ module.exports = _mv;
 /*!*******************************************!*\
   !*** ./node_modules/shelljs/src/pushd.js ***!
   \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (() => {
 
 // see dirs.js
 
@@ -8160,8 +7967,7 @@ module.exports = _mv;
 /*!*****************************************!*\
   !*** ./node_modules/shelljs/src/pwd.js ***!
   \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var path = __webpack_require__(/*! path */ "path");
 var common = __webpack_require__(/*! ./common */ "./node_modules/shelljs/src/common.js");
@@ -8187,8 +7993,7 @@ module.exports = _pwd;
 /*!****************************************!*\
   !*** ./node_modules/shelljs/src/rm.js ***!
   \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var common = __webpack_require__(/*! ./common */ "./node_modules/shelljs/src/common.js");
 var fs = __webpack_require__(/*! fs */ "fs");
@@ -8399,8 +8204,7 @@ module.exports = _rm;
 /*!*****************************************!*\
   !*** ./node_modules/shelljs/src/sed.js ***!
   \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var common = __webpack_require__(/*! ./common */ "./node_modules/shelljs/src/common.js");
 var fs = __webpack_require__(/*! fs */ "fs");
@@ -8497,8 +8301,7 @@ module.exports = _sed;
 /*!*****************************************!*\
   !*** ./node_modules/shelljs/src/set.js ***!
   \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var common = __webpack_require__(/*! ./common */ "./node_modules/shelljs/src/common.js");
 
@@ -8564,8 +8367,7 @@ module.exports = _set;
 /*!******************************************!*\
   !*** ./node_modules/shelljs/src/sort.js ***!
   \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var common = __webpack_require__(/*! ./common */ "./node_modules/shelljs/src/common.js");
 var fs = __webpack_require__(/*! fs */ "fs");
@@ -8672,8 +8474,7 @@ module.exports = _sort;
 /*!******************************************!*\
   !*** ./node_modules/shelljs/src/tail.js ***!
   \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var common = __webpack_require__(/*! ./common */ "./node_modules/shelljs/src/common.js");
 var fs = __webpack_require__(/*! fs */ "fs");
@@ -8763,8 +8564,7 @@ module.exports = _tail;
 /*!*********************************************!*\
   !*** ./node_modules/shelljs/src/tempdir.js ***!
   \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var common = __webpack_require__(/*! ./common */ "./node_modules/shelljs/src/common.js");
 var os = __webpack_require__(/*! os */ "os");
@@ -8849,8 +8649,7 @@ module.exports.clearCache = clearCache;
 /*!******************************************!*\
   !*** ./node_modules/shelljs/src/test.js ***!
   \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var common = __webpack_require__(/*! ./common */ "./node_modules/shelljs/src/common.js");
 var fs = __webpack_require__(/*! fs */ "fs");
@@ -8945,8 +8744,7 @@ module.exports = _test;
 /*!****************************************!*\
   !*** ./node_modules/shelljs/src/to.js ***!
   \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var common = __webpack_require__(/*! ./common */ "./node_modules/shelljs/src/common.js");
 var fs = __webpack_require__(/*! fs */ "fs");
@@ -8993,8 +8791,7 @@ module.exports = _to;
 /*!*******************************************!*\
   !*** ./node_modules/shelljs/src/toEnd.js ***!
   \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var common = __webpack_require__(/*! ./common */ "./node_modules/shelljs/src/common.js");
 var fs = __webpack_require__(/*! fs */ "fs");
@@ -9040,8 +8837,7 @@ module.exports = _toEnd;
 /*!*******************************************!*\
   !*** ./node_modules/shelljs/src/touch.js ***!
   \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var common = __webpack_require__(/*! ./common */ "./node_modules/shelljs/src/common.js");
 var fs = __webpack_require__(/*! fs */ "fs");
@@ -9162,8 +8958,7 @@ function tryStatFile(filePath) {
 /*!******************************************!*\
   !*** ./node_modules/shelljs/src/uniq.js ***!
   \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var common = __webpack_require__(/*! ./common */ "./node_modules/shelljs/src/common.js");
 var fs = __webpack_require__(/*! fs */ "fs");
@@ -9265,8 +9060,7 @@ module.exports = _uniq;
 /*!*******************************************!*\
   !*** ./node_modules/shelljs/src/which.js ***!
   \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var common = __webpack_require__(/*! ./common */ "./node_modules/shelljs/src/common.js");
 var fs = __webpack_require__(/*! fs */ "fs");
@@ -9390,12 +9184,106 @@ module.exports = _which;
 
 /***/ }),
 
+/***/ "./node_modules/shelljs/src sync recursive ^\\.\\/.*$":
+/*!*************************************************!*\
+  !*** ./node_modules/shelljs/src/ sync ^\.\/.*$ ***!
+  \*************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var map = {
+	"./cat": "./node_modules/shelljs/src/cat.js",
+	"./cat.js": "./node_modules/shelljs/src/cat.js",
+	"./cd": "./node_modules/shelljs/src/cd.js",
+	"./cd.js": "./node_modules/shelljs/src/cd.js",
+	"./chmod": "./node_modules/shelljs/src/chmod.js",
+	"./chmod.js": "./node_modules/shelljs/src/chmod.js",
+	"./common": "./node_modules/shelljs/src/common.js",
+	"./common.js": "./node_modules/shelljs/src/common.js",
+	"./cp": "./node_modules/shelljs/src/cp.js",
+	"./cp.js": "./node_modules/shelljs/src/cp.js",
+	"./dirs": "./node_modules/shelljs/src/dirs.js",
+	"./dirs.js": "./node_modules/shelljs/src/dirs.js",
+	"./echo": "./node_modules/shelljs/src/echo.js",
+	"./echo.js": "./node_modules/shelljs/src/echo.js",
+	"./error": "./node_modules/shelljs/src/error.js",
+	"./error.js": "./node_modules/shelljs/src/error.js",
+	"./exec": "./node_modules/shelljs/src/exec.js",
+	"./exec-child": "./node_modules/shelljs/src/exec-child.js",
+	"./exec-child.js": "./node_modules/shelljs/src/exec-child.js",
+	"./exec.js": "./node_modules/shelljs/src/exec.js",
+	"./find": "./node_modules/shelljs/src/find.js",
+	"./find.js": "./node_modules/shelljs/src/find.js",
+	"./grep": "./node_modules/shelljs/src/grep.js",
+	"./grep.js": "./node_modules/shelljs/src/grep.js",
+	"./head": "./node_modules/shelljs/src/head.js",
+	"./head.js": "./node_modules/shelljs/src/head.js",
+	"./ln": "./node_modules/shelljs/src/ln.js",
+	"./ln.js": "./node_modules/shelljs/src/ln.js",
+	"./ls": "./node_modules/shelljs/src/ls.js",
+	"./ls.js": "./node_modules/shelljs/src/ls.js",
+	"./mkdir": "./node_modules/shelljs/src/mkdir.js",
+	"./mkdir.js": "./node_modules/shelljs/src/mkdir.js",
+	"./mv": "./node_modules/shelljs/src/mv.js",
+	"./mv.js": "./node_modules/shelljs/src/mv.js",
+	"./popd": "./node_modules/shelljs/src/popd.js",
+	"./popd.js": "./node_modules/shelljs/src/popd.js",
+	"./pushd": "./node_modules/shelljs/src/pushd.js",
+	"./pushd.js": "./node_modules/shelljs/src/pushd.js",
+	"./pwd": "./node_modules/shelljs/src/pwd.js",
+	"./pwd.js": "./node_modules/shelljs/src/pwd.js",
+	"./rm": "./node_modules/shelljs/src/rm.js",
+	"./rm.js": "./node_modules/shelljs/src/rm.js",
+	"./sed": "./node_modules/shelljs/src/sed.js",
+	"./sed.js": "./node_modules/shelljs/src/sed.js",
+	"./set": "./node_modules/shelljs/src/set.js",
+	"./set.js": "./node_modules/shelljs/src/set.js",
+	"./sort": "./node_modules/shelljs/src/sort.js",
+	"./sort.js": "./node_modules/shelljs/src/sort.js",
+	"./tail": "./node_modules/shelljs/src/tail.js",
+	"./tail.js": "./node_modules/shelljs/src/tail.js",
+	"./tempdir": "./node_modules/shelljs/src/tempdir.js",
+	"./tempdir.js": "./node_modules/shelljs/src/tempdir.js",
+	"./test": "./node_modules/shelljs/src/test.js",
+	"./test.js": "./node_modules/shelljs/src/test.js",
+	"./to": "./node_modules/shelljs/src/to.js",
+	"./to.js": "./node_modules/shelljs/src/to.js",
+	"./toEnd": "./node_modules/shelljs/src/toEnd.js",
+	"./toEnd.js": "./node_modules/shelljs/src/toEnd.js",
+	"./touch": "./node_modules/shelljs/src/touch.js",
+	"./touch.js": "./node_modules/shelljs/src/touch.js",
+	"./uniq": "./node_modules/shelljs/src/uniq.js",
+	"./uniq.js": "./node_modules/shelljs/src/uniq.js",
+	"./which": "./node_modules/shelljs/src/which.js",
+	"./which.js": "./node_modules/shelljs/src/which.js"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./node_modules/shelljs/src sync recursive ^\\.\\/.*$";
+
+/***/ }),
+
 /***/ "./node_modules/supports-color/index.js":
 /*!**********************************************!*\
   !*** ./node_modules/supports-color/index.js ***!
   \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -9533,35 +9421,887 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/webpack/buildin/module.js":
-/*!***********************************!*\
-  !*** (webpack)/buildin/module.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./exports/Task/ConfigTask.ts":
+/*!************************************!*\
+  !*** ./exports/Task/ConfigTask.ts ***!
+  \************************************/
+/***/ ((module, exports, __webpack_require__) => {
 
-module.exports = function(module) {
-	if (!module.webpackPolyfill) {
-		module.deprecate = function() {};
-		module.paths = [];
-		// module.parent = undefined by default
-		if (!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function() {
-				return module.i;
-			}
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+var ConfigTask_1 = __webpack_require__(/*! ../../src/Task/ConfigTask */ "./src/Task/ConfigTask.ts");
+module.exports = ConfigTask_1.ConfigTask;
+
+
+/***/ }),
+
+/***/ "./src/Cli/Config/Config.ts":
+/*!**********************************!*\
+  !*** ./src/Cli/Config/Config.ts ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.Config = void 0;
+var Objects_1 = __webpack_require__(/*! ../../Core/Objects/Objects */ "./src/Core/Objects/Objects.ts");
+var FileSystem_1 = __webpack_require__(/*! ../FileSystem/FileSystem */ "./src/Cli/FileSystem/FileSystem.ts");
+var Strings_1 = __webpack_require__(/*! ../../Core/Strings/Strings */ "./src/Core/Strings/Strings.ts");
+var Config = /** @class */ (function () {
+    function Config() {
+    }
+    Config.addConfigDir = function (configDir) {
+        this.configDirs.push(configDir);
+    };
+    Config.setConfigDirs = function (configDirs) {
+        this.configDirs = configDirs;
+    };
+    Config.setConfigArray = function (configArray) {
+        this.configObject = configArray;
+    };
+    Config.addMergeRule = function (regex) {
+        this.mergeRules.push(regex);
+    };
+    Config.setMergeRules = function (mergeRules) {
+        this.mergeRules = mergeRules;
+    };
+    Config.generate = function () {
+        // Init config cache
+        var configCache = {};
+        var mergedConfig = {};
+        // For each rule
+        for (var _i = 0, _a = this.mergeRules; _i < _a.length; _i++) {
+            var mergeRuleRegex = _a[_i];
+            // For each config directory
+            for (var _b = 0, _c = this.configDirs; _b < _c.length; _b++) {
+                var configDirectory = _c[_b];
+                // if there is a cache for the directory
+                if (typeof configCache[configDirectory] !== 'undefined') {
+                    // loop through file cache
+                    for (var filePath in configCache[configDirectory])
+                        if (configCache[configDirectory].hasOwnProperty(filePath)) {
+                            var configArray = configCache[configDirectory][filePath];
+                            // For each file, merge if it matches the rule
+                            if (filePath.match(mergeRuleRegex)) {
+                                mergedConfig = Objects_1.Objects.merge(mergedConfig, configArray);
+                            }
+                        }
+                }
+                else {
+                    // If directory doesn't exist
+                    if (!FileSystem_1.FileSystem.fileExists(configDirectory)) {
+                        throw new Error("Config directory not found: configDirectory");
+                    }
+                    // Get all files from the directory
+                    var files = FileSystem_1.FileSystem.getDirContents(configDirectory);
+                    // For each file
+                    for (var _d = 0, files_1 = files; _d < files_1.length; _d++) {
+                        var file = files_1[_d];
+                        if (file == '.'
+                            ||
+                                file == '..'
+                            ||
+                                (!Strings_1.Strings.endsWith(file, '.yml')
+                                    &&
+                                        !Strings_1.Strings.endsWith(file, '.yaml'))) {
+                            continue;
+                        }
+                        // Read it in
+                        var fileAsArray = FileSystem_1.FileSystem.readYaml(configDirectory + '/' + file);
+                        if (!fileAsArray) {
+                            continue;
+                        }
+                        if (typeof configCache[configDirectory] == 'undefined') {
+                            configCache[configDirectory] = {};
+                        }
+                        // Cache it
+                        configCache[configDirectory][file] = fileAsArray;
+                        // For each file, merge if it matches the rule
+                        if (file.match(mergeRuleRegex)) {
+                            mergedConfig = Objects_1.Objects.merge(mergedConfig, fileAsArray);
+                        }
+                    }
+                }
+            }
+        }
+        this.configObject = mergedConfig;
+        return mergedConfig;
+    };
+    Config.toObject = function () {
+        return this.configObject;
+    };
+    Config.getByPath = function (configPath) {
+        return Objects_1.Objects.getByKeyPath(configPath, this.configObject);
+    };
+    Config.configObject = {};
+    Config.configDirs = [];
+    Config.mergeRules = [];
+    return Config;
+}());
+exports.Config = Config;
+
+
+/***/ }),
+
+/***/ "./src/Cli/FileSystem/FileSystem.ts":
+/*!******************************************!*\
+  !*** ./src/Cli/FileSystem/FileSystem.ts ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.FileSystem = void 0;
+var FileSystem = /** @class */ (function () {
+    function FileSystem() {
+    }
+    FileSystem.createFile = function (absoluteFilePath) {
+        try {
+            // Get directory path by removing file name at the end
+            var directoryPath = absoluteFilePath.replace(/[^\/]+$/, '');
+            this.getShellJs().mkdir('-p', directoryPath);
+            this
+                .getNodeJsFileSystem()
+                .writeFileSync(absoluteFilePath, '');
+        }
+        catch (exception) {
+            throw exception;
+        }
+        return true;
+    };
+    ;
+    FileSystem.fileExists = function (absoluteFilePath) {
+        var fileExists;
+        try {
+            this.getNodeJsFileSystem().statSync(absoluteFilePath);
+            fileExists = true;
+        }
+        catch (exception) {
+            fileExists = false;
+        }
+        return fileExists;
+    };
+    FileSystem.forEachFileRecursively = function (srcDirPath, callback, ignorePatterns, iterationCount) {
+        if (ignorePatterns === void 0) { ignorePatterns = []; }
+        if (iterationCount === void 0) { iterationCount = 0; }
+        var itemsInScope = this.getDirContents(srcDirPath);
+        for (var key in itemsInScope) {
+            var fileName = itemsInScope[key];
+            var fullFilePath = srcDirPath + '/' + fileName;
+            var shouldContinue = false;
+            // For each ignore pattern
+            for (var key_1 in ignorePatterns) {
+                var pattern = new RegExp(ignorePatterns[key_1]);
+                // If full file path matches
+                if (pattern.test(fullFilePath)) {
+                    // Ignore it and return
+                    shouldContinue = true;
+                    break;
+                }
+            }
+            if (shouldContinue) {
+                continue;
+            }
+            if (this.isDirectory(fullFilePath)) {
+                iterationCount = this.forEachFileRecursively(fullFilePath, callback, [], iterationCount);
+            }
+            else if (this.isFile(fullFilePath)) {
+                iterationCount++;
+                callback(fileName, fullFilePath);
+            }
+        }
+        return iterationCount;
+    };
+    FileSystem.getDirContents = function (absoluteDirPath) {
+        var dirItems = this
+            .getNodeJsFileSystem()
+            .readdirSync(absoluteDirPath);
+        return dirItems.filter((function (fileOrDirName) {
+            var stat = this
+                .getNodeJsFileSystem()
+                .statSync(absoluteDirPath + '/' + fileOrDirName);
+            return (stat.isFile() || stat.isDirectory());
+        }).bind(this));
+    };
+    FileSystem.getFiles = function (absoluteDirPath) {
+        var dirItems = this
+            .getNodeJsFileSystem()
+            .readdirSync(absoluteDirPath);
+        return dirItems.filter((function (fileOrDirName) {
+            return this
+                .getNodeJsFileSystem()
+                .statSync(absoluteDirPath + fileOrDirName).isFile();
+        }).bind(this));
+    };
+    FileSystem.getRelativePathBetweenDirs = function (fromPath, toPath) {
+        var path = this.getNodeJsPath();
+        return path.relative(fromPath, toPath);
+    };
+    FileSystem.isDirectory = function (absoluteFilePath) {
+        return this
+            .getNodeJsFileSystem()
+            .statSync(absoluteFilePath).isDirectory();
+    };
+    FileSystem.isFile = function (absoluteFilePath) {
+        return this
+            .getNodeJsFileSystem()
+            .statSync(absoluteFilePath).isFile();
+    };
+    FileSystem.readAsTextString = function (absoluteFilePath) {
+        return this.getNodeJsFileSystem().readFileSync(absoluteFilePath).toString();
+    };
+    ;
+    FileSystem.readYaml = function (absoluteFilePath) {
+        if (!this.fileExists(absoluteFilePath)) {
+            return null;
+        }
+        var yamlString = this.readAsTextString(absoluteFilePath);
+        // Return imported JavaScript array
+        return this.getYamlJs().parse(yamlString);
+    };
+    FileSystem.removeDir = function (absoluteDirPath) {
+        var fs = this.getNodeJsFileSystem();
+        if (fs.existsSync(absoluteDirPath)) {
+            fs.readdirSync(absoluteDirPath).forEach(function (file, index) {
+                var currentPath = absoluteDirPath + "/" + file;
+                if (fs.lstatSync(currentPath).isDirectory()) {
+                    // recurse
+                    this.removeDir(currentPath);
+                }
+                else {
+                    // delete file
+                    fs.unlinkSync(currentPath);
+                }
+            });
+            fs.rmdirSync(absoluteDirPath);
+            return true;
+        }
+        return false;
+    };
+    ;
+    FileSystem.removeFile = function (absoluteFilePath) {
+        var fs = this.getNodeJsFileSystem();
+        fs.unlinkSync(absoluteFilePath);
+        return true;
+    };
+    ;
+    FileSystem.writeFile = function (absoluteFilePath, fileContents) {
+        var fileExists = this.fileExists(absoluteFilePath);
+        // If file doesn't exist
+        if (fileExists == false) {
+            // Create it
+            this
+                .createFile(absoluteFilePath);
+        }
+        try {
+            this.getNodeJsFileSystem().writeFileSync(absoluteFilePath, fileContents, 'utf-8');
+        }
+        catch (exception) {
+            return false;
+        }
+        return true;
+    };
+    FileSystem.getNodeJsFileSystem = function () {
+        if (!this.nodeJsFileSystem) {
+            this.nodeJsFileSystem = __webpack_require__(/*! fs */ "fs");
+        }
+        return this.nodeJsFileSystem;
+    };
+    FileSystem.getNodeJsPath = function () {
+        if (!this.nodeJsPath) {
+            this.nodeJsPath = __webpack_require__(/*! path */ "path");
+        }
+        return this.nodeJsPath;
+    };
+    FileSystem.getYamlJs = function () {
+        if (!this.yamlJs) {
+            this.yamlJs = __webpack_require__(/*! yamljs */ "./node_modules/yamljs/lib/Yaml.js");
+        }
+        return this.yamlJs;
+    };
+    FileSystem.getShellJs = function () {
+        if (!this.shellJs) {
+            this.shellJs = __webpack_require__(/*! shelljs */ "./node_modules/shelljs/shell.js");
+        }
+        return this.shellJs;
+    };
+    return FileSystem;
+}());
+exports.FileSystem = FileSystem;
+
+
+/***/ }),
+
+/***/ "./src/Cli/Log/Log.ts":
+/*!****************************!*\
+  !*** ./src/Cli/Log/Log.ts ***!
+  \****************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.Log = void 0;
+var Log = /** @class */ (function () {
+    function Log() {
+    }
+    Log.error = function (message) {
+        var prefix = this.getLogPrefix();
+        var chalk = this.getChalk();
+        global.console.log(prefix + chalk.red(message));
+    };
+    Log.info = function (message) {
+        var prefix = this.getLogPrefix();
+        var chalk = this.getChalk();
+        global.console.log(prefix + chalk.blue(message));
+    };
+    Log.success = function (message) {
+        var prefix = this.getLogPrefix();
+        var chalk = this.getChalk();
+        global.console.log(prefix + chalk.green(message));
+    };
+    Log.warning = function (message) {
+        var prefix = this.getLogPrefix();
+        var chalk = this.getChalk();
+        global.console.log(prefix + chalk.yellow(message));
+    };
+    Log.getLogPrefix = function () {
+        var chalk = this.getChalk();
+        var date = new Date();
+        var hours = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+        var minutes = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+        var seconds = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds();
+        var timeString = hours + ':'
+            + minutes + ':'
+            + seconds;
+        return chalk.white('[') + chalk.grey(timeString) + chalk.white('] ');
+    };
+    Log.getChalk = function () {
+        if (!this.chalk) {
+            this.chalk = __webpack_require__(/*! chalk */ "./node_modules/chalk/index.js");
+        }
+        return this.chalk;
+    };
+    return Log;
+}());
+exports.Log = Log;
+
+
+/***/ }),
+
+/***/ "./src/Core/Arrays/Arrays.ts":
+/*!***********************************!*\
+  !*** ./src/Core/Arrays/Arrays.ts ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.Arrays = void 0;
+var Numbers_1 = __webpack_require__(/*! ../Numbers/Numbers */ "./src/Core/Numbers/Numbers.ts");
+var Objects_1 = __webpack_require__(/*! ../Objects/Objects */ "./src/Core/Objects/Objects.ts");
+var Arrays = /** @class */ (function () {
+    function Arrays() {
+    }
+    Arrays.inArray = function (needle, haystack) {
+        return Boolean(haystack.indexOf(needle) !== -1);
+    };
+    Arrays.clone = function (array) {
+        if (!Array.isArray(array)) {
+            throw new Error("Cannot clone array -  must be of type 'array'.");
+        }
+        var clone = [];
+        for (var key in array) {
+            var arrayItem = array[key];
+            // If array item is an array
+            if (Array.isArray(arrayItem)) {
+                // Clone the array
+                clone.push(this.clone(arrayItem));
+            }
+            // If value is an object
+            else if (typeof arrayItem == 'object') {
+                clone.push(Objects_1.Objects.clone(arrayItem));
+            }
+            else {
+                clone.push(arrayItem);
+            }
+        }
+        return clone;
+    };
+    Arrays.randomItem = function (array) {
+        return array[Numbers_1.Numbers.random(0, array.length - 1)];
+    };
+    return Arrays;
+}());
+exports.Arrays = Arrays;
+
+
+/***/ }),
+
+/***/ "./src/Core/Config/Config.ts":
+/*!***********************************!*\
+  !*** ./src/Core/Config/Config.ts ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.Config = void 0;
+var Objects_1 = __webpack_require__(/*! ../Objects/Objects */ "./src/Core/Objects/Objects.ts");
+var Config = /** @class */ (function () {
+    function Config() {
+    }
+    Config.getByPath = function (configPath) {
+        // Parse config for value
+        return Objects_1.Objects.getByKeyPath(configPath, this.configObject);
+    };
+    Config.setConfigObject = function (configObject) {
+        this.configObject = configObject;
+    };
+    Config.toObject = function () {
+        return this.configObject;
+    };
+    Config.configObject = {};
+    return Config;
+}());
+exports.Config = Config;
+
+
+/***/ }),
+
+/***/ "./src/Core/Numbers/Numbers.ts":
+/*!*************************************!*\
+  !*** ./src/Core/Numbers/Numbers.ts ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.Numbers = void 0;
+var Numbers = /** @class */ (function () {
+    function Numbers() {
+    }
+    Numbers.random = function (min, max) {
+        if (min === void 0) { min = 0; }
+        if (max === void 0) { max = 100; }
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    };
+    return Numbers;
+}());
+exports.Numbers = Numbers;
+
+
+/***/ }),
+
+/***/ "./src/Core/Objects/Objects.ts":
+/*!*************************************!*\
+  !*** ./src/Core/Objects/Objects.ts ***!
+  \*************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
 };
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.Objects = void 0;
+var Arrays_1 = __webpack_require__(/*! ../Arrays/Arrays */ "./src/Core/Arrays/Arrays.ts");
+var Objects = /** @class */ (function () {
+    function Objects() {
+    }
+    Objects.getByKeyPath = function (keyPath, object, delimiter) {
+        if (delimiter === void 0) { delimiter = ':'; }
+        if (!object) {
+            return null;
+        }
+        // Split path into array of keys
+        var keysArray = keyPath.split(delimiter);
+        // Get the total number of keys
+        var keyCount = keysArray.length;
+        var count = 1;
+        // For each key
+        for (var _i = 0, keysArray_1 = keysArray; _i < keysArray_1.length; _i++) {
+            var key = keysArray_1[_i];
+            // If key exists
+            if (object.hasOwnProperty(key)) {
+                // If this is the last key to be accessed
+                if (count == keyCount) {
+                    // Return it
+                    return object[key];
+                }
+                // If the key doesn't exist
+                if (!object[key]) {
+                    return null;
+                }
+                // Adjust object pointer for next key iteration
+                object = object[key];
+                // Increment count
+                count++;
+            }
+            else {
+                return null;
+            }
+        }
+    };
+    ;
+    Objects.setByKeyPath = function (keyPath, value, target) {
+        return this.setByPath(keyPath.split(':'), value, target);
+    };
+    Objects.setByPath = function (keys, value, object) {
+        var key = keys.shift();
+        if (keys.length) {
+            object[key] = this.setByPath(keys, value, object[key] ? object[key] : {});
+        }
+        else {
+            object[key] = value;
+        }
+        return object;
+    };
+    Objects.merge = function (target) {
+        var sourceObjects = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            sourceObjects[_i - 1] = arguments[_i];
+        }
+        // If no sources passed in, return target
+        if (!sourceObjects.length) {
+            return target;
+        }
+        // Get first source item
+        var source = sourceObjects.shift();
+        // Assign functions that need to be used inside "forEach" function below
+        var merge = this.merge.bind(this);
+        var isMergebleObject = (function (item) {
+            return item !== null && typeof item === 'object' && !Array.isArray(item);
+        }).bind(this);
+        // If target and source are both mergeble
+        if (isMergebleObject(target) && isMergebleObject(source)) {
+            // For each object key in source object
+            Object.keys(source).forEach(function (key) {
+                // If value at current key is a mergeable object
+                if (isMergebleObject(source[key])) {
+                    // If key doesn't exist on target
+                    if (!target[key]) {
+                        // Set to empty object
+                        target[key] = {};
+                    }
+                    // Deep merge target value and source value
+                    merge(target[key], source[key]);
+                }
+                // Else, if value is not a mergable object
+                else {
+                    // Set value
+                    target[key] = source[key];
+                }
+            });
+        }
+        return merge.apply(void 0, __spreadArray([target], sourceObjects, false));
+    };
+    ;
+    Objects.clone = function (object) {
+        if (typeof object !== 'object') {
+            throw new Error("Cannot clone object. Source object must be of type 'object'.");
+        }
+        return this.hydrate(Object.create(object), object);
+    };
+    Objects.hydrate = function (dest, source, mutators, excludeNullValues, excludeMethods) {
+        if (mutators === void 0) { mutators = {}; }
+        if (excludeNullValues === void 0) { excludeNullValues = false; }
+        if (excludeMethods === void 0) { excludeMethods = true; }
+        if (typeof dest !== 'object' || typeof source !== 'object') {
+            throw new Error("Cannot hydrate object. Source and destination object must both be of type 'object'.");
+        }
+        for (var property in source) {
+            var propertyValue = source[property];
+            if (typeof propertyValue == "function" && excludeMethods)
+                continue;
+            if (source[property] == null) {
+                if (excludeNullValues)
+                    continue;
+                dest[property] = null;
+            }
+            // If a mutator is present
+            else if (mutators.hasOwnProperty(property) && typeof mutators[property] == 'function') {
+                dest[property] = mutators[property](source[property]);
+            }
+            // If property value is an array
+            else if (Array.isArray(propertyValue)) {
+                // Clone array
+                dest[property] = Arrays_1.Arrays.clone(propertyValue);
+            }
+            // If value is an object
+            else if (typeof propertyValue == 'object') {
+                dest[property] = this.clone(propertyValue);
+            }
+            else {
+                dest[property] = propertyValue;
+            }
+        }
+        return dest;
+    };
+    return Objects;
+}());
+exports.Objects = Objects;
+
+
+/***/ }),
+
+/***/ "./src/Core/Strings/Strings.ts":
+/*!*************************************!*\
+  !*** ./src/Core/Strings/Strings.ts ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.Strings = void 0;
+var Strings = /** @class */ (function () {
+    function Strings() {
+    }
+    Strings.contains = function (haystack, needle) {
+        return haystack.indexOf(needle) >= 0;
+    };
+    Strings.startsWith = function (string, prefix) {
+        return string.indexOf(prefix) === 0;
+    };
+    Strings.endsWith = function (string, suffix) {
+        return string.indexOf(suffix, string.length - suffix.length) >= 0;
+    };
+    Strings.random = function (length) {
+        if (length === void 0) { length = 10; }
+        return this.generateRandomString(length, this.RANDOM_STRING_AVAILABLE_CHARS);
+    };
+    Strings.password = function (length) {
+        return this.generateRandomString(length, this.PASSWORD_AVAILABLE_CHARS);
+    };
+    Strings.initialCaps = function (string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    };
+    Strings.generateRandomString = function (length, availableCharacters) {
+        if (length === void 0) { length = 10; }
+        if (availableCharacters === void 0) { availableCharacters = this.RANDOM_STRING_AVAILABLE_CHARS; }
+        var result = '';
+        var charactersLength = availableCharacters.length;
+        for (var i = 0; i < length; i++) {
+            result += availableCharacters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
+    };
+    Strings.RANDOM_STRING_AVAILABLE_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    Strings.PASSWORD_AVAILABLE_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$-_.+!*\'(),,';
+    return Strings;
+}());
+exports.Strings = Strings;
+
+
+/***/ }),
+
+/***/ "./src/Task/AbstractTask.ts":
+/*!**********************************!*\
+  !*** ./src/Task/AbstractTask.ts ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.AbstractTask = void 0;
+var Log_1 = __webpack_require__(/*! ../Cli/Log/Log */ "./src/Cli/Log/Log.ts");
+var Objects_1 = __webpack_require__(/*! ../Core/Objects/Objects */ "./src/Core/Objects/Objects.ts");
+var Config_1 = __webpack_require__(/*! ../Core/Config/Config */ "./src/Core/Config/Config.ts");
+var AbstractTask = /** @class */ (function () {
+    function AbstractTask(taskConfig) {
+        if (taskConfig === void 0) { taskConfig = {}; }
+        this.running = false;
+        this.queued = 0;
+        this.queueLimit = 0;
+        // Get default task config
+        var defaultConfig = this.getDefaultTaskConfig();
+        // Merge the default config with overrides
+        var mergedConfigObject = Objects_1.Objects.merge(defaultConfig, taskConfig);
+        // Set task config as Config object
+        Config_1.Config.setConfigObject(mergedConfigObject);
+        this.validateTaskConfig();
+    }
+    AbstractTask.prototype.run = function () {
+        // If task is already running
+        if (this.running) {
+            // Queue it up
+            this.queue();
+            return;
+        }
+        var taskName = this.constructor['name'];
+        // Log task as running
+        this.running = true;
+        Log_1.Log.info(taskName + ': started');
+        // Execute the task
+        this.exec();
+        this.running = false;
+        Log_1.Log.success(taskName + ': finished');
+        this.shutdown();
+    };
+    AbstractTask.prototype.getDefaultTaskConfig = function () {
+        return {};
+    };
+    AbstractTask.prototype.getRequiredTaskConfigPaths = function () {
+        return {};
+    };
+    AbstractTask.prototype.validateTaskConfig = function () {
+        this.validateTaskConfigForRequiredPathsAndTypes();
+        return this;
+    };
+    AbstractTask.prototype.validateTaskConfigForRequiredPathsAndTypes = function () {
+        var requiredTaskConfigPaths = this.getRequiredTaskConfigPaths();
+        for (var requiredConfigPath in requiredTaskConfigPaths)
+            if (requiredTaskConfigPaths.hasOwnProperty(requiredConfigPath)) {
+                var requiredType = requiredTaskConfigPaths[requiredConfigPath];
+                var requiredConfigValue = Config_1.Config.getByPath(requiredConfigPath);
+                var actualType = typeof requiredConfigValue;
+                if (!requiredConfigValue) {
+                    Log_1.Log.error(this.constructor['name'] + ': Invalid task config. Required key path not found: ' + requiredConfigPath);
+                    global.process.exit();
+                }
+                else if (actualType !== requiredType) {
+                    Log_1.Log.error(this.constructor['name'] + ': Invalid task config value for "' + requiredConfigPath + '". Expected type of ' + requiredType + ', received ' + actualType);
+                    global.process.exit();
+                }
+            }
+        return this;
+    };
+    AbstractTask.prototype.queue = function () {
+        if (this.queued < this.queueLimit) {
+            this.queued++;
+        }
+        return this;
+    };
+    AbstractTask.prototype.shutdown = function () {
+        // Remove one from the queue
+        this.queued--;
+        // If there are tasks in the queue
+        if (this.queued > 0) {
+            // Run it
+            this.run();
+        }
+        return this;
+    };
+    AbstractTask.prototype.exec = function () {
+        throw new Error('exec() method must be implemented');
+    };
+    return AbstractTask;
+}());
+exports.AbstractTask = AbstractTask;
+
+
+/***/ }),
+
+/***/ "./src/Task/ConfigTask.ts":
+/*!********************************!*\
+  !*** ./src/Task/ConfigTask.ts ***!
+  \********************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.ConfigTask = void 0;
+var AbstractTask_1 = __webpack_require__(/*! ./AbstractTask */ "./src/Task/AbstractTask.ts");
+var Config_1 = __webpack_require__(/*! ../Core/Config/Config */ "./src/Core/Config/Config.ts");
+var Config_2 = __webpack_require__(/*! ../Cli/Config/Config */ "./src/Cli/Config/Config.ts");
+var FileSystem_1 = __webpack_require__(/*! ../Cli/FileSystem/FileSystem */ "./src/Cli/FileSystem/FileSystem.ts");
+var ConfigTask = /** @class */ (function (_super) {
+    __extends(ConfigTask, _super);
+    function ConfigTask() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    ConfigTask.prototype.exec = function () {
+        var configDirPath = Config_1.Config.getByPath('configDirPath');
+        var outputFilePath = Config_1.Config.getByPath('outputFilePath');
+        var outputFormat = Config_1.Config.getByPath('outputFormat');
+        var variableName = Config_1.Config.getByPath('variableName');
+        // Add trailing slash to configDirPath if needed
+        if (configDirPath.charAt(configDirPath.length - 1) !== '/') {
+            configDirPath += '/';
+        }
+        Config_2.Config.addConfigDir(configDirPath);
+        Config_2.Config.addMergeRule(/default-.+/);
+        var env = global.process.env.ENV || null;
+        if (env) {
+            Config_2.Config.addMergeRule(new RegExp(env + '-.+'));
+        }
+        var mergedConfig = Config_2.Config.generate();
+        // If config file already exists
+        // Empty it
+        FileSystem_1.FileSystem.writeFile(outputFilePath, '');
+        // If no configs exists, we want to write an empty object to the config file
+        // rather than the word 'null'
+        if (!mergedConfig) {
+            mergedConfig = {};
+        }
+        var fileContents = JSON.stringify(mergedConfig, null, 2);
+        // Format file contents depending on format provided
+        if (outputFormat == 'json') {
+            // Do nothing (file contents formatted for json by default)
+        }
+        if (outputFormat === 'node') {
+            fileContents = '\nmodule.exports = ' + fileContents + ';\n';
+        }
+        else if (outputFormat == 'js') {
+            fileContents = '\nvar ' + variableName + ' = ' + fileContents + ';\n';
+        }
+        // Write new generated config to output file
+        FileSystem_1.FileSystem.writeFile(outputFilePath, fileContents);
+        return true;
+    };
+    ConfigTask.prototype.getRequiredTaskConfigPaths = function () {
+        return {
+            configDirPath: "string",
+            outputFilePath: "string",
+            outputFormat: "string",
+            variableName: "string"
+        };
+    };
+    ConfigTask.prototype.getDefaultTaskConfig = function () {
+        var cwd = process.cwd();
+        return {
+            configDirPath: cwd + '/config',
+            outputFilePath: cwd + "/cache/config.js",
+            outputFormat: "js",
+            variableName: "config"
+        };
+    };
+    return ConfigTask;
+}(AbstractTask_1.AbstractTask));
+exports.ConfigTask = ConfigTask;
 
 
 /***/ }),
@@ -9570,8 +10310,7 @@ module.exports = function(module) {
 /*!***************************************!*\
   !*** ./node_modules/wrappy/wrappy.js ***!
   \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 // Returns a wrapper function that returns a wrapped callback
 // The wrapper function should do some stuff, and return a
@@ -9614,8 +10353,7 @@ function wrappy (fn, cb) {
 /*!*******************************************!*\
   !*** ./node_modules/yamljs/lib/Dumper.js ***!
   \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 // Generated by CoffeeScript 1.12.4
 var Dumper, Inline, Utils;
@@ -9678,8 +10416,7 @@ module.exports = Dumper;
 /*!********************************************!*\
   !*** ./node_modules/yamljs/lib/Escaper.js ***!
   \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 // Generated by CoffeeScript 1.12.4
 var Escaper, Pattern;
@@ -9745,8 +10482,7 @@ module.exports = Escaper;
 /*!************************************************************!*\
   !*** ./node_modules/yamljs/lib/Exception/DumpException.js ***!
   \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 // Generated by CoffeeScript 1.12.4
 var DumpException,
@@ -9783,8 +10519,7 @@ module.exports = DumpException;
 /*!*************************************************************!*\
   !*** ./node_modules/yamljs/lib/Exception/ParseException.js ***!
   \*************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 // Generated by CoffeeScript 1.12.4
 var ParseException,
@@ -9821,8 +10556,7 @@ module.exports = ParseException;
 /*!********************************************************!*\
   !*** ./node_modules/yamljs/lib/Exception/ParseMore.js ***!
   \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 // Generated by CoffeeScript 1.12.4
 var ParseMore,
@@ -9859,8 +10593,7 @@ module.exports = ParseMore;
 /*!*******************************************!*\
   !*** ./node_modules/yamljs/lib/Inline.js ***!
   \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 // Generated by CoffeeScript 1.12.4
 var DumpException, Escaper, Inline, ParseException, ParseMore, Pattern, Unescaper, Utils,
@@ -10355,8 +11088,7 @@ module.exports = Inline;
 /*!*******************************************!*\
   !*** ./node_modules/yamljs/lib/Parser.js ***!
   \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 // Generated by CoffeeScript 1.12.4
 var Inline, ParseException, ParseMore, Parser, Pattern, Utils;
@@ -10969,8 +11701,7 @@ module.exports = Parser;
 /*!********************************************!*\
   !*** ./node_modules/yamljs/lib/Pattern.js ***!
   \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 // Generated by CoffeeScript 1.12.4
 var Pattern;
@@ -11099,8 +11830,7 @@ module.exports = Pattern;
 /*!**********************************************!*\
   !*** ./node_modules/yamljs/lib/Unescaper.js ***!
   \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 // Generated by CoffeeScript 1.12.4
 var Pattern, Unescaper, Utils;
@@ -11193,10 +11923,9 @@ module.exports = Unescaper;
 /*!******************************************!*\
   !*** ./node_modules/yamljs/lib/Utils.js ***!
   \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var require;// Generated by CoffeeScript 1.12.4
+// Generated by CoffeeScript 1.12.4
 var Pattern, Utils,
   hasProp = {}.hasOwnProperty;
 
@@ -11468,7 +12197,7 @@ Utils = (function() {
         return null;
       }
     } else {
-      req = require;
+      req = undefined;
       fs = __webpack_require__(/*! fs */ "fs");
       if (callback != null) {
         return fs.readFile(path, function(err, data) {
@@ -11501,8 +12230,7 @@ module.exports = Utils;
 /*!*****************************************!*\
   !*** ./node_modules/yamljs/lib/Yaml.js ***!
   \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.12.4
 var Dumper, Parser, Utils, Yaml;
@@ -11601,869 +12329,13 @@ module.exports = Yaml;
 
 /***/ }),
 
-/***/ "./src/Cli/Config/Config.ts":
-/*!**********************************!*\
-  !*** ./src/Cli/Config/Config.ts ***!
-  \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Objects_1 = __webpack_require__(/*! ../../Core/Objects/Objects */ "./src/Core/Objects/Objects.ts");
-var FileSystem_1 = __webpack_require__(/*! ../FileSystem/FileSystem */ "./src/Cli/FileSystem/FileSystem.ts");
-var Strings_1 = __webpack_require__(/*! ../../Core/Strings/Strings */ "./src/Core/Strings/Strings.ts");
-var Config = /** @class */ (function () {
-    function Config() {
-    }
-    Config.addConfigDir = function (configDir) {
-        this.configDirs.push(configDir);
-    };
-    Config.setConfigDirs = function (configDirs) {
-        this.configDirs = configDirs;
-    };
-    Config.setConfigArray = function (configArray) {
-        this.configObject = configArray;
-    };
-    Config.addMergeRule = function (regex) {
-        this.mergeRules.push(regex);
-    };
-    Config.setMergeRules = function (mergeRules) {
-        this.mergeRules = mergeRules;
-    };
-    Config.generate = function () {
-        // Init config cache
-        var configCache = {};
-        var mergedConfig = {};
-        // For each rule
-        for (var _i = 0, _a = this.mergeRules; _i < _a.length; _i++) {
-            var mergeRuleRegex = _a[_i];
-            // For each config directory
-            for (var _b = 0, _c = this.configDirs; _b < _c.length; _b++) {
-                var configDirectory = _c[_b];
-                // if there is a cache for the directory
-                if (typeof configCache[configDirectory] !== 'undefined') {
-                    // loop through file cache
-                    for (var filePath in configCache[configDirectory])
-                        if (configCache[configDirectory].hasOwnProperty(filePath)) {
-                            var configArray = configCache[configDirectory][filePath];
-                            // For each file, merge if it matches the rule
-                            if (filePath.match(mergeRuleRegex)) {
-                                mergedConfig = Objects_1.Objects.merge(mergedConfig, configArray);
-                            }
-                        }
-                }
-                else {
-                    // If directory doesn't exist
-                    if (!FileSystem_1.FileSystem.fileExists(configDirectory)) {
-                        throw new Error("Config directory not found: configDirectory");
-                    }
-                    // Get all files from the directory
-                    var files = FileSystem_1.FileSystem.getDirContents(configDirectory);
-                    // For each file
-                    for (var _d = 0, files_1 = files; _d < files_1.length; _d++) {
-                        var file = files_1[_d];
-                        if (file == '.'
-                            ||
-                                file == '..'
-                            ||
-                                (!Strings_1.Strings.endsWith(file, '.yml')
-                                    &&
-                                        !Strings_1.Strings.endsWith(file, '.yaml'))) {
-                            continue;
-                        }
-                        // Read it in
-                        var fileAsArray = FileSystem_1.FileSystem.readYaml(configDirectory + '/' + file);
-                        if (!fileAsArray) {
-                            continue;
-                        }
-                        if (typeof configCache[configDirectory] == 'undefined') {
-                            configCache[configDirectory] = {};
-                        }
-                        // Cache it
-                        configCache[configDirectory][file] = fileAsArray;
-                        // For each file, merge if it matches the rule
-                        if (file.match(mergeRuleRegex)) {
-                            mergedConfig = Objects_1.Objects.merge(mergedConfig, fileAsArray);
-                        }
-                    }
-                }
-            }
-        }
-        this.configObject = mergedConfig;
-        return mergedConfig;
-    };
-    Config.toObject = function () {
-        return this.configObject;
-    };
-    Config.getByPath = function (configPath) {
-        return Objects_1.Objects.getByKeyPath(configPath, this.configObject);
-    };
-    Config.configObject = {};
-    Config.configDirs = [];
-    Config.mergeRules = [];
-    return Config;
-}());
-exports.Config = Config;
-
-
-/***/ }),
-
-/***/ "./src/Cli/FileSystem/FileSystem.ts":
-/*!******************************************!*\
-  !*** ./src/Cli/FileSystem/FileSystem.ts ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var FileSystem = /** @class */ (function () {
-    function FileSystem() {
-    }
-    FileSystem.createFile = function (absoluteFilePath) {
-        try {
-            // Get directory path by removing file name at the end
-            var directoryPath = absoluteFilePath.replace(/[^\/]+$/, '');
-            this.getShellJs().mkdir('-p', directoryPath);
-            this
-                .getNodeJsFileSystem()
-                .writeFileSync(absoluteFilePath, '');
-        }
-        catch (exception) {
-            throw exception;
-        }
-        return true;
-    };
-    ;
-    FileSystem.fileExists = function (absoluteFilePath) {
-        var fileExists;
-        try {
-            this.getNodeJsFileSystem().statSync(absoluteFilePath);
-            fileExists = true;
-        }
-        catch (exception) {
-            fileExists = false;
-        }
-        return fileExists;
-    };
-    FileSystem.forEachFileRecursively = function (srcDirPath, callback, ignorePatterns, iterationCount) {
-        if (ignorePatterns === void 0) { ignorePatterns = []; }
-        if (iterationCount === void 0) { iterationCount = 0; }
-        var itemsInScope = this.getDirContents(srcDirPath);
-        for (var key in itemsInScope) {
-            var fileName = itemsInScope[key];
-            var fullFilePath = srcDirPath + '/' + fileName;
-            var shouldContinue = false;
-            // For each ignore pattern
-            for (var key_1 in ignorePatterns) {
-                var pattern = new RegExp(ignorePatterns[key_1]);
-                // If full file path matches
-                if (pattern.test(fullFilePath)) {
-                    // Ignore it and return
-                    shouldContinue = true;
-                    break;
-                }
-            }
-            if (shouldContinue) {
-                continue;
-            }
-            if (this.isDirectory(fullFilePath)) {
-                iterationCount = this.forEachFileRecursively(fullFilePath, callback, [], iterationCount);
-            }
-            else if (this.isFile(fullFilePath)) {
-                iterationCount++;
-                callback(fileName, fullFilePath);
-            }
-        }
-        return iterationCount;
-    };
-    FileSystem.getDirContents = function (absoluteDirPath) {
-        var dirItems = this
-            .getNodeJsFileSystem()
-            .readdirSync(absoluteDirPath);
-        return dirItems.filter((function (fileOrDirName) {
-            var stat = this
-                .getNodeJsFileSystem()
-                .statSync(absoluteDirPath + '/' + fileOrDirName);
-            return (stat.isFile() || stat.isDirectory());
-        }).bind(this));
-    };
-    FileSystem.getFiles = function (absoluteDirPath) {
-        var dirItems = this
-            .getNodeJsFileSystem()
-            .readdirSync(absoluteDirPath);
-        return dirItems.filter((function (fileOrDirName) {
-            return this
-                .getNodeJsFileSystem()
-                .statSync(absoluteDirPath + fileOrDirName).isFile();
-        }).bind(this));
-    };
-    FileSystem.getRelativePathBetweenDirs = function (fromPath, toPath) {
-        var path = this.getNodeJsPath();
-        return path.relative(fromPath, toPath);
-    };
-    FileSystem.isDirectory = function (absoluteFilePath) {
-        return this
-            .getNodeJsFileSystem()
-            .statSync(absoluteFilePath).isDirectory();
-    };
-    FileSystem.isFile = function (absoluteFilePath) {
-        return this
-            .getNodeJsFileSystem()
-            .statSync(absoluteFilePath).isFile();
-    };
-    FileSystem.readAsTextString = function (absoluteFilePath) {
-        return this.getNodeJsFileSystem().readFileSync(absoluteFilePath).toString();
-    };
-    ;
-    FileSystem.readYaml = function (absoluteFilePath) {
-        if (!this.fileExists(absoluteFilePath)) {
-            return null;
-        }
-        var yamlString = this.readAsTextString(absoluteFilePath);
-        // Return imported JavaScript array
-        return this.getYamlJs().parse(yamlString);
-    };
-    FileSystem.removeDir = function (absoluteDirPath) {
-        var fs = this.getNodeJsFileSystem();
-        if (fs.existsSync(absoluteDirPath)) {
-            fs.readdirSync(absoluteDirPath).forEach(function (file, index) {
-                var currentPath = absoluteDirPath + "/" + file;
-                if (fs.lstatSync(currentPath).isDirectory()) {
-                    // recurse
-                    this.removeDir(currentPath);
-                }
-                else {
-                    // delete file
-                    fs.unlinkSync(currentPath);
-                }
-            });
-            fs.rmdirSync(absoluteDirPath);
-            return true;
-        }
-        return false;
-    };
-    ;
-    FileSystem.removeFile = function (absoluteFilePath) {
-        var fs = this.getNodeJsFileSystem();
-        fs.unlinkSync(absoluteFilePath);
-        return true;
-    };
-    ;
-    FileSystem.writeFile = function (absoluteFilePath, fileContents) {
-        var fileExists = this.fileExists(absoluteFilePath);
-        // If file doesn't exist
-        if (fileExists == false) {
-            // Create it
-            this
-                .createFile(absoluteFilePath);
-        }
-        try {
-            this.getNodeJsFileSystem().writeFileSync(absoluteFilePath, fileContents, 'utf-8');
-        }
-        catch (exception) {
-            return false;
-        }
-        return true;
-    };
-    FileSystem.getNodeJsFileSystem = function () {
-        if (!this.nodeJsFileSystem) {
-            this.nodeJsFileSystem = __webpack_require__(/*! fs */ "fs");
-        }
-        return this.nodeJsFileSystem;
-    };
-    FileSystem.getNodeJsPath = function () {
-        if (!this.nodeJsPath) {
-            this.nodeJsPath = __webpack_require__(/*! path */ "path");
-        }
-        return this.nodeJsPath;
-    };
-    FileSystem.getYamlJs = function () {
-        if (!this.yamlJs) {
-            this.yamlJs = __webpack_require__(/*! yamljs */ "./node_modules/yamljs/lib/Yaml.js");
-        }
-        return this.yamlJs;
-    };
-    FileSystem.getShellJs = function () {
-        if (!this.shellJs) {
-            this.shellJs = __webpack_require__(/*! shelljs */ "./node_modules/shelljs/shell.js");
-        }
-        return this.shellJs;
-    };
-    return FileSystem;
-}());
-exports.FileSystem = FileSystem;
-
-
-/***/ }),
-
-/***/ "./src/Cli/Log/Log.ts":
-/*!****************************!*\
-  !*** ./src/Cli/Log/Log.ts ***!
-  \****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Log = /** @class */ (function () {
-    function Log() {
-    }
-    Log.error = function (message) {
-        var prefix = this.getLogPrefix();
-        var chalk = this.getChalk();
-        global.console.log(prefix + chalk.red(message));
-    };
-    Log.info = function (message) {
-        var prefix = this.getLogPrefix();
-        var chalk = this.getChalk();
-        global.console.log(prefix + chalk.blue(message));
-    };
-    Log.success = function (message) {
-        var prefix = this.getLogPrefix();
-        var chalk = this.getChalk();
-        global.console.log(prefix + chalk.green(message));
-    };
-    Log.warning = function (message) {
-        var prefix = this.getLogPrefix();
-        var chalk = this.getChalk();
-        global.console.log(prefix + chalk.yellow(message));
-    };
-    Log.getLogPrefix = function () {
-        var chalk = this.getChalk();
-        var date = new Date();
-        var hours = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
-        var minutes = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
-        var seconds = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds();
-        var timeString = hours + ':'
-            + minutes + ':'
-            + seconds;
-        return chalk.white('[') + chalk.grey(timeString) + chalk.white('] ');
-    };
-    Log.getChalk = function () {
-        if (!this.chalk) {
-            this.chalk = __webpack_require__(/*! chalk */ "./node_modules/chalk/index.js");
-        }
-        return this.chalk;
-    };
-    return Log;
-}());
-exports.Log = Log;
-
-
-/***/ }),
-
-/***/ "./src/Core/Arrays/Arrays.ts":
-/*!***********************************!*\
-  !*** ./src/Core/Arrays/Arrays.ts ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Numbers_1 = __webpack_require__(/*! ../Numbers/Numbers */ "./src/Core/Numbers/Numbers.ts");
-var Objects_1 = __webpack_require__(/*! ../Objects/Objects */ "./src/Core/Objects/Objects.ts");
-var Arrays = /** @class */ (function () {
-    function Arrays() {
-    }
-    Arrays.inArray = function (needle, haystack) {
-        return Boolean(haystack.indexOf(needle) !== -1);
-    };
-    Arrays.clone = function (array) {
-        if (!Array.isArray(array)) {
-            throw new Error("Cannot clone array -  must be of type 'array'.");
-        }
-        var clone = [];
-        for (var key in array) {
-            var arrayItem = array[key];
-            // If array item is an array
-            if (Array.isArray(arrayItem)) {
-                // Clone the array
-                clone.push(this.clone(arrayItem));
-            }
-            // If value is an object
-            else if (typeof arrayItem == 'object') {
-                clone.push(Objects_1.Objects.clone(arrayItem));
-            }
-            else {
-                clone.push(arrayItem);
-            }
-        }
-        return clone;
-    };
-    Arrays.randomItem = function (array) {
-        return array[Numbers_1.Numbers.random(0, array.length - 1)];
-    };
-    return Arrays;
-}());
-exports.Arrays = Arrays;
-
-
-/***/ }),
-
-/***/ "./src/Core/Config/Config.ts":
-/*!***********************************!*\
-  !*** ./src/Core/Config/Config.ts ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Objects_1 = __webpack_require__(/*! ../Objects/Objects */ "./src/Core/Objects/Objects.ts");
-var Config = /** @class */ (function () {
-    function Config() {
-    }
-    Config.getByPath = function (configPath) {
-        // Parse config for value
-        return Objects_1.Objects.getByKeyPath(configPath, this.configObject);
-    };
-    Config.setConfigObject = function (configObject) {
-        this.configObject = configObject;
-    };
-    Config.toObject = function () {
-        return this.configObject;
-    };
-    Config.configObject = {};
-    return Config;
-}());
-exports.Config = Config;
-
-
-/***/ }),
-
-/***/ "./src/Core/Numbers/Numbers.ts":
-/*!*************************************!*\
-  !*** ./src/Core/Numbers/Numbers.ts ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Numbers = /** @class */ (function () {
-    function Numbers() {
-    }
-    Numbers.random = function (min, max) {
-        if (min === void 0) { min = 0; }
-        if (max === void 0) { max = 100; }
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min + 1) + min);
-    };
-    return Numbers;
-}());
-exports.Numbers = Numbers;
-
-
-/***/ }),
-
-/***/ "./src/Core/Objects/Objects.ts":
-/*!*************************************!*\
-  !*** ./src/Core/Objects/Objects.ts ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Arrays_1 = __webpack_require__(/*! ../Arrays/Arrays */ "./src/Core/Arrays/Arrays.ts");
-var Objects = /** @class */ (function () {
-    function Objects() {
-    }
-    Objects.getByKeyPath = function (keyPath, object, delimiter) {
-        if (delimiter === void 0) { delimiter = ':'; }
-        if (!object) {
-            return null;
-        }
-        // Split path into array of keys
-        var keysArray = keyPath.split(delimiter);
-        // Get the total number of keys
-        var keyCount = keysArray.length;
-        var count = 1;
-        // For each key
-        for (var _i = 0, keysArray_1 = keysArray; _i < keysArray_1.length; _i++) {
-            var key = keysArray_1[_i];
-            // If key exists
-            if (object.hasOwnProperty(key)) {
-                // If this is the last key to be accessed
-                if (count == keyCount) {
-                    // Return it
-                    return object[key];
-                }
-                // If the key doesn't exist
-                if (!object[key]) {
-                    return null;
-                }
-                // Adjust object pointer for next key iteration
-                object = object[key];
-                // Increment count
-                count++;
-            }
-            else {
-                return null;
-            }
-        }
-    };
-    ;
-    Objects.setByKeyPath = function (keyPath, value, target) {
-        return this.setByPath(keyPath.split(':'), value, target);
-    };
-    Objects.setByPath = function (keys, value, object) {
-        var key = keys.shift();
-        if (keys.length) {
-            object[key] = this.setByPath(keys, value, object[key] ? object[key] : {});
-        }
-        else {
-            object[key] = value;
-        }
-        return object;
-    };
-    Objects.merge = function (target) {
-        var sourceObjects = [];
-        for (var _i = 1; _i < arguments.length; _i++) {
-            sourceObjects[_i - 1] = arguments[_i];
-        }
-        // If no sources passed in, return target
-        if (!sourceObjects.length) {
-            return target;
-        }
-        // Get first source item
-        var source = sourceObjects.shift();
-        // Assign functions that need to be used inside "forEach" function below
-        var merge = this.merge.bind(this);
-        var isMergebleObject = (function (item) {
-            return item !== null && typeof item === 'object' && !Array.isArray(item);
-        }).bind(this);
-        // If target and source are both mergeble
-        if (isMergebleObject(target) && isMergebleObject(source)) {
-            // For each object key in source object
-            Object.keys(source).forEach(function (key) {
-                // If value at current key is a mergeable object
-                if (isMergebleObject(source[key])) {
-                    // If key doesn't exist on target
-                    if (!target[key]) {
-                        // Set to empty object
-                        target[key] = {};
-                    }
-                    // Deep merge target value and source value
-                    merge(target[key], source[key]);
-                }
-                // Else, if value is not a mergable object
-                else {
-                    // Set value
-                    target[key] = source[key];
-                }
-            });
-        }
-        return merge.apply(void 0, [target].concat(sourceObjects));
-    };
-    ;
-    Objects.clone = function (object) {
-        if (typeof object !== 'object') {
-            throw new Error("Cannot clone object. Source object must be of type 'object'.");
-        }
-        return this.hydrate(Object.create(object), object);
-    };
-    Objects.hydrate = function (dest, source, mutators, excludeNullValues, excludeMethods) {
-        if (mutators === void 0) { mutators = {}; }
-        if (excludeNullValues === void 0) { excludeNullValues = false; }
-        if (excludeMethods === void 0) { excludeMethods = true; }
-        if (typeof dest !== 'object' || typeof source !== 'object') {
-            throw new Error("Cannot hydrate object. Source and destination object must both be of type 'object'.");
-        }
-        for (var property in source) {
-            var propertyValue = source[property];
-            if (typeof propertyValue == "function" && excludeMethods)
-                continue;
-            if (source[property] == null) {
-                if (excludeNullValues)
-                    continue;
-                dest[property] = null;
-            }
-            // If a mutator is present
-            else if (mutators.hasOwnProperty(property) && typeof mutators[property] == 'function') {
-                dest[property] = mutators[property](source[property]);
-            }
-            // If property value is an array
-            else if (Array.isArray(propertyValue)) {
-                // Clone array
-                dest[property] = Arrays_1.Arrays.clone(propertyValue);
-            }
-            // If value is an object
-            else if (typeof propertyValue == 'object') {
-                dest[property] = this.clone(propertyValue);
-            }
-            else {
-                dest[property] = propertyValue;
-            }
-        }
-        return dest;
-    };
-    return Objects;
-}());
-exports.Objects = Objects;
-
-
-/***/ }),
-
-/***/ "./src/Core/Strings/Strings.ts":
-/*!*************************************!*\
-  !*** ./src/Core/Strings/Strings.ts ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Strings = /** @class */ (function () {
-    function Strings() {
-    }
-    Strings.contains = function (haystack, needle) {
-        return haystack.indexOf(needle) >= 0;
-    };
-    Strings.startsWith = function (string, prefix) {
-        return string.indexOf(prefix) === 0;
-    };
-    Strings.endsWith = function (string, suffix) {
-        return string.indexOf(suffix, string.length - suffix.length) >= 0;
-    };
-    Strings.random = function (length) {
-        if (length === void 0) { length = 10; }
-        return this.generateRandomString(length, this.RANDOM_STRING_AVAILABLE_CHARS);
-    };
-    Strings.password = function (length) {
-        return this.generateRandomString(length, this.PASSWORD_AVAILABLE_CHARS);
-    };
-    Strings.initialCaps = function (string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    };
-    Strings.generateRandomString = function (length, availableCharacters) {
-        if (length === void 0) { length = 10; }
-        if (availableCharacters === void 0) { availableCharacters = this.RANDOM_STRING_AVAILABLE_CHARS; }
-        var result = '';
-        var charactersLength = availableCharacters.length;
-        for (var i = 0; i < length; i++) {
-            result += availableCharacters.charAt(Math.floor(Math.random() * charactersLength));
-        }
-        return result;
-    };
-    Strings.RANDOM_STRING_AVAILABLE_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    Strings.PASSWORD_AVAILABLE_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$-_.+!*\'(),,';
-    return Strings;
-}());
-exports.Strings = Strings;
-
-
-/***/ }),
-
-/***/ "./src/Task/AbstractTask.ts":
-/*!**********************************!*\
-  !*** ./src/Task/AbstractTask.ts ***!
-  \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Log_1 = __webpack_require__(/*! ../Cli/Log/Log */ "./src/Cli/Log/Log.ts");
-var Objects_1 = __webpack_require__(/*! ../Core/Objects/Objects */ "./src/Core/Objects/Objects.ts");
-var Config_1 = __webpack_require__(/*! ../Core/Config/Config */ "./src/Core/Config/Config.ts");
-var AbstractTask = /** @class */ (function () {
-    function AbstractTask(taskConfig) {
-        if (taskConfig === void 0) { taskConfig = {}; }
-        this.running = false;
-        this.queued = 0;
-        this.queueLimit = 0;
-        // Get default task config
-        var defaultConfig = this.getDefaultTaskConfig();
-        // Merge the default config with overrides
-        var mergedConfigObject = Objects_1.Objects.merge(defaultConfig, taskConfig);
-        // Set task config as Config object
-        Config_1.Config.setConfigObject(mergedConfigObject);
-        this.validateTaskConfig();
-    }
-    AbstractTask.prototype.run = function () {
-        // If task is already running
-        if (this.running) {
-            // Queue it up
-            this.queue();
-            return;
-        }
-        var taskName = this.constructor['name'];
-        // Log task as running
-        this.running = true;
-        Log_1.Log.info(taskName + ': started');
-        // Execute the task
-        this.exec();
-        this.running = false;
-        Log_1.Log.success(taskName + ': finished');
-        this.shutdown();
-    };
-    AbstractTask.prototype.getDefaultTaskConfig = function () {
-        return {};
-    };
-    AbstractTask.prototype.getRequiredTaskConfigPaths = function () {
-        return {};
-    };
-    AbstractTask.prototype.validateTaskConfig = function () {
-        this.validateTaskConfigForRequiredPathsAndTypes();
-        return this;
-    };
-    AbstractTask.prototype.validateTaskConfigForRequiredPathsAndTypes = function () {
-        var requiredTaskConfigPaths = this.getRequiredTaskConfigPaths();
-        for (var requiredConfigPath in requiredTaskConfigPaths)
-            if (requiredTaskConfigPaths.hasOwnProperty(requiredConfigPath)) {
-                var requiredType = requiredTaskConfigPaths[requiredConfigPath];
-                var requiredConfigValue = Config_1.Config.getByPath(requiredConfigPath);
-                var actualType = typeof requiredConfigValue;
-                if (!requiredConfigValue) {
-                    Log_1.Log.error(this.constructor['name'] + ': Invalid task config. Required key path not found: ' + requiredConfigPath);
-                    global.process.exit();
-                }
-                else if (actualType !== requiredType) {
-                    Log_1.Log.error(this.constructor['name'] + ': Invalid task config value for "' + requiredConfigPath + '". Expected type of ' + requiredType + ', received ' + actualType);
-                    global.process.exit();
-                }
-            }
-        return this;
-    };
-    AbstractTask.prototype.queue = function () {
-        if (this.queued < this.queueLimit) {
-            this.queued++;
-        }
-        return this;
-    };
-    AbstractTask.prototype.shutdown = function () {
-        // Remove one from the queue
-        this.queued--;
-        // If there are tasks in the queue
-        if (this.queued > 0) {
-            // Run it
-            this.run();
-        }
-        return this;
-    };
-    AbstractTask.prototype.exec = function () {
-        throw new Error('exec() method must be implemented');
-    };
-    return AbstractTask;
-}());
-exports.AbstractTask = AbstractTask;
-
-
-/***/ }),
-
-/***/ "./src/Task/ConfigTask.ts":
-/*!********************************!*\
-  !*** ./src/Task/ConfigTask.ts ***!
-  \********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var AbstractTask_1 = __webpack_require__(/*! ./AbstractTask */ "./src/Task/AbstractTask.ts");
-var Config_1 = __webpack_require__(/*! ../Core/Config/Config */ "./src/Core/Config/Config.ts");
-var Config_2 = __webpack_require__(/*! ../Cli/Config/Config */ "./src/Cli/Config/Config.ts");
-var FileSystem_1 = __webpack_require__(/*! ../Cli/FileSystem/FileSystem */ "./src/Cli/FileSystem/FileSystem.ts");
-var ConfigTask = /** @class */ (function (_super) {
-    __extends(ConfigTask, _super);
-    function ConfigTask() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    ConfigTask.prototype.exec = function () {
-        var configDirPath = Config_1.Config.getByPath('configDirPath');
-        var outputFilePath = Config_1.Config.getByPath('outputFilePath');
-        var outputFormat = Config_1.Config.getByPath('outputFormat');
-        var variableName = Config_1.Config.getByPath('variableName');
-        // Add trailing slash to configDirPath if needed
-        if (configDirPath.charAt(configDirPath.length - 1) !== '/') {
-            configDirPath += '/';
-        }
-        Config_2.Config.addConfigDir(configDirPath);
-        Config_2.Config.addMergeRule(/default-.+/);
-        var env = global.process.env.ENV || null;
-        if (env) {
-            Config_2.Config.addMergeRule(new RegExp(env + '-.+'));
-        }
-        var mergedConfig = Config_2.Config.generate();
-        // If config file already exists
-        // Empty it
-        FileSystem_1.FileSystem.writeFile(outputFilePath, '');
-        // If no configs exists, we want to write an empty object to the config file
-        // rather than the word 'null'
-        if (!mergedConfig) {
-            mergedConfig = {};
-        }
-        var fileContents = JSON.stringify(mergedConfig, null, 2);
-        // Format file contents depending on format provided
-        if (outputFormat == 'json') {
-            // Do nothing (file contents formatted for json by default)
-        }
-        if (outputFormat === 'node') {
-            fileContents = '\nmodule.exports = ' + fileContents + ';\n';
-        }
-        else if (outputFormat == 'js') {
-            fileContents = '\nvar ' + variableName + ' = ' + fileContents + ';\n';
-        }
-        // Write new generated config to output file
-        FileSystem_1.FileSystem.writeFile(outputFilePath, fileContents);
-        return true;
-    };
-    ConfigTask.prototype.getRequiredTaskConfigPaths = function () {
-        return {
-            configDirPath: "string",
-            outputFilePath: "string",
-            outputFormat: "string",
-            variableName: "string"
-        };
-    };
-    ConfigTask.prototype.getDefaultTaskConfig = function () {
-        var cwd = process.cwd();
-        return {
-            configDirPath: cwd + '/config',
-            outputFilePath: cwd + "/cache/config.js",
-            outputFormat: "js",
-            variableName: "config"
-        };
-    };
-    return ConfigTask;
-}(AbstractTask_1.AbstractTask));
-exports.ConfigTask = ConfigTask;
-
-
-/***/ }),
-
 /***/ "assert":
 /*!*************************!*\
   !*** external "assert" ***!
   \*************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
+"use strict";
 module.exports = require("assert");
 
 /***/ }),
@@ -12472,9 +12344,9 @@ module.exports = require("assert");
 /*!********************************!*\
   !*** external "child_process" ***!
   \********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
+"use strict";
 module.exports = require("child_process");
 
 /***/ }),
@@ -12483,9 +12355,9 @@ module.exports = require("child_process");
 /*!*************************!*\
   !*** external "events" ***!
   \*************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
+"use strict";
 module.exports = require("events");
 
 /***/ }),
@@ -12494,9 +12366,9 @@ module.exports = require("events");
 /*!*********************!*\
   !*** external "fs" ***!
   \*********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
+"use strict";
 module.exports = require("fs");
 
 /***/ }),
@@ -12505,9 +12377,9 @@ module.exports = require("fs");
 /*!*********************!*\
   !*** external "os" ***!
   \*********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
+"use strict";
 module.exports = require("os");
 
 /***/ }),
@@ -12516,9 +12388,9 @@ module.exports = require("os");
 /*!***********************!*\
   !*** external "path" ***!
   \***********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
+"use strict";
 module.exports = require("path");
 
 /***/ }),
@@ -12527,12 +12399,68 @@ module.exports = require("path");
 /*!***********************!*\
   !*** external "util" ***!
   \***********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
+"use strict";
 module.exports = require("util");
 
 /***/ })
 
-/******/ });
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			id: moduleId,
+/******/ 			loaded: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = __webpack_module_cache__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/node module decorator */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nmd = (module) => {
+/******/ 			module.paths = [];
+/******/ 			if (!module.children) module.children = [];
+/******/ 			return module;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// module cache are used so entry inlining is disabled
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	var __webpack_exports__ = __webpack_require__(__webpack_require__.s = "./exports/Task/ConfigTask.ts");
+/******/ 	exports.ConfigTask = __webpack_exports__;
+/******/ 	
+/******/ })()
+;
 //# sourceMappingURL=ConfigTask.map
