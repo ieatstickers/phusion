@@ -19,9 +19,16 @@ export class Strings
 		return string.indexOf(suffix, string.length - suffix.length) >= 0;
 	}
   
-  public static random(length: number = 10): string
+  public static random(length: number = 10, blacklistedStrings?: Array<string>): string
   {
-    return this.generateRandomString(length, this.RANDOM_STRING_AVAILABLE_CHARS);
+    let string;
+    
+    while (!string || (blacklistedStrings && blacklistedStrings.length && blacklistedStrings.includes(string)))
+    {
+      string = this.generateRandomString(length, this.RANDOM_STRING_AVAILABLE_CHARS);
+    }
+    
+    return string;
   }
   
   public static password(length: number)
