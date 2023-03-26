@@ -1,36 +1,14 @@
 {
   "name": "phusion",
-  "version": "2.0.0",
-  "description": "TypeScript library designed to help with building Javascript/TypeScript applications. It provides a number of utility classes to handle making HTTP requests, caching responses, accessing browser storage and more.",
+  "version": "3.0.0",
+  "description": "TypeScript library designed to help with building TypeScript applications.",
   "author": "Mike Burke",
-  "scripts": {
-    "test": "jest"
-  },
+  "scripts": {},
   "dependencies": {
-    "@react-native-async-storage/async-storage": "^1.17.11",
-    "@types/jest": "^29.0.5",
-    "axios": "^0.21.1",
-    "chalk": "^2.4.2",
-    "moment": "^2.24.0",
-    "shelljs": "^0.8.4",
-    "ua-parser-js": "^0.7.21",
-    "yamljs": "^0.3.0"
+    "ua-parser-js": "^0.7.21"
   },
   "devDependencies": {
-    "@types/node": "^8.10.66",
-    "gulp": "^4.0.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-if": "^2.0.2",
-    "gulp-uglify": "^3.0.2",
-    "jest": "^29.0.5",
-    "json-loader": "^0.5.4",
-    "ts-jest": "^29.0.5",
-    "ts-loader": "^4.0.0",
-    "typescript": "^4.9.5",
-    "vinyl-named": "^1.1.0",
-    "webpack": "^5.75.0",
-    "webpack-cli": "^5.0.1",
-    "webpack-stream": "^7.0.0"
+    "@types/node": "^18.15.10"
   },
   "repository": {
     "type": "git",
