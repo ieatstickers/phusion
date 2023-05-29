@@ -38,7 +38,13 @@ export class Strings
   
   public static initialCaps(string: string)
   {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+    const words = string.split(' ');
+    
+    return words.reduce((result, word, index) => {
+      result += word.charAt(0).toUpperCase() + word.slice(1);
+      if (index < words.length - 1) result += ' ';
+      return result;
+    }, '');
   }
   
   private static generateRandomString(

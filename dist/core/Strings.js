@@ -38,15 +38,25 @@ var Strings = /** @class */ (function () {
     Strings.endsWith = function (string, suffix) {
         return string.indexOf(suffix, string.length - suffix.length) >= 0;
     };
-    Strings.random = function (length) {
+    Strings.random = function (length, blacklistedStrings) {
         if (length === void 0) { length = 10; }
-        return this.generateRandomString(length, this.RANDOM_STRING_AVAILABLE_CHARS);
+        var string;
+        while (!string || (blacklistedStrings && blacklistedStrings.length && blacklistedStrings.includes(string))) {
+            string = this.generateRandomString(length, this.RANDOM_STRING_AVAILABLE_CHARS);
+        }
+        return string;
     };
     Strings.password = function (length) {
         return this.generateRandomString(length, this.PASSWORD_AVAILABLE_CHARS);
     };
     Strings.initialCaps = function (string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
+        var words = string.split(' ');
+        return words.reduce(function (result, word, index) {
+            result += word.charAt(0).toUpperCase() + word.slice(1);
+            if (index < words.length - 1)
+                result += ' ';
+            return result;
+        }, '');
     };
     Strings.generateRandomString = function (length, availableCharacters) {
         if (length === void 0) { length = 10; }
